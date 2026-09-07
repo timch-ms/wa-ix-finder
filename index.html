@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Used BMW iX listings from Washington dealerships in one ad-free view.">
+  <title>WA iX Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="WA iX Finder home">
+      <span class="brand-mark">iX</span>
+      <span>WA Finder</span>
+    </a>
+    <span class="state-label">Washington State</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">PRE-OWNED INVENTORY</p>
+      <h1>Find your BMW iX</h1>
+      <p>Washington dealer listings, collected in one simple, ad-free page.</p>
+    </section>
+
+    <section class="inventory-shell">
+      <aside class="filters" aria-label="Inventory filters">
+        <div class="filter-heading">
+          <h2>Filter inventory</h2>
+          <button id="clear-filters" class="text-button" type="button">Clear</button>
+        </div>
+
+        <label for="year">Year</label>
+        <select id="year"><option value="">All years</option></select>
+
+        <label for="dealership">Dealership</label>
+        <select id="dealership"><option value="">All dealerships</option></select>
+
+        <label for="mileage">Maximum mileage</label>
+        <select id="mileage">
+          <option value="">Any mileage</option>
+          <option value="5000">5,000 miles</option>
+          <option value="10000">10,000 miles</option>
+          <option value="25000">25,000 miles</option>
+          <option value="50000">50,000 miles</option>
+        </select>
+
+        <label for="color">Exterior color</label>
+        <select id="color"><option value="">All colors</option></select>
+
+        <label for="material">Interior material</label>
+        <select id="material"><option value="">All materials</option></select>
+
+        <label class="check-row" for="dapp">
+          <input id="dapp" type="checkbox">
+          <span>
+            <strong>Driving Assistance Pro</strong>
+            <small>Only show listings where DAPP is explicitly listed</small>
+          </span>
+        </label>
+      </aside>
+
+      <section class="results" aria-live="polite">
+        <div class="results-header">
+          <div>
+            <p class="eyebrow">USED BMW iX</p>
+            <h2><span id="result-count">0</span> vehicles</h2>
+          </div>
+          <label class="sort-label" for="sort">
+            Sort
+            <select id="sort">
+              <option value="year-desc">Newest year</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="mileage-asc">Mileage: low to high</option>
+            </select>
+          </label>
+        </div>
+        <div id="active-filters" class="active-filters"></div>
+        <div id="vehicle-grid" class="vehicle-grid"></div>
+        <p id="empty-state" class="empty-state" hidden>No vehicles match these filters.</p>
+      </section>
+    </section>
+
+    <section class="source-panel">
+      <div>
+        <p class="eyebrow">COVERAGE &amp; FRESHNESS</p>
+        <h2>Dealer sources</h2>
+        <p>Inventory changes quickly. Confirm price, equipment, and availability on the dealer site.</p>
+      </div>
+      <div id="source-list" class="source-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Independent inventory index. Not affiliated with BMW or any listed dealer.</p>
+    <p id="updated-at"></p>
+  </footer>
+
+  <template id="vehicle-card-template">
+    <article class="vehicle-card">
+      <div class="vehicle-image-wrap">
+        <img class="vehicle-image" alt="" loading="lazy">
+        <span class="condition-badge">Pre-Owned</span>
+      </div>
+      <div class="vehicle-body">
+        <p class="dealer-name"></p>
+        <h3 class="vehicle-title"></h3>
+        <p class="vehicle-subtitle"></p>
+        <div class="vehicle-facts"></div>
+        <div class="package-row"></div>
+        <div class="price-row">
+          <div><small>Dealer price</small><strong class="vehicle-price"></strong></div>
+          <a class="info-link" target="_blank" rel="noopener noreferrer">Get More Information</a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

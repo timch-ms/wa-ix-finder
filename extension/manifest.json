@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "WA iX Dealer Collector",
+  "version": "1.7.0",
+  "description": "Collects visible BMW iX inventory from Washington BMW dealer tabs into WA iX Finder.",
+  "permissions": ["tabs"],
+  "host_permissions": [
+    "http://127.0.0.1:4173/*",
+    "https://www.bmwseattle.com/*",
+    "https://www.bmwbellevue.com/*",
+    "https://bmwnorthwest.com/*",
+    "https://www.bmwlynnwood.com/*",
+    "https://www.bmwtricities.com/*",
+    "https://www.bmwofspokane.com/*",
+    "https://www.bmwofportland.com/*",
+    "https://www.bmwportland.com/*",
+    "https://www.bmwtigard.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.bmwseattle.com/*",
+        "https://www.bmwbellevue.com/*",
+        "https://bmwnorthwest.com/*",
+        "https://www.bmwlynnwood.com/*",
+        "https://www.bmwtricities.com/*",
+        "https://www.bmwofspokane.com/*",
+        "https://www.bmwofportland.com/*",
+        "https://www.bmwportland.com/*",
+        "https://www.bmwtigard.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "WA iX Dealer Collector"
+  }
+}

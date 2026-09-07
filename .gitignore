@@ -1,0 +1,4 @@
+data/collected.json
+collector/__pycache__/
+node_modules/
+
