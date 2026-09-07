@@ -15,6 +15,7 @@ LOCKED_FIELDS = {"dealer", "city"}
 COLLECTION_LOCK = threading.Lock()
 MATERIAL_PATTERN = re.compile(r"\b(leather|merino|vernasca|nappa|sensatec|alcantara|wool|cloth)\b", re.IGNORECASE)
 INVALID_COLOR_PATTERN = re.compile(r"^(not listed|color|location|360|360°|ext\.?|int\.?)$", re.IGNORECASE)
+TRIM_PATTERN = re.compile(r"\b(xDrive(?:40|45|50|60)|M60|M70)\b", re.IGNORECASE)
 
 
 def read_json(path, fallback):
@@ -105,6 +106,9 @@ def combined_inventory():
         material = str(item.get("interiorMaterial") or "Not listed").strip()
         item["exteriorColor"] = "Not listed" if INVALID_COLOR_PATTERN.match(color) else color
         item["interiorMaterial"] = material if MATERIAL_PATTERN.search(material) else "Not listed"
+        trim_match = TRIM_PATTERN.search(str(item.get("trim") or ""))
+        if trim_match:
+            item["trim"] = trim_match.group(1)
         key = item.get("vin") or item.get("id") or item.get("url")
         existing = unique.get(key)
         if not existing or item.get("dapp") or item.get("image", "").startswith("http"):

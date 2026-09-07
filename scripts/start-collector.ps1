@@ -17,7 +17,7 @@ Start-Sleep -Seconds 2
 
 $urls = @(
     "http://127.0.0.1:4173/",
-    "https://www.bmwseattle.com/inventory/used-bmw-ix/?waixcollector=1",
+    "https://www.bmwseattle.com/used-vehicles/?_dFR%5Bmodel%5D%5B0%5D=iX&_dFR%5Btype%5D%5B0%5D=Pre-Owned&_dFR%5Btype%5D%5B1%5D=Certified%20Pre-Owned&waixcollector=1",
     "https://www.bmwbellevue.com/inventory/used/bmw-ix.htm?waixcollector=1",
     "https://bmwnorthwest.com/cars/ix?waixcollector=1",
     "https://www.bmwlynnwood.com/searchused.aspx?Model=iX&waixcollector=1",
