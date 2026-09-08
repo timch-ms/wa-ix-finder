@@ -26,7 +26,7 @@ jobs:
       - name: Prepare public site
         run: |
           mkdir -p _site/assets _site/data _site/lib
-          cp index.html styles.css inventory.css pages.js .nojekyll _site/
+          cp index.html styles.css inventory-v2.css pages.js .nojekyll _site/
           cp -R assets/. _site/assets/
           cp data/inventory.json _site/data/
           cp lib/inventory.js lib/inventory-view.js _site/lib/

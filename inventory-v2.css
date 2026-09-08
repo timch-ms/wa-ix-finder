@@ -72,9 +72,9 @@
 
 .carfax-link {
   padding: 11px 13px;
-  border: 1px solid var(--blue);
-  color: var(--blue-dark);
-  background: white;
+  border: 1px solid #262626;
+  color: white;
+  background: #262626;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
@@ -83,7 +83,7 @@
 
 .carfax-link:hover {
   color: white;
-  background: var(--blue-dark);
+  background: #000;
 }
 
 .cache-stats {
