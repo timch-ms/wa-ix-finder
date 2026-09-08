@@ -39,6 +39,8 @@ The server stores a sanitized response in ignored file `data/auto-dev-cache.json
 
 The Auto.dev page substitutes filters supported by its data—trim, price, interior color, CPO status, one-owner status, accident history, prior usage, listing recency, photo count, and BMW-dealer-only—for unavailable upholstery-material and DAPP fields. Listings first observed after the initial cache are highlighted as new.
 
+Each card exposes its CARFAX report separately. **Get More Information** is reserved for direct dealer or dealer-group pages; marketplace links are labeled as such, and records with only a CARFAX destination do not show a misleading dealer action.
+
 To replace the public snapshot with the current sanitized cache, run:
 
 ```powershell
