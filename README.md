@@ -45,7 +45,7 @@ To replace the public snapshot with the current sanitized cache, run:
 python .\scripts\export-auto-dev-snapshot.py
 ```
 
-This writes tracked file `data/auto-dev-listings.json`. GitHub Pages loads that static file through `pages.js`; the published browser code contains no Auto.dev or localhost API request. The deployment workflow only uploads committed repository files and does not contact Auto.dev.
+This writes tracked file `data/inventory.json`. GitHub Pages loads that static file through `pages.js`; the published browser code contains no provider or localhost API request.
 
 ## Inventory data
 

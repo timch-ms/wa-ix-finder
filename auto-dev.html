@@ -6,7 +6,7 @@
   <meta name="description" content="Used BMW iX listings in Washington from a daily Auto.dev cache.">
   <title>Auto.dev WA iX Finder</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="auto-dev.css">
+  <link rel="stylesheet" href="inventory.css">
 </head>
 <body>
   <header class="site-header">
@@ -18,7 +18,7 @@
   </header>
 
   <main>
-    <section class="hero auto-dev-hero">
+    <section class="hero inventory-hero">
       <p class="eyebrow">AUTO.DEV INVENTORY</p>
       <h1>Washington BMW iX listings</h1>
       <p>One ad-free view built solely from the daily Auto.dev listing feed.</p>
@@ -26,7 +26,7 @@
 
     <div id="cache-notice" class="cache-notice" role="status"></div>
 
-    <section class="inventory-shell auto-dev-shell">
+    <section class="inventory-shell inventory-layout">
       <aside class="filters" aria-label="Inventory filters">
         <div class="filter-heading">
           <h2>Filter inventory</h2>
@@ -92,7 +92,7 @@
           <option value="not-cpo">Not CPO</option>
         </select>
 
-        <label for="recency">First seen by Auto.dev</label>
+        <label for="recency">First indexed</label>
         <select id="recency">
           <option value="">Any listing age</option>
           <option value="7">Within 7 days</option>

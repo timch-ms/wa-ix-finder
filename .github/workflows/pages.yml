@@ -23,9 +23,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Prepare public site
+        run: |
+          mkdir -p _site/assets _site/data _site/lib
+          cp index.html styles.css inventory.css pages.js .nojekyll _site/
+          cp -R assets/. _site/assets/
+          cp data/inventory.json _site/data/
+          cp lib/inventory.js lib/inventory-view.js _site/lib/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

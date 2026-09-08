@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Used BMW iX listings in Washington from a static Auto.dev snapshot.">
+  <meta name="description" content="Used BMW iX listings in Washington from a daily inventory snapshot.">
   <title>WA iX Finder</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="auto-dev.css">
+  <link rel="stylesheet" href="inventory.css">
 </head>
 <body>
   <header class="site-header">
@@ -18,15 +18,15 @@
   </header>
 
   <main>
-    <section class="hero auto-dev-hero">
-      <p class="eyebrow">AUTO.DEV INVENTORY</p>
+    <section class="hero inventory-hero">
+      <p class="eyebrow">USED VEHICLE INVENTORY</p>
       <h1>Washington BMW iX listings</h1>
-      <p>One ad-free view published from a sanitized Auto.dev inventory snapshot.</p>
+      <p>One ad-free view published from a daily Washington inventory snapshot.</p>
     </section>
 
     <div id="cache-notice" class="cache-notice" role="status"></div>
 
-    <section class="inventory-shell auto-dev-shell">
+    <section class="inventory-shell inventory-layout">
       <aside class="filters" aria-label="Inventory filters">
         <div class="filter-heading">
           <h2>Filter inventory</h2>
@@ -92,7 +92,7 @@
           <option value="not-cpo">Not CPO</option>
         </select>
 
-        <label for="recency">First seen by Auto.dev</label>
+        <label for="recency">First indexed</label>
         <select id="recency">
           <option value="">Any listing age</option>
           <option value="7">Within 7 days</option>
@@ -145,8 +145,8 @@
     <section class="source-panel">
       <div>
         <p class="eyebrow">STATIC SNAPSHOT</p>
-        <h2>Published Auto.dev inventory</h2>
-        <p>This page reads a checked-in JSON snapshot. It does not contact Auto.dev or any localhost inventory API from your browser.</p>
+        <h2>Published inventory</h2>
+        <p>This page reads a checked-in JSON snapshot and makes no external inventory requests from your browser.</p>
       </div>
       <div id="cache-stats" class="cache-stats"></div>
     </section>

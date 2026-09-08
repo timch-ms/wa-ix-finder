@@ -3,7 +3,7 @@ import json
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "auto-dev-cache.json"
-DESTINATION = ROOT / "data" / "auto-dev-listings.json"
+DESTINATION = ROOT / "data" / "inventory.json"
 LISTING_FIELDS = {
     "id",
     "vin",
@@ -42,7 +42,7 @@ def export_snapshot():
         for listing in cache.get("listings", [])
     ]
     snapshot = {
-        "staticSnapshot": True,
+        "publishedSnapshot": True,
         "updatedAt": cache.get("updatedAt"),
         "lastRefreshDate": cache.get("lastRefreshDate"),
         "lastAttemptCalls": cache.get("lastAttemptCalls", 0),

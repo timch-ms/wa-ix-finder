@@ -1,4 +1,4 @@
-.auto-dev-hero {
+.inventory-hero {
   background: linear-gradient(110deg, #101820 10%, #173653 58%, #1c69d4 160%);
 }
 
@@ -11,8 +11,8 @@
 
 .cache-ok { background: var(--success); }
 .cache-error { background: #9c5200; }
-.auto-dev-shell { grid-template-columns: 310px minmax(0, 1fr); }
-.auto-dev-shell .filters {
+.inventory-layout { grid-template-columns: 310px minmax(0, 1fr); }
+.inventory-layout .filters {
   max-height: calc(100vh - 36px);
   overflow-y: auto;
 }
@@ -79,8 +79,8 @@
 .cache-stats strong { font-size: 20px; }
 
 @media (max-width: 1000px) {
-  .auto-dev-shell { grid-template-columns: 1fr; }
-  .auto-dev-shell .filters {
+  .inventory-layout { grid-template-columns: 1fr; }
+  .inventory-layout .filters {
     max-height: none;
     overflow-y: visible;
   }
