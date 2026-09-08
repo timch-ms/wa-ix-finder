@@ -47,7 +47,7 @@ To replace the public snapshot with the current sanitized cache, run:
 python .\scripts\export-auto-dev-snapshot.py
 ```
 
-This writes tracked file `data/inventory.json`. GitHub Pages loads that static file through `site-v2.js`; the published browser code contains no provider or localhost API request.
+This writes tracked file `data/inventory.json`. GitHub Pages loads that static file through `site-v3.js` with browser caching disabled; the published browser code contains no provider or localhost API request.
 
 Verified discrepancies are stored by VIN in `data/listing-overrides.json`. The local cache server and snapshot exporter apply these corrections after each feed refresh so confirmed dealer status and links are not overwritten by stale source fields.
 
