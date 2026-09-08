@@ -25,6 +25,28 @@ This starts the local collector and launches Edge with the unpacked extension in
 
 The collection server stores browser results in `data/collected.json`. It does not access or export Edge cookies. Only public vehicle fields and dealer URLs are retained.
 
+## Auto.dev comparison site
+
+The separate Auto.dev view uses only the Washington BMW iX records returned by the listings API:
+
+```powershell
+.\scripts\start-auto-dev.ps1
+```
+
+The launcher securely prompts for the API key when `AUTO_DEV_API_KEY` is not already set, starts the cache server, and opens `http://127.0.0.1:4174/auto-dev.html` in Edge. The key is inherited by the server process but is never written to the repository or cache. Running the launcher again reuses the existing server rather than creating another process.
+
+The server stores a sanitized response in ignored file `data/auto-dev-cache.json`. It requests the first result page to determine the actual page size and total, requests each remaining page once, and records the attempt before making requests. Additional page loads on the same local calendar day use the cache without spending API calls. If the server remains running across midnight, it performs one refresh shortly after midnight. After rotating the key, stop the exact server PID shown by the launcher with `Stop-Process -Id <PID>`, then run the launcher again so future refreshes use the new credential.
+
+The Auto.dev page substitutes filters supported by its data—trim, price, interior color, CPO status, one-owner status, accident history, prior usage, listing recency, photo count, and BMW-dealer-only—for unavailable upholstery-material and DAPP fields. Listings first observed after the initial cache are highlighted as new.
+
+To replace the public snapshot with the current sanitized cache, run:
+
+```powershell
+python .\scripts\export-auto-dev-snapshot.py
+```
+
+This writes tracked file `data/auto-dev-listings.json`. GitHub Pages loads that static file through `pages.js`; the published browser code contains no Auto.dev or localhost API request. The deployment workflow only uploads committed repository files and does not contact Auto.dev.
+
 ## Inventory data
 
 Listings and source status are stored in `data/listings.json`. Run `npm run refresh` to check whether configured dealer inventory pages are reachable. The refresh never interprets a blocked request as zero inventory and never deletes existing records.

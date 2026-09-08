@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node --test",
     "serve": "node scripts/serve.mjs",
-    "refresh": "node scripts/refresh.mjs"
+    "refresh": "node scripts/refresh.mjs",
+    "export:auto-dev": "python scripts/export-auto-dev-snapshot.py"
   }
 }

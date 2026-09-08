@@ -1,0 +1,376 @@
+from datetime import datetime, time, timedelta
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode, urlparse
+from urllib.request import Request, urlopen
+from contextlib import contextmanager
+import json
+import math
+import msvcrt
+import os
+import threading
+
+ROOT = Path(__file__).resolve().parent.parent
+CACHE_FILE = ROOT / "data" / "auto-dev-cache.json"
+INSTANCE_FILE = ROOT / "data" / "auto-dev-server.lock"
+PORT = int(os.environ.get("AUTO_DEV_PORT", "4174"))
+REFRESH_LOCK = threading.Lock()
+BMW_DEALERS = {
+    "bmw northwest": "BMW Northwest",
+    "bmw of bellevue": "BMW of Bellevue",
+    "bmw of lynnwood": "BMW of Lynnwood",
+    "bmw of spokane": "BMW of Spokane",
+    "bmw of tri-cities": "BMW of Tri-Cities",
+    "bmw seattle": "BMW Seattle",
+}
+
+
+def today_local():
+    return datetime.now().astimezone().date().isoformat()
+
+
+def now_local():
+    return datetime.now().astimezone().isoformat()
+
+
+def empty_cache():
+    return {
+        "updatedAt": None,
+        "lastRefreshDate": None,
+        "lastAttemptDate": None,
+        "lastAttemptCalls": 0,
+        "refreshError": None,
+        "apiTotal": 0,
+        "listingCount": 0,
+        "newCount": 0,
+        "removedCount": 0,
+        "rejectedCount": 0,
+        "listings": [],
+        "knownVins": {},
+    }
+
+
+def read_cache():
+    try:
+        value = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+        cache = {**empty_cache(), **value}
+        normalize_dealer_names(cache.get("listings", []))
+        return cache
+    except (FileNotFoundError, json.JSONDecodeError, TypeError):
+        return empty_cache()
+
+
+def write_cache(value):
+    CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    temporary = CACHE_FILE.with_suffix(".tmp")
+    temporary.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(CACHE_FILE)
+
+
+def prepare_lock_file(path):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    handle = path.open("a+b")
+    if os.fstat(handle.fileno()).st_size == 0:
+        handle.seek(0)
+        handle.write(b"0")
+        handle.flush()
+    handle.seek(0)
+    return handle
+
+
+@contextmanager
+def refresh_file_lock():
+    lock_file = CACHE_FILE.with_suffix(".lock")
+    with prepare_lock_file(lock_file) as handle:
+        msvcrt.locking(handle.fileno(), msvcrt.LK_LOCK, 1)
+        try:
+            yield
+        finally:
+            handle.seek(0)
+            msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+
+
+@contextmanager
+def single_instance_lock():
+    with prepare_lock_file(INSTANCE_FILE) as handle:
+        try:
+            msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+        except OSError as error:
+            raise RuntimeError(f"Auto.dev cache server is already running on port {PORT}.") from error
+        try:
+            yield
+        finally:
+            handle.seek(0)
+            msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+
+
+def clear_daily_changes(cache):
+    cache["newCount"] = 0
+    cache["removedCount"] = 0
+    for listing in cache.get("listings", []):
+        listing["isNew"] = False
+
+
+def valid_https_url(value):
+    return value if isinstance(value, str) and urlparse(value).scheme == "https" else None
+
+
+def normalize_dealer_names(listings):
+    variants = {}
+    for listing in listings:
+        name = str(listing.get("dealer") or "Dealer not listed").strip()
+        variants.setdefault(name.casefold(), {})
+        variants[name.casefold()][name] = variants[name.casefold()].get(name, 0) + 1
+
+    canonical = {}
+    for key, counts in variants.items():
+        if key in BMW_DEALERS:
+            canonical[key] = BMW_DEALERS[key]
+            continue
+        canonical[key] = max(
+            counts,
+            key=lambda name: (
+                counts[name],
+                sum(1 for word in name.split() if word[:1].isupper()),
+                sum(1 for character in name if character.isupper()),
+                name,
+            ),
+        )
+
+    for listing in listings:
+        key = str(listing.get("dealer") or "Dealer not listed").strip().casefold()
+        listing["dealer"] = canonical[key]
+        listing["officialBmwDealer"] = key in BMW_DEALERS
+
+
+def clean_listing(item):
+    vehicle = item.get("vehicle") or {}
+    retail = item.get("retailListing") or {}
+    history = item.get("history") or {}
+    vin = str(item.get("vin") or vehicle.get("vin") or "").upper()
+
+    if (
+        len(vin) != 17
+        or str(vehicle.get("make", "")).lower() != "bmw"
+        or str(vehicle.get("model", "")).lower() != "ix"
+        or str(retail.get("state", "")).upper() != "WA"
+        or retail.get("used") is not True
+    ):
+        return None
+
+    try:
+        year = int(vehicle["year"])
+        price = int(float(retail["price"]))
+    except (KeyError, TypeError, ValueError):
+        return None
+
+    mileage = retail.get("miles")
+    try:
+        mileage = int(float(mileage)) if mileage is not None else None
+    except (TypeError, ValueError):
+        mileage = None
+
+    dealer = str(retail.get("dealer") or "Dealer not listed").strip()
+    dealer = BMW_DEALERS.get(dealer.casefold(), dealer)
+    accidents = history.get("accidents")
+    return {
+        "id": vin.lower(),
+        "vin": vin,
+        "year": year,
+        "make": "BMW",
+        "model": "iX",
+        "trim": str(vehicle.get("trim") or "Trim not listed").strip(),
+        "price": price,
+        "mileage": mileage,
+        "exteriorColor": str(vehicle.get("exteriorColor") or "Not listed").strip(),
+        "interiorColor": str(vehicle.get("interiorColor") or "Not listed").strip(),
+        "dealer": dealer,
+        "officialBmwDealer": dealer.casefold() in BMW_DEALERS,
+        "city": str(retail.get("city") or "City not listed").strip(),
+        "state": "WA",
+        "zip": str(retail.get("zip") or "").strip(),
+        "cpo": retail.get("cpo") is True,
+        "oneOwner": history.get("oneOwner") if isinstance(history.get("oneOwner"), bool) else None,
+        "accidentFree": not accidents if isinstance(accidents, bool) else None,
+        "accidentCount": history.get("accidentCount"),
+        "usageType": str(history.get("usageType") or "Not listed").strip(),
+        "image": valid_https_url(retail.get("primaryImage")) or "assets/ix-blue.svg",
+        "photoCount": int(retail.get("photoCount") or 0),
+        "url": valid_https_url(retail.get("vdp")),
+        "carfaxUrl": valid_https_url(retail.get("carfaxUrl")),
+        "listedAt": item.get("createdAt"),
+    }
+
+
+def fetch_page(api_key, page):
+    query = urlencode(
+        {
+            "vehicle.make": "BMW",
+            "vehicle.model": "iX",
+            "retailListing.state": "WA",
+            "retailListing.used": "true",
+            "page": page,
+            "limit": 100,
+            "includes": "total",
+        }
+    )
+    request = Request(
+        f"https://api.auto.dev/listings?{query}",
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Accept": "application/json",
+            "User-Agent": "WA-iX-Finder/1.0",
+        },
+    )
+    with urlopen(request, timeout=30) as response:
+        return json.load(response)
+
+
+def error_message(error):
+    if isinstance(error, HTTPError):
+        try:
+            body = json.loads(error.read().decode("utf-8"))
+            return f"Auto.dev returned HTTP {error.code}: {body.get('message') or body.get('error')}"
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            return f"Auto.dev returned HTTP {error.code}"
+    if isinstance(error, URLError):
+        return f"Could not reach Auto.dev: {error.reason}"
+    return f"Auto.dev refresh failed: {error}"
+
+
+def refresh_cache(fetcher=None, date=None, api_key=None):
+    fetcher = fetcher or fetch_page
+
+    with REFRESH_LOCK:
+        with refresh_file_lock():
+            date = date or today_local()
+            cache = read_cache()
+            last_attempt = cache.get("lastAttemptDate")
+            if last_attempt == date or last_attempt and last_attempt > date:
+                return cache
+
+            api_key = api_key or os.environ.get("AUTO_DEV_API_KEY")
+            if not api_key:
+                clear_daily_changes(cache)
+                cache["refreshError"] = "AUTO_DEV_API_KEY is not set; cached data was retained."
+                write_cache(cache)
+                return cache
+
+            previous_vins = {item["vin"] for item in cache.get("listings", []) if item.get("vin")}
+            known_vins = dict(cache.get("knownVins") or {})
+            for vin in previous_vins:
+                known_vins.setdefault(vin, cache.get("lastRefreshDate") or date)
+
+            cache["lastAttemptDate"] = date
+            cache["lastAttemptCalls"] = 0
+            cache["refreshError"] = None
+            write_cache(cache)
+
+            calls = 0
+            try:
+                calls += 1
+                first = fetcher(api_key, 1)
+                raw_items = list(first.get("data") or [])
+                total = int(first.get("total") or len(raw_items))
+                page_size = len(raw_items)
+                page_count = max(1, math.ceil(total / page_size)) if page_size else 1
+
+                for page in range(2, page_count + 1):
+                    calls += 1
+                    response = fetcher(api_key, page)
+                    raw_items.extend(response.get("data") or [])
+            except (HTTPError, URLError, TimeoutError, json.JSONDecodeError, TypeError, ValueError) as error:
+                clear_daily_changes(cache)
+                cache["lastAttemptCalls"] = calls
+                cache["refreshError"] = error_message(error)
+                write_cache(cache)
+                print(f"[auto.dev] {cache['refreshError']}")
+                return cache
+
+            unique = {}
+            rejected = 0
+            for item in raw_items:
+                listing = clean_listing(item)
+                if listing is None:
+                    rejected += 1
+                    continue
+                unique[listing["vin"]] = listing
+
+            normalize_dealer_names(unique.values())
+            first_seed = not known_vins
+            for listing in unique.values():
+                vin = listing["vin"]
+                listing["isNew"] = not first_seed and vin not in known_vins
+                listing["firstSeenDate"] = known_vins.setdefault(vin, date)
+
+            current_vins = set(unique)
+            updated = {
+                **cache,
+                "updatedAt": now_local(),
+                "lastRefreshDate": date,
+                "lastAttemptDate": date,
+                "lastAttemptCalls": calls,
+                "refreshError": None,
+                "apiTotal": total,
+                "listingCount": len(unique),
+                "newCount": sum(1 for item in unique.values() if item["isNew"]),
+                "removedCount": len(previous_vins - current_vins),
+                "rejectedCount": rejected,
+                "listings": list(unique.values()),
+                "knownVins": known_vins,
+            }
+            write_cache(updated)
+            print(
+                f"[auto.dev] refreshed {len(unique)} listings with {calls} calls; "
+                f"{updated['newCount']} new, {updated['removedCount']} removed"
+            )
+            return updated
+
+
+def midnight_refresh_loop():
+    while True:
+        now = datetime.now().astimezone()
+        tomorrow = now.date() + timedelta(days=1)
+        next_refresh = datetime.combine(tomorrow, time.min, tzinfo=now.tzinfo) + timedelta(seconds=2)
+        threading.Event().wait(max(1, (next_refresh - now).total_seconds()))
+        refresh_cache()
+
+
+class AutoDevHandler(SimpleHTTPRequestHandler):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, directory=str(ROOT), **kwargs)
+
+    def log_message(self, format_string, *args):
+        print(f"[auto.dev] {format_string % args}")
+
+    def send_json(self, value, status=200):
+        payload = json.dumps(value).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("Content-Length", str(len(payload)))
+        self.end_headers()
+        self.wfile.write(payload)
+
+    def do_GET(self):
+        if urlparse(self.path).path == "/api/health":
+            self.send_json({"ok": True, "service": "auto-dev-cache", "pid": os.getpid()})
+            return
+        if urlparse(self.path).path == "/api/auto-dev-inventory":
+            self.send_json(refresh_cache())
+            return
+        super().do_GET()
+
+
+if __name__ == "__main__":
+    try:
+        with single_instance_lock():
+            server = ThreadingHTTPServer(("127.0.0.1", PORT), AutoDevHandler)
+            threading.Thread(target=refresh_cache, daemon=True).start()
+            threading.Thread(target=midnight_refresh_loop, daemon=True).start()
+            print(f"Auto.dev WA iX Finder: http://127.0.0.1:{PORT}/auto-dev.html")
+            server.serve_forever()
+    except RuntimeError as error:
+        print(f"[auto.dev] {error}")
+        raise SystemExit(1) from error

@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Used BMW iX listings in Washington from a static Auto.dev snapshot.">
-  <title>WA iX Finder</title>
+  <meta name="description" content="Used BMW iX listings in Washington from a daily Auto.dev cache.">
+  <title>Auto.dev WA iX Finder</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="auto-dev.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="./" aria-label="WA iX Finder home">
+    <a class="brand" href="auto-dev.html" aria-label="Auto.dev WA iX Finder home">
       <span class="brand-mark">iX</span>
-      <span>WA Finder</span>
+      <span>Auto.dev Finder</span>
     </a>
-    <span class="state-label">Washington State · Static snapshot</span>
+    <span class="state-label">Washington State · Daily cache</span>
   </header>
 
   <main>
     <section class="hero auto-dev-hero">
       <p class="eyebrow">AUTO.DEV INVENTORY</p>
       <h1>Washington BMW iX listings</h1>
-      <p>One ad-free view published from a sanitized Auto.dev inventory snapshot.</p>
+      <p>One ad-free view built solely from the daily Auto.dev listing feed.</p>
     </section>
 
     <div id="cache-notice" class="cache-notice" role="status"></div>
@@ -144,9 +144,9 @@
 
     <section class="source-panel">
       <div>
-        <p class="eyebrow">STATIC SNAPSHOT</p>
-        <h2>Published Auto.dev inventory</h2>
-        <p>This page reads a checked-in JSON snapshot. It does not contact Auto.dev or any localhost inventory API from your browser.</p>
+        <p class="eyebrow">CACHE &amp; QUOTA</p>
+        <h2>Daily Auto.dev snapshot</h2>
+        <p>The server requests each required result page once per local calendar day and serves this sanitized cache between refreshes.</p>
       </div>
       <div id="cache-stats" class="cache-stats"></div>
     </section>
@@ -178,6 +178,6 @@
     </article>
   </template>
 
-  <script type="module" src="pages.js"></script>
+  <script type="module" src="auto-dev.js"></script>
 </body>
 </html>
