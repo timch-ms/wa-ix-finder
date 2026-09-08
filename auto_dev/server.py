@@ -13,6 +13,7 @@ import threading
 
 ROOT = Path(__file__).resolve().parent.parent
 CACHE_FILE = ROOT / "data" / "auto-dev-cache.json"
+OVERRIDES_FILE = ROOT / "data" / "listing-overrides.json"
 INSTANCE_FILE = ROOT / "data" / "auto-dev-server.lock"
 PORT = int(os.environ.get("AUTO_DEV_PORT", "4174"))
 REFRESH_LOCK = threading.Lock()
@@ -56,6 +57,7 @@ def read_cache():
         value = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
         cache = {**empty_cache(), **value}
         normalize_dealer_names(cache.get("listings", []))
+        apply_listing_overrides(cache.get("listings", []))
         return cache
     except (FileNotFoundError, json.JSONDecodeError, TypeError):
         return empty_cache()
@@ -114,6 +116,20 @@ def clear_daily_changes(cache):
 
 def valid_https_url(value):
     return value if isinstance(value, str) and urlparse(value).scheme == "https" else None
+
+
+def apply_listing_overrides(listings):
+    try:
+        overrides = json.loads(OVERRIDES_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, TypeError):
+        return
+
+    for listing in listings:
+        override = overrides.get(listing.get("vin"), {})
+        if isinstance(override.get("cpo"), bool):
+            listing["cpo"] = override["cpo"]
+        if url := valid_https_url(override.get("url")):
+            listing["url"] = url
 
 
 def normalize_dealer_names(listings):
@@ -298,6 +314,7 @@ def refresh_cache(fetcher=None, date=None, api_key=None):
                 unique[listing["vin"]] = listing
 
             normalize_dealer_names(unique.values())
+            apply_listing_overrides(unique.values())
             first_seed = not known_vins
             for listing in unique.values():
                 vin = listing["vin"]

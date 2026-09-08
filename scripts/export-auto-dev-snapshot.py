@@ -1,9 +1,11 @@
 from pathlib import Path
+from urllib.parse import urlparse
 import json
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "auto-dev-cache.json"
 DESTINATION = ROOT / "data" / "inventory.json"
+OVERRIDES = ROOT / "data" / "listing-overrides.json"
 LISTING_FIELDS = {
     "id",
     "vin",
@@ -35,10 +37,28 @@ LISTING_FIELDS = {
 }
 
 
+def apply_override(listing, override):
+    corrected = dict(listing)
+    if isinstance(override.get("cpo"), bool):
+        corrected["cpo"] = override["cpo"]
+    url = override.get("url")
+    if isinstance(url, str) and urlparse(url).scheme == "https":
+        corrected["url"] = url
+    return corrected
+
+
 def export_snapshot():
     cache = json.loads(SOURCE.read_text(encoding="utf-8"))
+    overrides = json.loads(OVERRIDES.read_text(encoding="utf-8")) if OVERRIDES.exists() else {}
     listings = [
-        {key: value for key, value in listing.items() if key in LISTING_FIELDS}
+        {
+            key: value
+            for key, value in apply_override(
+                listing,
+                overrides.get(listing.get("vin"), {}),
+            ).items()
+            if key in LISTING_FIELDS
+        }
         for listing in cache.get("listings", [])
     ]
     snapshot = {

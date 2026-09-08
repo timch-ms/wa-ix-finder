@@ -47,6 +47,8 @@ python .\scripts\export-auto-dev-snapshot.py
 
 This writes tracked file `data/inventory.json`. GitHub Pages loads that static file through `pages.js`; the published browser code contains no provider or localhost API request.
 
+Verified discrepancies are stored by VIN in `data/listing-overrides.json`. The local cache server and snapshot exporter apply these corrections after each feed refresh so confirmed dealer status and links are not overwritten by stale source fields.
+
 ## Inventory data
 
 Listings and source status are stored in `data/listings.json`. Run `npm run refresh` to check whether configured dealer inventory pages are reachable. The refresh never interprets a blocked request as zero inventory and never deletes existing records.

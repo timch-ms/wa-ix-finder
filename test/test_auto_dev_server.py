@@ -3,10 +3,18 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest import TestCase, main
 from urllib.error import URLError
+import importlib.util
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from auto_dev import server
+
+exporter_spec = importlib.util.spec_from_file_location(
+    "export_auto_dev_snapshot",
+    Path(__file__).resolve().parent.parent / "scripts" / "export-auto-dev-snapshot.py",
+)
+exporter = importlib.util.module_from_spec(exporter_spec)
+exporter_spec.loader.exec_module(exporter)
 
 
 def listing(vin, dealer="BMW Seattle"):
@@ -39,10 +47,13 @@ class AutoDevCacheTests(TestCase):
     def setUp(self):
         self.temporary = TemporaryDirectory()
         self.original_cache_file = server.CACHE_FILE
+        self.original_overrides_file = server.OVERRIDES_FILE
         server.CACHE_FILE = Path(self.temporary.name) / "cache.json"
+        server.OVERRIDES_FILE = Path(self.temporary.name) / "overrides.json"
 
     def tearDown(self):
         server.CACHE_FILE = self.original_cache_file
+        server.OVERRIDES_FILE = self.original_overrides_file
         self.temporary.cleanup()
 
     def test_refresh_fetches_each_page_only_once_per_day(self):
@@ -125,6 +136,33 @@ class AutoDevCacheTests(TestCase):
 
         self.assertEqual({item["dealer"] for item in cache["listings"]}, {"BMW Northwest"})
         self.assertTrue(all(item["officialBmwDealer"] for item in cache["listings"]))
+
+    def test_verified_listing_override_reconciles_cpo_and_dealer_url(self):
+        vin = "WB523CF0000000001"
+        server.OVERRIDES_FILE.write_text(
+            '{"WB523CF0000000001":{"cpo":true,"url":"https://dealer.example/vehicle"}}',
+            encoding="utf-8",
+        )
+
+        def fetcher(_key, _page):
+            return {"total": 1, "data": [listing(vin)]}
+
+        cache = server.refresh_cache(fetcher=fetcher, date="2026-09-07", api_key="test")
+        corrected = cache["listings"][0]
+
+        self.assertTrue(corrected["cpo"])
+        self.assertEqual(corrected["url"], "https://dealer.example/vehicle")
+
+    def test_snapshot_override_rejects_unapproved_fields_and_insecure_url(self):
+        original = {"vin": "WB523CF0000000001", "price": 50000, "cpo": False, "url": "https://dealer.example"}
+        override = {"vin": "ALTERED", "price": 1, "cpo": True, "url": "http://insecure.example"}
+
+        corrected = exporter.apply_override(original, override)
+
+        self.assertEqual(corrected["vin"], original["vin"])
+        self.assertEqual(corrected["price"], original["price"])
+        self.assertTrue(corrected["cpo"])
+        self.assertEqual(corrected["url"], original["url"])
 
 
 if __name__ == "__main__":
