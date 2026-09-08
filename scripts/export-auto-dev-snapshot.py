@@ -30,7 +30,6 @@ LISTING_FIELDS = {
     "image",
     "photoCount",
     "url",
-    "carfaxUrl",
     "listedAt",
     "isNew",
     "firstSeenDate",

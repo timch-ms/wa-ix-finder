@@ -1,4 +1,4 @@
-import { renderInventory } from "./lib/inventory-view.js";
+import { renderInventory } from "./lib/inventory-view-v2.js";
 
 const isLocalCacheServer = ["127.0.0.1", "localhost", "[::1]"].includes(location.hostname)
   && location.port === "4174";

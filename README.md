@@ -39,7 +39,7 @@ The server stores a sanitized response in ignored file `data/auto-dev-cache.json
 
 The Auto.dev page substitutes filters supported by its data—trim, price, interior color, CPO status, one-owner status, accident history, prior usage, listing recency, photo count, and BMW-dealer-only—for unavailable upholstery-material and DAPP fields. Listings first observed after the initial cache are highlighted as new.
 
-Each card exposes its CARFAX report separately. **Get More Information** is reserved for direct dealer or dealer-group pages; marketplace links are labeled as such, and records with only a CARFAX destination do not show a misleading dealer action.
+Each card exposes its CARFAX report separately. **Dealer Site** is reserved for confirmed dealer or dealer-group domains; marketplace links are labeled as such, and records with only a CARFAX destination do not show a misleading dealer action.
 
 To replace the public snapshot with the current sanitized cache, run:
 
@@ -47,7 +47,7 @@ To replace the public snapshot with the current sanitized cache, run:
 python .\scripts\export-auto-dev-snapshot.py
 ```
 
-This writes tracked file `data/inventory.json`. GitHub Pages loads that static file through `pages.js`; the published browser code contains no provider or localhost API request.
+This writes tracked file `data/inventory.json`. GitHub Pages loads that static file through `site-v2.js`; the published browser code contains no provider or localhost API request.
 
 Verified discrepancies are stored by VIN in `data/listing-overrides.json`. The local cache server and snapshot exporter apply these corrections after each feed refresh so confirmed dealer status and links are not overwritten by stale source fields.
 

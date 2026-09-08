@@ -11,11 +11,18 @@
 
 .cache-ok { background: var(--success); }
 .cache-error { background: #9c5200; }
-.inventory-layout { grid-template-columns: 310px minmax(0, 1fr); }
+.inventory-layout {
+  grid-template-columns: 310px minmax(0, 1fr);
+  max-width: 2400px;
+}
 .inventory-layout .filters {
   max-height: calc(100vh - 36px);
   overflow-y: auto;
 }
+.inventory-layout .vehicle-grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.inventory-layout .price-row { flex-wrap: wrap; }
 .compact-check { margin-top: 14px; padding-top: 14px; }
 
 .new-badge {
@@ -62,13 +69,17 @@
   cursor: not-allowed;
 }
 
-.listing-actions {
+.inventory-layout .listing-actions {
   display: flex;
+  flex: 1 1 100%;
   align-items: stretch;
   justify-content: end;
   flex-wrap: wrap;
   gap: 8px;
+  width: 100%;
 }
+
+.inventory-layout .listing-actions a { flex: 1 1 130px; }
 
 .carfax-link {
   padding: 11px 13px;
@@ -112,6 +123,6 @@
 
 @media (max-width: 720px) {
   .cache-stats { grid-template-columns: repeat(2, 1fr); }
-  .listing-actions { justify-content: stretch; }
-  .listing-actions a { flex: 1; }
+  .inventory-layout .listing-actions { justify-content: stretch; }
+  .inventory-layout .listing-actions a { flex: 1; }
 }
