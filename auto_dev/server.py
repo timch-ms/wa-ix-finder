@@ -128,8 +128,12 @@ def apply_listing_overrides(listings):
         override = overrides.get(listing.get("vin"), {})
         if isinstance(override.get("cpo"), bool):
             listing["cpo"] = override["cpo"]
-        if url := valid_https_url(override.get("url")):
-            listing["url"] = url
+        if "url" in override:
+            url = override["url"]
+            if url is None:
+                listing["url"] = None
+            elif valid_url := valid_https_url(url):
+                listing["url"] = valid_url
 
 
 def normalize_dealer_names(listings):

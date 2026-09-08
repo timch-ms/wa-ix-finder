@@ -164,6 +164,13 @@ class AutoDevCacheTests(TestCase):
         self.assertTrue(corrected["cpo"])
         self.assertEqual(corrected["url"], original["url"])
 
+    def test_verified_null_url_override_suppresses_stale_dealer_link(self):
+        original = {"vin": "WB523CF0000000001", "url": "https://dealer.example/stale"}
+
+        corrected = exporter.apply_override(original, {"url": None})
+
+        self.assertIsNone(corrected["url"])
+
 
 if __name__ == "__main__":
     main()

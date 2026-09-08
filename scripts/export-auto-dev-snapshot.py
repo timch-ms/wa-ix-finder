@@ -40,9 +40,12 @@ def apply_override(listing, override):
     corrected = dict(listing)
     if isinstance(override.get("cpo"), bool):
         corrected["cpo"] = override["cpo"]
-    url = override.get("url")
-    if isinstance(url, str) and urlparse(url).scheme == "https":
-        corrected["url"] = url
+    if "url" in override:
+        url = override["url"]
+        if url is None:
+            corrected["url"] = None
+        elif isinstance(url, str) and urlparse(url).scheme == "https":
+            corrected["url"] = url
     return corrected
 
 
