@@ -1,0 +1,22 @@
+{
+  "siteTitle": "WA EQS SUV Finder",
+  "vehicleName": "Mercedes-Benz EQS SUV",
+  "make": "Mercedes-Benz",
+  "model": "EQS SUV",
+  "minimumYear": 2022,
+  "refreshIntervalDays": 2,
+  "maxApiCalls": 2,
+  "brandMark": "EQS",
+  "fallbackImage": "assets/vehicle.svg",
+  "dealerOnlyLabel": "Mercedes-Benz dealers only",
+  "dealerOnlyDescription": "Hide independent and other-brand dealers",
+  "officialDealerNamePatterns": [
+    "Mercedes-Benz",
+    "Mercedes Benz"
+  ],
+  "dealerDomains": [],
+  "marketplaceDomains": [
+    "autolist.com",
+    "carvana.com"
+  ]
+}
