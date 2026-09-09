@@ -1,0 +1,10 @@
+{
+  "siteTitle": "EQE name check",
+  "vehicleName": "Mercedes-Benz EQE",
+  "make": "Mercedes-Benz",
+  "model": "EQE",
+  "minimumYear": 2022,
+  "officialDealerNamePatterns": [
+    "Mercedes"
+  ]
+}

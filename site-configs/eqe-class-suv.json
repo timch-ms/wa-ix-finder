@@ -1,0 +1,10 @@
+{
+  "siteTitle": "EQE-Class SUV name check",
+  "vehicleName": "Mercedes-Benz EQE-Class SUV",
+  "make": "Mercedes-Benz",
+  "model": "EQE-Class SUV",
+  "minimumYear": 2022,
+  "officialDealerNamePatterns": [
+    "Mercedes"
+  ]
+}

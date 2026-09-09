@@ -13,10 +13,9 @@ jobs:
       fail-fast: false
       matrix:
         vehicle:
-          - ex90
-          - id-buzz
-          - eqe-suv
-          - eqs-suv
+          - eqe
+          - eqe-class
+          - eqe-class-suv
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
