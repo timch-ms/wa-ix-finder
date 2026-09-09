@@ -73,6 +73,24 @@ class AutoDevCacheTests(TestCase):
         self.assertEqual(first["newCount"], 0)
         self.assertEqual(same_day["lastAttemptCalls"], 3)
 
+    def test_refresh_stops_before_exceeding_call_limit(self):
+        calls = []
+
+        def fetcher(_key, page):
+            calls.append(page)
+            return {"total": 101, "data": [listing("WB523CF0000000001") for _ in range(20)]}
+
+        cache = server.refresh_cache(
+            fetcher=fetcher,
+            date="2026-09-07",
+            api_key="test",
+            max_calls=5,
+        )
+
+        self.assertEqual(calls, [1])
+        self.assertEqual(cache["lastAttemptCalls"], 1)
+        self.assertIn("configured maximum is 5", cache["refreshError"])
+
     def test_next_day_marks_only_unseen_vins_new(self):
         first_vins = ["WB523CF0000000001", "WB523CF0000000002"]
         next_vins = ["WB523CF0000000002", "WB523CF0000000003"]

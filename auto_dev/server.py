@@ -274,7 +274,7 @@ def error_message(error):
     return f"Auto.dev refresh failed: {error}"
 
 
-def refresh_cache(fetcher=None, date=None, api_key=None):
+def refresh_cache(fetcher=None, date=None, api_key=None, max_calls=None):
     fetcher = fetcher or fetch_page
 
     with REFRESH_LOCK:
@@ -310,6 +310,10 @@ def refresh_cache(fetcher=None, date=None, api_key=None):
                 total = int(first.get("total") or len(raw_items))
                 page_size = len(raw_items)
                 page_count = max(1, math.ceil(total / page_size)) if page_size else 1
+                if max_calls is not None and page_count > max_calls:
+                    raise ValueError(
+                        f"Refresh requires {page_count} calls; configured maximum is {max_calls}."
+                    )
 
                 for page in range(2, page_count + 1):
                     calls += 1

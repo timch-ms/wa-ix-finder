@@ -3,6 +3,17 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: ["main"]
+    paths:
+      - "index.html"
+      - "styles.css"
+      - "inventory-v3.css"
+      - "site-v3.js"
+      - ".nojekyll"
+      - "assets/**"
+      - "data/inventory.json"
+      - "lib/inventory.js"
+      - "lib/inventory-view-v2.js"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
