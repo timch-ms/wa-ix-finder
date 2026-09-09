@@ -1,0 +1,16 @@
+{
+  "siteTitle": "WA Model Y Finder",
+  "vehicleName": "Tesla Model Y",
+  "make": "Tesla",
+  "model": "Model Y",
+  "minimumYear": 2022,
+  "brandMark": "Y",
+  "dealerOnlyLabel": "Tesla locations only",
+  "dealerOnlyDescription": "Hide independent and other-brand dealers",
+  "officialDealerNamePatterns": [
+    "Tesla"
+  ],
+  "dealerDomains": [
+    "tesla.com"
+  ]
+}

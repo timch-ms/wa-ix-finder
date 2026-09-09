@@ -1,0 +1,14 @@
+{
+  "siteTitle": "WA Sienna Finder",
+  "vehicleName": "Toyota Sienna",
+  "make": "Toyota",
+  "model": "Sienna",
+  "minimumYear": 2022,
+  "brandMark": "S",
+  "dealerOnlyLabel": "Toyota dealers only",
+  "dealerOnlyDescription": "Hide independent and other-brand dealers",
+  "officialDealerNamePatterns": [
+    "Toyota"
+  ],
+  "dealerDomains": []
+}

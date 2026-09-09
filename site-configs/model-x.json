@@ -1,0 +1,16 @@
+{
+  "siteTitle": "WA Model X Finder",
+  "vehicleName": "Tesla Model X",
+  "make": "Tesla",
+  "model": "Model X",
+  "minimumYear": 2022,
+  "brandMark": "X",
+  "dealerOnlyLabel": "Tesla locations only",
+  "dealerOnlyDescription": "Hide independent and other-brand dealers",
+  "officialDealerNamePatterns": [
+    "Tesla"
+  ],
+  "dealerDomains": [
+    "tesla.com"
+  ]
+}

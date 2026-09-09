@@ -1,0 +1,35 @@
+name: Measure new vehicle inventory
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        vehicle:
+          - model-x
+          - model-y
+          - sienna
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Measure required calls
+        env:
+          AUTO_DEV_API_KEY: ${{ secrets.INVENTORY_API_KEY }}
+        shell: pwsh
+        run: |
+          python scripts\estimate-site-calls.py `
+            --config "site-configs\${{ matrix.vehicle }}.json" `
+            --output "reports\${{ matrix.vehicle }}.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.vehicle }}-call-report
+          path: reports/${{ matrix.vehicle }}.json
