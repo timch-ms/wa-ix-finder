@@ -137,6 +137,17 @@ class AutoDevCacheTests(TestCase):
         self.assertEqual({item["dealer"] for item in cache["listings"]}, {"BMW Northwest"})
         self.assertTrue(all(item["officialBmwDealer"] for item in cache["listings"]))
 
+    def test_known_independent_dealer_uses_canonical_name(self):
+        items = [listing("WB523CF0000000001", dealer="jaguar land rover bellevue")]
+
+        def fetcher(_key, _page):
+            return {"total": 1, "data": items}
+
+        cache = server.refresh_cache(fetcher=fetcher, date="2026-09-07", api_key="test")
+
+        self.assertEqual(cache["listings"][0]["dealer"], "Jaguar Land Rover Bellevue")
+        self.assertFalse(cache["listings"][0]["officialBmwDealer"])
+
     def test_verified_listing_override_reconciles_cpo_and_dealer_url(self):
         vin = "WB523CF0000000001"
         server.OVERRIDES_FILE.write_text(

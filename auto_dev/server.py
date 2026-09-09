@@ -25,6 +25,21 @@ BMW_DEALERS = {
     "bmw of tri-cities": "BMW of Tri-Cities",
     "bmw seattle": "BMW Seattle",
 }
+CANONICAL_DEALERS = {
+    **BMW_DEALERS,
+    "carmax lynnwood": "CarMax Lynnwood",
+    "elliot bay ineos grenadier": "Elliot Bay Ineos Grenadier",
+    "infiniti of lynnwood": "Infiniti of Lynnwood",
+    "j & a auto sales": "J & A Auto Sales",
+    "jaguar land rover bellevue": "Jaguar Land Rover Bellevue",
+    "landmark motors inc": "Landmark Motors Inc",
+    "lithia chrysler dodge jeep ram fiat of spokane": "Lithia Chrysler Dodge Jeep Ram FIAT of Spokane",
+    "mercedes-benz of seattle": "Mercedes-Benz of Seattle",
+    "platinum auto sales inc": "Platinum Auto Sales Inc",
+    "seattle finest motors llc": "Seattle Finest Motors LLC",
+    "swickard toyota": "Swickard Toyota",
+    "windy chevrolet": "Windy Chevrolet",
+}
 
 
 def today_local():
@@ -145,8 +160,8 @@ def normalize_dealer_names(listings):
 
     canonical = {}
     for key, counts in variants.items():
-        if key in BMW_DEALERS:
-            canonical[key] = BMW_DEALERS[key]
+        if key in CANONICAL_DEALERS:
+            canonical[key] = CANONICAL_DEALERS[key]
             continue
         canonical[key] = max(
             counts,
