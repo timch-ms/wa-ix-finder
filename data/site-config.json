@@ -5,6 +5,7 @@
   "model": "iX",
   "minimumYear": 2022,
   "brandMark": "iX",
+  "fallbackImage": "assets/ix-blue.svg",
   "dealerOnlyLabel": "BMW dealers only",
   "dealerOnlyDescription": "Hide independent and other-brand dealers",
   "officialDealerNamePatterns": [
@@ -22,5 +23,8 @@
     "seattlefinestmotors.com",
     "swickardtoyota.com",
     "volvocarsbellevue.com"
+  ],
+  "marketplaceDomains": [
+    "autolist.com"
   ]
 }

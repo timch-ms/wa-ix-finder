@@ -39,6 +39,13 @@ class PublishedInventoryRefreshTests(TestCase):
     def setUp(self):
         self.temporary = TemporaryDirectory()
         root = Path(self.temporary.name)
+        self.original_site_config_file = refresh.server.SITE_CONFIG_FILE
+        refresh.server.SITE_CONFIG_FILE = root / "site-config.json"
+        refresh.server.SITE_CONFIG_FILE.write_text(
+            '{"make":"BMW","model":"iX","minimumYear":2022,'
+            '"officialDealerNamePatterns":["BMW"]}',
+            encoding="utf-8",
+        )
         self.state_file = root / "refresh-state.json"
         self.snapshot_file = root / "inventory.json"
         self.cache_file = root / "cache.json"
@@ -64,6 +71,7 @@ class PublishedInventoryRefreshTests(TestCase):
         )
 
     def tearDown(self):
+        refresh.server.SITE_CONFIG_FILE = self.original_site_config_file
         self.temporary.cleanup()
 
     def test_reservation_allows_only_one_attempt_per_day(self):

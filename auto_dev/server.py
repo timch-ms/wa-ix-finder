@@ -269,7 +269,8 @@ def clean_listing(item, config=None):
         "accidentFree": not accidents if isinstance(accidents, bool) else None,
         "accidentCount": history.get("accidentCount"),
         "usageType": str(history.get("usageType") or "Not listed").strip(),
-        "image": valid_https_url(retail.get("primaryImage")) or "assets/ix-blue.svg",
+        "image": valid_https_url(retail.get("primaryImage"))
+        or config.get("fallbackImage", "assets/vehicle.svg"),
         "photoCount": int(retail.get("photoCount") or 0),
         "url": valid_https_url(retail.get("vdp")),
         "carfaxUrl": valid_https_url(retail.get("carfaxUrl")),
