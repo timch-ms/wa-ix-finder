@@ -10,7 +10,7 @@ sys.path.insert(0, str(ROOT))
 STATE_FILE = ROOT / "data" / "refresh-state.json"
 SNAPSHOT_FILE = ROOT / "data" / "inventory.json"
 CACHE_FILE = ROOT / "data" / "auto-dev-cache.json"
-MAX_CALLS = 5
+MAX_CALLS = 10
 MINIMUM_RETENTION_RATIO = 0.5
 
 from auto_dev import server

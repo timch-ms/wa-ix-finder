@@ -71,6 +71,9 @@ class PublishedInventoryRefreshTests(TestCase):
         self.assertFalse(refresh.reserve_refresh("2026-09-09", self.state_file))
         self.assertFalse(refresh.reserve_refresh("2026-09-08", self.state_file))
 
+    def test_automated_refresh_allows_up_to_ten_calls(self):
+        self.assertEqual(refresh.MAX_CALLS, 10)
+
     def test_successful_refresh_updates_snapshot_and_state(self):
         refresh.reserve_refresh("2026-09-09", self.state_file)
         calls = []
