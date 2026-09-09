@@ -153,7 +153,7 @@ class AutoDevCacheTests(TestCase):
         cache = server.refresh_cache(fetcher=fetcher, date="2026-09-07", api_key="test")
 
         self.assertEqual({item["dealer"] for item in cache["listings"]}, {"BMW Northwest"})
-        self.assertTrue(all(item["officialBmwDealer"] for item in cache["listings"]))
+        self.assertTrue(all(item["officialBrandDealer"] for item in cache["listings"]))
 
     def test_known_independent_dealer_uses_canonical_name(self):
         items = [listing("WB523CF0000000001", dealer="jaguar land rover bellevue")]
@@ -164,7 +164,26 @@ class AutoDevCacheTests(TestCase):
         cache = server.refresh_cache(fetcher=fetcher, date="2026-09-07", api_key="test")
 
         self.assertEqual(cache["listings"][0]["dealer"], "Jaguar Land Rover Bellevue")
-        self.assertFalse(cache["listings"][0]["officialBmwDealer"])
+        self.assertFalse(cache["listings"][0]["officialBrandDealer"])
+
+    def test_site_configuration_filters_make_model_and_minimum_year(self):
+        config = {
+            "make": "Tesla",
+            "model": "Model Y",
+            "minimumYear": 2022,
+            "officialDealerNamePatterns": ["tesla"],
+        }
+        matching = listing("WB523CF0000000001", dealer="Tesla Seattle")
+        matching["vehicle"].update({"make": "Tesla", "model": "Model Y", "year": 2022})
+        too_old = listing("WB523CF0000000002")
+        too_old["vehicle"].update({"make": "Tesla", "model": "Model Y", "year": 2021})
+
+        cleaned = server.clean_listing(matching, config)
+
+        self.assertEqual(cleaned["make"], "Tesla")
+        self.assertEqual(cleaned["model"], "Model Y")
+        self.assertTrue(cleaned["officialBrandDealer"])
+        self.assertIsNone(server.clean_listing(too_old, config))
 
     def test_verified_listing_override_reconciles_cpo_and_dealer_url(self):
         vin = "WB523CF0000000001"

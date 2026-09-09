@@ -14,6 +14,7 @@ import threading
 ROOT = Path(__file__).resolve().parent.parent
 CACHE_FILE = ROOT / "data" / "auto-dev-cache.json"
 OVERRIDES_FILE = ROOT / "data" / "listing-overrides.json"
+SITE_CONFIG_FILE = ROOT / "data" / "site-config.json"
 INSTANCE_FILE = ROOT / "data" / "auto-dev-server.lock"
 PORT = int(os.environ.get("AUTO_DEV_PORT", "4174"))
 REFRESH_LOCK = threading.Lock()
@@ -40,6 +41,12 @@ CANONICAL_DEALERS = {
     "swickard toyota": "Swickard Toyota",
     "windy chevrolet": "Windy Chevrolet",
 }
+DEFAULT_SITE_CONFIG = {
+    "make": "BMW",
+    "model": "iX",
+    "minimumYear": 2022,
+    "officialDealerNamePatterns": ["bmw"],
+}
 
 
 def today_local():
@@ -65,6 +72,24 @@ def empty_cache():
         "listings": [],
         "knownVins": {},
     }
+
+
+def read_site_config():
+    try:
+        value = json.loads(SITE_CONFIG_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, TypeError):
+        value = {}
+    config = {**DEFAULT_SITE_CONFIG, **value}
+    if not isinstance(config["make"], str) or not config["make"].strip():
+        raise ValueError("Site configuration requires a make.")
+    if not isinstance(config["model"], str) or not config["model"].strip():
+        raise ValueError("Site configuration requires a model.")
+    if not isinstance(config["minimumYear"], int):
+        raise ValueError("Site configuration requires an integer minimumYear.")
+    patterns = config.get("officialDealerNamePatterns")
+    if not isinstance(patterns, list) or not all(isinstance(item, str) for item in patterns):
+        raise ValueError("officialDealerNamePatterns must be a list of strings.")
+    return config
 
 
 def read_cache():
@@ -151,7 +176,17 @@ def apply_listing_overrides(listings):
                 listing["url"] = valid_url
 
 
-def normalize_dealer_names(listings):
+def is_official_brand_dealer(name, config):
+    normalized = name.casefold()
+    return any(
+        pattern.strip().casefold() in normalized
+        for pattern in config.get("officialDealerNamePatterns", [])
+        if pattern.strip()
+    )
+
+
+def normalize_dealer_names(listings, config=None):
+    config = config or read_site_config()
     variants = {}
     for listing in listings:
         name = str(listing.get("dealer") or "Dealer not listed").strip()
@@ -176,10 +211,12 @@ def normalize_dealer_names(listings):
     for listing in listings:
         key = str(listing.get("dealer") or "Dealer not listed").strip().casefold()
         listing["dealer"] = canonical[key]
-        listing["officialBmwDealer"] = key in BMW_DEALERS
+        listing["officialBrandDealer"] = is_official_brand_dealer(canonical[key], config)
+        listing.pop("officialBmwDealer", None)
 
 
-def clean_listing(item):
+def clean_listing(item, config=None):
+    config = config or read_site_config()
     vehicle = item.get("vehicle") or {}
     retail = item.get("retailListing") or {}
     history = item.get("history") or {}
@@ -187,8 +224,8 @@ def clean_listing(item):
 
     if (
         len(vin) != 17
-        or str(vehicle.get("make", "")).lower() != "bmw"
-        or str(vehicle.get("model", "")).lower() != "ix"
+        or str(vehicle.get("make", "")).casefold() != config["make"].casefold()
+        or str(vehicle.get("model", "")).casefold() != config["model"].casefold()
         or str(retail.get("state", "")).upper() != "WA"
         or retail.get("used") is not True
     ):
@@ -199,6 +236,8 @@ def clean_listing(item):
         price = int(float(retail["price"]))
     except (KeyError, TypeError, ValueError):
         return None
+    if year < config["minimumYear"]:
+        return None
 
     mileage = retail.get("miles")
     try:
@@ -207,21 +246,21 @@ def clean_listing(item):
         mileage = None
 
     dealer = str(retail.get("dealer") or "Dealer not listed").strip()
-    dealer = BMW_DEALERS.get(dealer.casefold(), dealer)
+    dealer = CANONICAL_DEALERS.get(dealer.casefold(), dealer)
     accidents = history.get("accidents")
     return {
         "id": vin.lower(),
         "vin": vin,
         "year": year,
-        "make": "BMW",
-        "model": "iX",
+        "make": config["make"],
+        "model": config["model"],
         "trim": str(vehicle.get("trim") or "Trim not listed").strip(),
         "price": price,
         "mileage": mileage,
         "exteriorColor": str(vehicle.get("exteriorColor") or "Not listed").strip(),
         "interiorColor": str(vehicle.get("interiorColor") or "Not listed").strip(),
         "dealer": dealer,
-        "officialBmwDealer": dealer.casefold() in BMW_DEALERS,
+        "officialBrandDealer": is_official_brand_dealer(dealer, config),
         "city": str(retail.get("city") or "City not listed").strip(),
         "state": "WA",
         "zip": str(retail.get("zip") or "").strip(),
@@ -238,11 +277,12 @@ def clean_listing(item):
     }
 
 
-def fetch_page(api_key, page):
+def fetch_page(api_key, page, config=None):
+    config = config or read_site_config()
     query = urlencode(
         {
-            "vehicle.make": "BMW",
-            "vehicle.model": "iX",
+            "vehicle.make": config["make"],
+            "vehicle.model": config["model"],
             "retailListing.state": "WA",
             "retailListing.used": "true",
             "page": page,
@@ -275,7 +315,8 @@ def error_message(error):
 
 
 def refresh_cache(fetcher=None, date=None, api_key=None, max_calls=None):
-    fetcher = fetcher or fetch_page
+    config = read_site_config()
+    fetcher = fetcher or (lambda key, page: fetch_page(key, page, config))
 
     with REFRESH_LOCK:
         with refresh_file_lock():
@@ -330,13 +371,13 @@ def refresh_cache(fetcher=None, date=None, api_key=None, max_calls=None):
             unique = {}
             rejected = 0
             for item in raw_items:
-                listing = clean_listing(item)
+                listing = clean_listing(item, config)
                 if listing is None:
                     rejected += 1
                     continue
                 unique[listing["vin"]] = listing
 
-            normalize_dealer_names(unique.values())
+            normalize_dealer_names(unique.values(), config)
             apply_listing_overrides(unique.values())
             first_seed = not known_vins
             for listing in unique.values():

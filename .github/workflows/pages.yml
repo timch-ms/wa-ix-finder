@@ -11,6 +11,7 @@ on:
       - ".nojekyll"
       - "assets/**"
       - "data/inventory.json"
+      - "data/site-config.json"
       - "lib/inventory.js"
       - "lib/inventory-view-v2.js"
       - ".github/workflows/pages.yml"
@@ -40,6 +41,7 @@ jobs:
           cp index.html styles.css inventory-v3.css site-v3.js .nojekyll _site/
           cp -R assets/. _site/assets/
           cp data/inventory.json _site/data/
+          cp data/site-config.json _site/data/
           cp lib/inventory.js lib/inventory-view-v2.js _site/lib/
       - uses: actions/upload-pages-artifact@v3
         with:

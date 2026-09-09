@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Used BMW iX listings in Washington from a daily inventory snapshot.">
+  <meta id="site-description" name="description" content="Used vehicle listings in Washington from a daily inventory snapshot.">
   <title>WA iX Finder</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="inventory-v3.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="./" aria-label="WA iX Finder home">
-      <span class="brand-mark">iX</span>
-      <span>WA Finder</span>
+    <a id="brand-link" class="brand" href="./" aria-label="Vehicle finder home">
+      <span id="brand-mark" class="brand-mark">WA</span>
+      <span id="brand-name">WA Finder</span>
     </a>
     <span class="state-label">Washington State · Static snapshot</span>
   </header>
@@ -20,7 +20,7 @@
   <main>
     <section class="hero inventory-hero">
       <p class="eyebrow">USED VEHICLE INVENTORY</p>
-      <h1>Washington BMW iX listings</h1>
+      <h1 id="hero-title">Washington used vehicle listings</h1>
       <p>One ad-free view published from a daily Washington inventory snapshot.</p>
     </section>
 
@@ -108,9 +108,9 @@
           <option value="30">30+ photos</option>
         </select>
 
-        <label class="check-row" for="bmw-dealer">
-          <input id="bmw-dealer" type="checkbox">
-          <span><strong>BMW dealers only</strong><small>Hide independent and other-brand dealers</small></span>
+        <label class="check-row" for="brand-dealer">
+          <input id="brand-dealer" type="checkbox">
+          <span><strong id="dealer-only-label">Brand dealers only</strong><small id="dealer-only-description">Hide independent and other-brand dealers</small></span>
         </label>
 
         <label class="check-row compact-check" for="new-today">
@@ -122,7 +122,7 @@
       <section class="results" aria-live="polite">
         <div class="results-header">
           <div>
-            <p class="eyebrow">USED BMW iX · WASHINGTON</p>
+            <p id="results-eyebrow" class="eyebrow">USED VEHICLES · WASHINGTON</p>
             <h2><span id="result-count">0</span> vehicles</h2>
           </div>
           <label class="sort-label" for="sort">

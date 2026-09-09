@@ -6,7 +6,15 @@ const isLocalCacheServer = ["127.0.0.1", "localhost", "[::1]"].includes(location
 if (!isLocalCacheServer) {
   location.replace("./");
 } else {
-  const response = await fetch("./api/auto-dev-inventory", { cache: "no-store" });
-  if (!response.ok) throw new Error(`Inventory request failed with HTTP ${response.status}`);
-  renderInventory(await response.json());
+  const [configResponse, inventoryResponse] = await Promise.all([
+    fetch("./data/site-config.json", { cache: "no-store" }),
+    fetch("./api/auto-dev-inventory", { cache: "no-store" })
+  ]);
+  if (!configResponse.ok) {
+    throw new Error(`Site configuration request failed with HTTP ${configResponse.status}`);
+  }
+  if (!inventoryResponse.ok) {
+    throw new Error(`Inventory request failed with HTTP ${inventoryResponse.status}`);
+  }
+  renderInventory(await inventoryResponse.json(), await configResponse.json());
 }

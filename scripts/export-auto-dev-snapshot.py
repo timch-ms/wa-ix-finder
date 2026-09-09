@@ -18,7 +18,7 @@ LISTING_FIELDS = {
     "exteriorColor",
     "interiorColor",
     "dealer",
-    "officialBmwDealer",
+    "officialBrandDealer",
     "city",
     "state",
     "zip",

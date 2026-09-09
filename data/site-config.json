@@ -1,0 +1,26 @@
+{
+  "siteTitle": "WA iX Finder",
+  "vehicleName": "BMW iX",
+  "make": "BMW",
+  "model": "iX",
+  "minimumYear": 2022,
+  "brandMark": "iX",
+  "dealerOnlyLabel": "BMW dealers only",
+  "dealerOnlyDescription": "Hide independent and other-brand dealers",
+  "officialDealerNamePatterns": [
+    "BMW"
+  ],
+  "dealerDomains": [
+    "bmwbellevue.com",
+    "bmwnorthwest.com",
+    "bmwofseattle.com",
+    "bmwofspokane.com",
+    "bmwseattle.com",
+    "jaguarbellevue.com",
+    "lithia.com",
+    "lithiajeepspokane.com",
+    "seattlefinestmotors.com",
+    "swickardtoyota.com",
+    "volvocarsbellevue.com"
+  ]
+}

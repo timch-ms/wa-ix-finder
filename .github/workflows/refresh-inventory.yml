@@ -43,8 +43,21 @@ jobs:
         shell: pwsh
         run: git pull --ff-only origin main
 
+      - name: Check API credential
+        id: credential
+        shell: pwsh
+        env:
+          AUTO_DEV_API_KEY: ${{ secrets.INVENTORY_API_KEY }}
+        run: |
+          $configured = -not [string]::IsNullOrWhiteSpace($env:AUTO_DEV_API_KEY)
+          "configured=$($configured.ToString().ToLowerInvariant())" >> $env:GITHUB_OUTPUT
+          if (-not $configured) {
+            Write-Host "INVENTORY_API_KEY is not configured; no refresh date was reserved."
+          }
+
       - name: Reserve daily API attempt
         id: reserve
+        if: steps.credential.outputs.configured == 'true'
         shell: pwsh
         run: python scripts\refresh-published-inventory.py reserve --date "${{ steps.date.outputs.value }}"
 
@@ -88,6 +101,7 @@ jobs:
             "lib\inventory.js",
             "lib\inventory-view-v2.js",
             "data\inventory.json"
+            "data\site-config.json"
           )
           $publicFiles += Get-ChildItem "assets" -Recurse -File |
             Select-Object -ExpandProperty FullName
@@ -153,6 +167,7 @@ jobs:
           cp index.html styles.css inventory-v3.css site-v3.js .nojekyll _site/
           cp -R assets/. _site/assets/
           cp data/inventory.json _site/data/
+          cp data/site-config.json _site/data/
           cp lib/inventory.js lib/inventory-view-v2.js _site/lib/
       - uses: actions/upload-pages-artifact@v3
         with:
