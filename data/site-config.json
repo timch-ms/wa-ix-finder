@@ -4,6 +4,7 @@
   "make": "BMW",
   "model": "iX",
   "minimumYear": 2022,
+  "maxApiCalls": 6,
   "brandMark": "iX",
   "fallbackImage": "assets/ix-blue.svg",
   "dealerOnlyLabel": "BMW dealers only",

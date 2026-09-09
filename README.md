@@ -53,7 +53,7 @@ This writes tracked file `data/inventory.json`. GitHub Pages loads that static f
 
 The `Refresh daily inventory` GitHub Actions workflow runs at 16:30 UTC each day and can also be started manually. Add the API credential as a repository Actions secret named `INVENTORY_API_KEY` under **Settings → Secrets and variables → Actions**. The key is passed only to the refresh process and is never written to the snapshot or Pages artifact.
 
-Before making any request, the workflow commits the Washington calendar date to `data/refresh-state.json`. This durable reservation prevents scheduled retries and manual reruns from spending more calls on the same day. A refresh is capped at ten API calls; if more pages would be required, a request fails, or the result count falls implausibly, the prior public snapshot is retained. A successful run sanitizes and tests `data/inventory.json`, commits it to `main`, and deploys the same explicit Pages allowlist used by the normal deployment workflow.
+Before making any request, the workflow commits the Washington calendar date to `data/refresh-state.json`. This durable reservation prevents scheduled retries and manual reruns from spending more calls on the same day. Each site has a configured API-call ceiling; if more pages would be required, a request fails, or the result count falls implausibly, the prior public snapshot is retained. A successful run sanitizes and tests `data/inventory.json`, commits it to `main`, and deploys the same explicit Pages allowlist used by the normal deployment workflow.
 
 Vehicle-specific make, model, minimum year, labels, official-dealer matching, and approved listing domains are defined in `data/site-config.json`. That public configuration contains no API credentials or provider endpoint.
 
