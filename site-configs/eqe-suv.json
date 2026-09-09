@@ -6,7 +6,7 @@
   "bodyStyle": "SUV",
   "minimumYear": 2022,
   "refreshIntervalDays": 2,
-  "maxApiCalls": 2,
+  "maxApiCalls": 3,
   "brandMark": "EQE",
   "fallbackImage": "assets/vehicle.svg",
   "dealerOnlyLabel": "Mercedes-Benz dealers only",
