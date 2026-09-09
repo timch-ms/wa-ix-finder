@@ -317,7 +317,7 @@ def error_message(error):
 
 def refresh_cache(fetcher=None, date=None, api_key=None, max_calls=None):
     config = read_site_config()
-    fetcher = fetcher or (lambda key, page: fetch_page(key, page, config))
+    fetcher = fetcher or fetch_page
 
     with REFRESH_LOCK:
         with refresh_file_lock():
@@ -346,21 +346,35 @@ def refresh_cache(fetcher=None, date=None, api_key=None, max_calls=None):
 
             calls = 0
             try:
-                calls += 1
-                first = fetcher(api_key, 1)
-                raw_items = list(first.get("data") or [])
-                total = int(first.get("total") or len(raw_items))
-                page_size = len(raw_items)
-                page_count = max(1, math.ceil(total / page_size)) if page_size else 1
-                if max_calls is not None and page_count > max_calls:
-                    raise ValueError(
-                        f"Refresh requires {page_count} calls; configured maximum is {max_calls}."
-                    )
+                query_configs = [config]
+                if config.get("queryYearsSeparately"):
+                    query_configs = [
+                        {**config, "year": year}
+                        for year in range(config["minimumYear"], datetime.now().year + 2)
+                    ]
 
-                for page in range(2, page_count + 1):
+                raw_items = []
+                total = 0
+                for query_config in query_configs:
                     calls += 1
-                    response = fetcher(api_key, page)
-                    raw_items.extend(response.get("data") or [])
+                    first = fetcher(api_key, 1, query_config)
+                    query_items = list(first.get("data") or [])
+                    query_total = int(first.get("total") or len(query_items))
+                    page_size = len(query_items)
+                    page_count = max(1, math.ceil(query_total / page_size)) if page_size else 1
+                    required_calls = calls + page_count - 1
+                    if max_calls is not None and required_calls > max_calls:
+                        raise ValueError(
+                            f"Refresh requires at least {required_calls} calls; "
+                            f"configured maximum is {max_calls}."
+                        )
+
+                    for page in range(2, page_count + 1):
+                        calls += 1
+                        response = fetcher(api_key, page, query_config)
+                        query_items.extend(response.get("data") or [])
+                    total += query_total
+                    raw_items.extend(query_items)
             except (HTTPError, URLError, TimeoutError, json.JSONDecodeError, TypeError, ValueError) as error:
                 clear_daily_changes(cache)
                 cache["lastAttemptCalls"] = calls

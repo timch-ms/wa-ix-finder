@@ -4,6 +4,7 @@
   "make": "Tesla",
   "model": "Model Y",
   "minimumYear": 2022,
+  "queryYearsSeparately": true,
   "brandMark": "Y",
   "dealerOnlyLabel": "Tesla locations only",
   "dealerOnlyDescription": "Hide independent and other-brand dealers",

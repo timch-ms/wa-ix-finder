@@ -4,6 +4,7 @@
   "make": "Toyota",
   "model": "Sienna",
   "minimumYear": 2022,
+  "queryYearsSeparately": true,
   "brandMark": "S",
   "dealerOnlyLabel": "Toyota dealers only",
   "dealerOnlyDescription": "Hide independent and other-brand dealers",

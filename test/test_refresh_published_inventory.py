@@ -78,7 +78,7 @@ class PublishedInventoryRefreshTests(TestCase):
         refresh.reserve_refresh("2026-09-09", self.state_file)
         calls = []
 
-        def fetcher(_key, page):
+        def fetcher(_key, page, _config):
             calls.append(page)
             return {"total": 1, "data": [raw_listing("WB523CF0000000002")]}
 
@@ -103,7 +103,7 @@ class PublishedInventoryRefreshTests(TestCase):
         refresh.reserve_refresh("2026-09-09", self.state_file)
         original_snapshot = self.snapshot_file.read_text(encoding="utf-8")
 
-        def fetcher(_key, _page):
+        def fetcher(_key, _page, _config):
             raise URLError("offline")
 
         succeeded = refresh.refresh_snapshot(
@@ -125,7 +125,7 @@ class PublishedInventoryRefreshTests(TestCase):
         refresh.reserve_refresh("2026-09-09", self.state_file)
         original_snapshot = self.snapshot_file.read_text(encoding="utf-8")
 
-        def fetcher(_key, _page):
+        def fetcher(_key, _page, _config):
             return {"total": 0, "data": []}
 
         succeeded = refresh.refresh_snapshot(

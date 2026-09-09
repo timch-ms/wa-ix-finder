@@ -1,4 +1,4 @@
-name: Measure new vehicle inventory
+name: Build initial vehicle snapshots
 
 on:
   workflow_dispatch:
@@ -7,12 +7,13 @@ permissions:
   contents: read
 
 jobs:
-  measure:
+  build:
     runs-on: windows-latest
     strategy:
       fail-fast: false
       matrix:
         vehicle:
+          - model-x
           - model-y
           - sienna
     steps:
@@ -20,16 +21,29 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Measure required calls
+      - name: Determine Washington date
+        id: date
+        shell: pwsh
+        run: |
+          $utc = (Get-Date).ToUniversalTime()
+          $date = [TimeZoneInfo]::ConvertTimeBySystemTimeZoneId(
+            $utc,
+            "Pacific Standard Time"
+          ).ToString("yyyy-MM-dd")
+          "value=$date" >> $env:GITHUB_OUTPUT
+      - name: Build initial snapshot
         env:
           AUTO_DEV_API_KEY: ${{ secrets.INVENTORY_API_KEY }}
         shell: pwsh
         run: |
-          python scripts\estimate-site-calls.py `
+          python scripts\initialize-site-snapshot.py `
             --config "site-configs\${{ matrix.vehicle }}.json" `
-            --output "reports\${{ matrix.vehicle }}.json" `
-            --yearly
+            --date "${{ steps.date.outputs.value }}"
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.vehicle }}-call-report
-          path: reports/${{ matrix.vehicle }}.json
+          name: ${{ matrix.vehicle }}-initial-site
+          path: |
+            data/inventory.json
+            data/listing-overrides.json
+            data/refresh-state.json
+            data/site-config.json

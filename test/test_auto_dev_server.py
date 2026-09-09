@@ -1,9 +1,10 @@
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest import TestCase, main
 from urllib.error import URLError
 import importlib.util
+import json
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -48,19 +49,27 @@ class AutoDevCacheTests(TestCase):
         self.temporary = TemporaryDirectory()
         self.original_cache_file = server.CACHE_FILE
         self.original_overrides_file = server.OVERRIDES_FILE
+        self.original_site_config_file = server.SITE_CONFIG_FILE
         server.CACHE_FILE = Path(self.temporary.name) / "cache.json"
         server.OVERRIDES_FILE = Path(self.temporary.name) / "overrides.json"
+        server.SITE_CONFIG_FILE = Path(self.temporary.name) / "site-config.json"
+        server.SITE_CONFIG_FILE.write_text(
+            '{"make":"BMW","model":"iX","minimumYear":2022,'
+            '"officialDealerNamePatterns":["BMW"]}',
+            encoding="utf-8",
+        )
 
     def tearDown(self):
         server.CACHE_FILE = self.original_cache_file
         server.OVERRIDES_FILE = self.original_overrides_file
+        server.SITE_CONFIG_FILE = self.original_site_config_file
         self.temporary.cleanup()
 
     def test_refresh_fetches_each_page_only_once_per_day(self):
         calls = []
         vins = [f"WB523CF0{i:09d}"[-17:] for i in range(45)]
 
-        def fetcher(_key, page):
+        def fetcher(_key, page, _config):
             calls.append(page)
             start = (page - 1) * 20
             return {"total": 45, "data": [listing(vin) for vin in vins[start:start + 20]]}
@@ -76,7 +85,7 @@ class AutoDevCacheTests(TestCase):
     def test_refresh_stops_before_exceeding_call_limit(self):
         calls = []
 
-        def fetcher(_key, page):
+        def fetcher(_key, page, _config):
             calls.append(page)
             return {"total": 101, "data": [listing("WB523CF0000000001") for _ in range(20)]}
 
@@ -91,12 +100,45 @@ class AutoDevCacheTests(TestCase):
         self.assertEqual(cache["lastAttemptCalls"], 1)
         self.assertIn("configured maximum is 5", cache["refreshError"])
 
+    def test_year_partitioned_refresh_combines_each_configured_year(self):
+        current_year = datetime.now().year
+        server.SITE_CONFIG_FILE.write_text(
+            json.dumps(
+                {
+                    "make": "Tesla",
+                    "model": "Model Y",
+                    "minimumYear": current_year,
+                    "queryYearsSeparately": True,
+                    "officialDealerNamePatterns": ["Tesla"],
+                }
+            ),
+            encoding="utf-8",
+        )
+        years = []
+
+        def fetcher(_key, _page, config):
+            years.append(config["year"])
+            item = listing(f"WB523CF0000000{config['year'] % 1000:03d}", dealer="Tesla Seattle")
+            item["vehicle"].update({"make": "Tesla", "model": "Model Y", "year": config["year"]})
+            return {"total": 1, "data": [item]}
+
+        cache = server.refresh_cache(
+            fetcher=fetcher,
+            date="2026-09-08",
+            api_key="test",
+            max_calls=10,
+        )
+
+        self.assertEqual(years, [current_year, current_year + 1])
+        self.assertEqual(cache["lastAttemptCalls"], 2)
+        self.assertEqual(cache["listingCount"], 2)
+
     def test_next_day_marks_only_unseen_vins_new(self):
         first_vins = ["WB523CF0000000001", "WB523CF0000000002"]
         next_vins = ["WB523CF0000000002", "WB523CF0000000003"]
         current = first_vins
 
-        def fetcher(_key, _page):
+        def fetcher(_key, _page, _config):
             return {"total": len(current), "data": [listing(vin) for vin in current]}
 
         server.refresh_cache(fetcher=fetcher, date="2026-09-07", api_key="test")
@@ -111,7 +153,7 @@ class AutoDevCacheTests(TestCase):
     def test_older_date_cannot_replace_newer_attempt_marker(self):
         calls = []
 
-        def fetcher(_key, page):
+        def fetcher(_key, page, _config):
             calls.append(page)
             return {"total": 1, "data": [listing("WB523CF0000000001")]}
 
@@ -124,14 +166,14 @@ class AutoDevCacheTests(TestCase):
     def test_failed_next_day_refresh_clears_old_new_markers(self):
         current = ["WB523CF0000000001"]
 
-        def fetcher(_key, _page):
+        def fetcher(_key, _page, _config):
             return {"total": len(current), "data": [listing(vin) for vin in current]}
 
         server.refresh_cache(fetcher=fetcher, date="2026-09-07", api_key="test")
         current.append("WB523CF0000000002")
         server.refresh_cache(fetcher=fetcher, date="2026-09-08", api_key="test")
 
-        def failing_fetcher(_key, _page):
+        def failing_fetcher(_key, _page, _config):
             raise URLError("offline")
 
         failed = server.refresh_cache(fetcher=failing_fetcher, date="2026-09-09", api_key="test")
@@ -147,7 +189,7 @@ class AutoDevCacheTests(TestCase):
             listing("WB523CF0000000002", dealer="BMW Northwest"),
         ]
 
-        def fetcher(_key, _page):
+        def fetcher(_key, _page, _config):
             return {"total": len(items), "data": items}
 
         cache = server.refresh_cache(fetcher=fetcher, date="2026-09-07", api_key="test")
@@ -158,7 +200,7 @@ class AutoDevCacheTests(TestCase):
     def test_known_independent_dealer_uses_canonical_name(self):
         items = [listing("WB523CF0000000001", dealer="jaguar land rover bellevue")]
 
-        def fetcher(_key, _page):
+        def fetcher(_key, _page, _config):
             return {"total": 1, "data": items}
 
         cache = server.refresh_cache(fetcher=fetcher, date="2026-09-07", api_key="test")
@@ -192,7 +234,7 @@ class AutoDevCacheTests(TestCase):
             encoding="utf-8",
         )
 
-        def fetcher(_key, _page):
+        def fetcher(_key, _page, _config):
             return {"total": 1, "data": [listing(vin)]}
 
         cache = server.refresh_cache(fetcher=fetcher, date="2026-09-07", api_key="test")
