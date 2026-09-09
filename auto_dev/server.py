@@ -279,17 +279,18 @@ def clean_listing(item, config=None):
 
 def fetch_page(api_key, page, config=None):
     config = config or read_site_config()
-    query = urlencode(
-        {
-            "vehicle.make": config["make"],
-            "vehicle.model": config["model"],
-            "retailListing.state": "WA",
-            "retailListing.used": "true",
-            "page": page,
-            "limit": 100,
-            "includes": "total",
-        }
-    )
+    parameters = {
+        "vehicle.make": config["make"],
+        "vehicle.model": config["model"],
+        "retailListing.state": "WA",
+        "retailListing.used": "true",
+        "page": page,
+        "limit": 100,
+        "includes": "total",
+    }
+    if config.get("year") is not None:
+        parameters["vehicle.year"] = config["year"]
+    query = urlencode(parameters)
     request = Request(
         f"https://api.auto.dev/listings?{query}",
         headers={
