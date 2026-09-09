@@ -301,6 +301,22 @@ class AutoDevCacheTests(TestCase):
         self.assertTrue(cleaned["officialBrandDealer"])
         self.assertIsNone(server.clean_listing(too_old, config))
 
+    def test_site_configuration_filters_body_style(self):
+        config = {
+            "make": "Mercedes-Benz",
+            "model": "EQE",
+            "bodyStyle": "SUV",
+            "minimumYear": 2022,
+            "officialDealerNamePatterns": ["Mercedes"],
+        }
+        suv = listing("WB523CF0000000001", dealer="Mercedes-Benz of Seattle")
+        suv["vehicle"].update({"make": "Mercedes-Benz", "model": "EQE", "bodyStyle": "SUV"})
+        sedan = listing("WB523CF0000000002")
+        sedan["vehicle"].update({"make": "Mercedes-Benz", "model": "EQE", "bodyStyle": "Sedan"})
+
+        self.assertIsNotNone(server.clean_listing(suv, config))
+        self.assertIsNone(server.clean_listing(sedan, config))
+
     def test_verified_listing_override_reconciles_cpo_and_dealer_url(self):
         vin = "WB523CF0000000001"
         server.OVERRIDES_FILE.write_text(

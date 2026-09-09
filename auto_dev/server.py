@@ -39,6 +39,9 @@ CANONICAL_DEALERS = {
     "platinum auto sales inc": "Platinum Auto Sales Inc",
     "seattle finest motors llc": "Seattle Finest Motors LLC",
     "swickard toyota": "Swickard Toyota",
+    "volkswagen of kirkland": "Volkswagen of Kirkland",
+    "volkswagen of puyallup": "Volkswagen of Puyallup",
+    "volvo cars bellevue": "Volvo Cars Bellevue",
     "windy chevrolet": "Windy Chevrolet",
 }
 DEFAULT_SITE_CONFIG = {
