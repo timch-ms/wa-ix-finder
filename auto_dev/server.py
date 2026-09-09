@@ -229,6 +229,8 @@ def clean_listing(item, config=None):
         len(vin) != 17
         or str(vehicle.get("make", "")).casefold() != config["make"].casefold()
         or str(vehicle.get("model", "")).casefold() != config["model"].casefold()
+        or config.get("bodyStyle")
+        and str(vehicle.get("bodyStyle", "")).casefold() != config["bodyStyle"].casefold()
         or str(retail.get("state", "")).upper() != "WA"
         or retail.get("used") is not True
     ):
@@ -294,6 +296,8 @@ def fetch_page(api_key, page, config=None):
     }
     if config.get("year") is not None:
         parameters["vehicle.year"] = config["year"]
+    if config.get("bodyStyle"):
+        parameters["vehicle.bodyStyle"] = config["bodyStyle"]
     query = urlencode(parameters)
     request = Request(
         f"https://api.auto.dev/listings?{query}",
