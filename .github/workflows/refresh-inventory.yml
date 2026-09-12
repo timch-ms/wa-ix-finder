@@ -2,7 +2,10 @@ name: Refresh daily inventory
 
 on:
   schedule:
-    - cron: "30 16 * * *"
+    # GitHub schedules use UTC. These cover 7:00 AM Pacific in daylight
+    # and standard time; the Washington-time gate below selects one.
+    - cron: "0 14 * * *"
+    - cron: "0 15 * * *"
   workflow_dispatch:
 
 permissions:
@@ -33,18 +36,32 @@ jobs:
         shell: pwsh
         run: |
           $utc = (Get-Date).ToUniversalTime()
-          $date = [TimeZoneInfo]::ConvertTimeBySystemTimeZoneId(
-            $utc,
-            "Pacific Standard Time"
-          ).ToString("yyyy-MM-dd")
+          $pacific = [TimeZoneInfo]::FindSystemTimeZoneById("Pacific Standard Time")
+          $washington = [TimeZoneInfo]::ConvertTimeFromUtc($utc, $pacific)
+          $date = $washington.ToString("yyyy-MM-dd")
+          $expectedSchedule = if ($pacific.GetUtcOffset($utc).TotalHours -eq -7) {
+            "0 14 * * *"
+          } else {
+            "0 15 * * *"
+          }
+          $shouldRun = (
+            "${{ github.event_name }}" -ne "schedule" -or
+            "${{ github.event.schedule }}" -eq $expectedSchedule
+          )
           "value=$date" >> $env:GITHUB_OUTPUT
+          "should_run=$($shouldRun.ToString().ToLowerInvariant())" >> $env:GITHUB_OUTPUT
+          if (-not $shouldRun) {
+            Write-Host "Skipping the inactive daylight-saving schedule."
+          }
 
       - name: Synchronize main branch
+        if: steps.date.outputs.should_run == 'true'
         shell: pwsh
         run: git pull --ff-only origin main
 
       - name: Check API credential
         id: credential
+        if: steps.date.outputs.should_run == 'true'
         shell: pwsh
         env:
           AUTO_DEV_API_KEY: ${{ secrets.INVENTORY_API_KEY }}
@@ -57,7 +74,7 @@ jobs:
 
       - name: Reserve daily API attempt
         id: reserve
-        if: steps.credential.outputs.configured == 'true'
+        if: steps.date.outputs.should_run == 'true' && steps.credential.outputs.configured == 'true'
         shell: pwsh
         run: python scripts\refresh-published-inventory.py reserve --date "${{ steps.date.outputs.value }}"
 
