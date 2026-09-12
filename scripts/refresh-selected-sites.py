@@ -64,14 +64,14 @@ def main():
                 snapshot_file=snapshot_file,
                 cache_file=cache_file,
             )
-            if not succeeded:
-                updated_state = json.loads(state_file.read_text(encoding="utf-8"))
-                raise RuntimeError(f"{repository}: {updated_state.get('lastError')}")
 
             destination = output / repository / "data"
             destination.mkdir(parents=True, exist_ok=True)
             shutil.copy2(snapshot_file, destination / "inventory.json")
             shutil.copy2(state_file, destination / "refresh-state.json")
+            if not succeeded:
+                updated_state = json.loads(state_file.read_text(encoding="utf-8"))
+                print(f"{repository}: retained prior snapshot: {updated_state.get('lastError')}")
     finally:
         server.SITE_CONFIG_FILE = original_config
         server.OVERRIDES_FILE = original_overrides
