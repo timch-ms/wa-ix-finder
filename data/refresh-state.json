@@ -1,7 +1,7 @@
 {
   "lastAttemptDate": "2026-09-18",
-  "lastSuccessfulRefreshDate": "2026-09-17",
-  "lastAttemptCalls": 0,
+  "lastSuccessfulRefreshDate": "2026-09-18",
+  "lastAttemptCalls": 4,
   "lastError": null,
   "knownVins": {
     "WB523CF00RCN58477": "2026-09-07",
@@ -97,6 +97,8 @@
     "WB523CF09RCP02995": "2026-09-13",
     "WB543CF01TCW13003": "2026-09-15",
     "WB523CF04RCP35676": "2026-09-15",
-    "WB523CF04PCM04352": "2026-09-16"
+    "WB523CF04PCM04352": "2026-09-16",
+    "WB533CF04PCM86541": "2026-09-18",
+    "WB523CF02RCP11165": "2026-09-18"
   }
 }
