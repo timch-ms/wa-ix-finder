@@ -342,6 +342,22 @@ class AutoDevCacheTests(TestCase):
         self.assertEqual(server.normalize_powertrain("Gasoline"), "Gasoline")
         self.assertIsNone(server.normalize_powertrain(None))
 
+    def test_site_configuration_filters_powertrain(self):
+        config = {
+            "make": "Porsche",
+            "model": "Macan",
+            "minimumYear": 2022,
+            "allowedPowertrains": ["Electric"],
+            "officialDealerNamePatterns": ["Porsche"],
+        }
+        electric = listing("WB523CF0000000001", dealer="Porsche Bellevue")
+        electric["vehicle"].update({"make": "Porsche", "model": "Macan", "fuel": "Electric"})
+        gasoline = listing("WB523CF0000000002", dealer="Porsche Bellevue")
+        gasoline["vehicle"].update({"make": "Porsche", "model": "Macan", "fuel": "Gasoline"})
+
+        self.assertIsNotNone(server.clean_listing(electric, config))
+        self.assertIsNone(server.clean_listing(gasoline, config))
+
     def test_verified_listing_override_reconciles_cpo_and_dealer_url(self):
         vin = "WB523CF0000000001"
         server.OVERRIDES_FILE.write_text(

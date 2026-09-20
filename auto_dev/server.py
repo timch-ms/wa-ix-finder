@@ -300,6 +300,10 @@ def clean_listing(item, config=None):
     dealer = str(retail.get("dealer") or "Dealer not listed").strip()
     dealer = CANONICAL_DEALERS.get(dealer.casefold(), dealer)
     accidents = history.get("accidents")
+    powertrain = normalize_powertrain(vehicle.get("fuel"))
+    allowed_powertrains = config.get("allowedPowertrains")
+    if allowed_powertrains and powertrain not in allowed_powertrains:
+        return None
     return {
         "id": vin.lower(),
         "vin": vin,
@@ -313,7 +317,7 @@ def clean_listing(item, config=None):
         "interiorColor": str(vehicle.get("interiorColor") or "Not listed").strip(),
         "seats": normalize_seats(vehicle.get("seats")),
         "drivetrain": normalize_drivetrain(vehicle.get("drivetrain")),
-        "powertrain": normalize_powertrain(vehicle.get("fuel")),
+        "powertrain": powertrain,
         "dealer": dealer,
         "officialBrandDealer": is_official_brand_dealer(dealer, config),
         "city": str(retail.get("city") or "City not listed").strip(),

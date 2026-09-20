@@ -1,0 +1,25 @@
+name: Build new vehicle snapshots
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build sanitized snapshots
+        env:
+          AUTO_DEV_API_KEY: ${{ secrets.INVENTORY_API_KEY }}
+        run: python scripts\build-new-vehicle-snapshots.py output 2026-09-20
+      - uses: actions/upload-artifact@v4
+        with:
+          name: new-vehicle-snapshots
+          path: output/*/data/*.json
+          if-no-files-found: error
