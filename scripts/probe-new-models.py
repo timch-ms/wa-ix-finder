@@ -8,12 +8,8 @@ sys.path.insert(0, str(ROOT))
 from auto_dev import server
 
 QUERIES = [
-    ("macan-electric-name", {"make": "Porsche", "model": "Macan Electric"}),
-    ("macan-electric-fuel", {"make": "Porsche", "model": "Macan", "queryFuel": "Electric"}),
-    ("cayenne-electric-name", {"make": "Porsche", "model": "Cayenne Electric"}),
-    ("cayenne-electric-fuel", {"make": "Porsche", "model": "Cayenne", "queryFuel": "Electric"}),
-    ("grecale-folgore-name", {"make": "Maserati", "model": "Grecale Folgore"}),
-    ("grecale-electric-fuel", {"make": "Maserati", "model": "Grecale", "queryFuel": "Electric"}),
+    ("cayenne-all-powertrains", {"make": "Porsche", "model": "Cayenne"}),
+    ("grecale-all-powertrains", {"make": "Maserati", "model": "Grecale"}),
 ]
 
 
