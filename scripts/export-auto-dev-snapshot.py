@@ -19,6 +19,7 @@ LISTING_FIELDS = {
     "interiorColor",
     "seats",
     "drivetrain",
+    "powertrain",
     "dealer",
     "officialBrandDealer",
     "city",

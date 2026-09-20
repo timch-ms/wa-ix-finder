@@ -63,6 +63,48 @@
   background: #fae4ca;
 }
 
+.status-pill.info {
+  color: #144d74;
+  background: #dcecf7;
+}
+
+.listing-history {
+  margin-top: 12px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.listing-history summary {
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.history-observations {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.history-observation {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.price-change {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.price-change.decrease { color: #0f5c37; }
+.price-change.increase { color: #9c5200; }
+
 .info-link.disabled {
   color: #666;
   background: #ddd;

@@ -191,6 +191,23 @@ def normalize_drivetrain(value):
     return None
 
 
+def normalize_powertrain(value):
+    normalized = str(value or "").strip().casefold().replace("_", " ").replace("-", " ")
+    if not normalized:
+        return None
+    if "plug in" in normalized or "phev" in normalized:
+        return "Plug-in hybrid"
+    if "hybrid" in normalized:
+        return "Hybrid"
+    if normalized in {"electric", "ev", "bev"} or "battery electric" in normalized:
+        return "Electric"
+    if "diesel" in normalized:
+        return "Diesel"
+    if "gas" in normalized or "petrol" in normalized:
+        return "Gasoline"
+    return "Other"
+
+
 def apply_listing_overrides(listings):
     try:
         overrides = json.loads(OVERRIDES_FILE.read_text(encoding="utf-8"))
@@ -296,6 +313,7 @@ def clean_listing(item, config=None):
         "interiorColor": str(vehicle.get("interiorColor") or "Not listed").strip(),
         "seats": normalize_seats(vehicle.get("seats")),
         "drivetrain": normalize_drivetrain(vehicle.get("drivetrain")),
+        "powertrain": normalize_powertrain(vehicle.get("fuel")),
         "dealer": dealer,
         "officialBrandDealer": is_official_brand_dealer(dealer, config),
         "city": str(retail.get("city") or "City not listed").strip(),
@@ -330,6 +348,8 @@ def fetch_page(api_key, page, config=None):
         parameters["vehicle.year"] = config["year"]
     if config.get("bodyStyle"):
         parameters["vehicle.bodyStyle"] = config["bodyStyle"]
+    if config.get("queryFuel"):
+        parameters["vehicle.fuel"] = config["queryFuel"]
     query = urlencode(parameters)
     request = Request(
         f"https://api.auto.dev/listings?{query}",

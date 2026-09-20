@@ -101,7 +101,8 @@ jobs:
             "inventory-v3.css",
             "lib\inventory.js",
             "lib\inventory-view-v2.js",
-            "data\inventory.json"
+            "data\inventory.json",
+            "data\inventory-history.json",
             "data\site-config.json"
           )
           $publicFiles += Get-ChildItem "assets" -Recurse -File |
@@ -118,7 +119,7 @@ jobs:
         if: steps.reserve.outputs.should_refresh == 'true' && steps.refresh.outputs.refresh_succeeded == 'true'
         shell: pwsh
         run: |
-          git add data\inventory.json data\refresh-state.json
+          git add data\inventory.json data\inventory-history.json data\refresh-state.json
           git diff --cached --quiet
           if ($LASTEXITCODE -eq 0) {
             Write-Host "The snapshot is already current."
@@ -168,6 +169,7 @@ jobs:
           cp index.html styles.css inventory-v3.css site-v3.js .nojekyll _site/
           cp -R assets/. _site/assets/
           cp data/inventory.json _site/data/
+          cp data/inventory-history.json _site/data/
           cp data/site-config.json _site/data/
           cp lib/inventory.js lib/inventory-view-v2.js _site/lib/
       - uses: actions/upload-pages-artifact@v3

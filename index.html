@@ -72,6 +72,9 @@
         <label for="drivetrain">Drivetrain</label>
         <select id="drivetrain"><option value="">All drivetrains</option></select>
 
+        <label for="powertrain">Powertrain</label>
+        <select id="powertrain"><option value="">All powertrains</option></select>
+
         <label for="usage">Prior usage</label>
         <select id="usage"><option value="">All usage types</option></select>
 
@@ -122,6 +125,11 @@
         <label class="check-row compact-check" for="new-today">
           <input id="new-today" type="checkbox">
           <span><strong>New in latest refresh</strong></span>
+        </label>
+
+        <label class="check-row compact-check" for="recently-removed">
+          <input id="recently-removed" type="checkbox">
+          <span><strong>Recently removed</strong><small>Last seen within seven days</small></span>
         </label>
       </aside>
 
@@ -176,6 +184,10 @@
         <p class="vehicle-subtitle"></p>
         <div class="vehicle-facts"></div>
         <div class="history-row"></div>
+        <details class="listing-history">
+          <summary>Seven-day listing history</summary>
+          <div class="history-observations"></div>
+        </details>
         <div class="price-row">
           <div><small>Listed price</small><strong class="vehicle-price"></strong></div>
           <div class="listing-actions">

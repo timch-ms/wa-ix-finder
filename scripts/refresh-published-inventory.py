@@ -11,10 +11,12 @@ sys.path.insert(0, str(ROOT))
 STATE_FILE = ROOT / "data" / "refresh-state.json"
 SNAPSHOT_FILE = ROOT / "data" / "inventory.json"
 CACHE_FILE = ROOT / "data" / "auto-dev-cache.json"
+HISTORY_FILE = ROOT / "data" / "inventory-history.json"
 MAX_CALLS = 10
 MINIMUM_RETENTION_RATIO = 0.5
 
 from auto_dev import server
+from scripts import inventory_history
 
 exporter_spec = importlib.util.spec_from_file_location(
     "export_auto_dev_snapshot",
@@ -109,6 +111,7 @@ def refresh_snapshot(
     state_file=STATE_FILE,
     snapshot_file=SNAPSHOT_FILE,
     cache_file=CACHE_FILE,
+    history_file=HISTORY_FILE,
     fetcher=None,
 ):
     state = read_json(state_file, {})
@@ -152,6 +155,7 @@ def refresh_snapshot(
             exporter.SOURCE = cache_file
             exporter.DESTINATION = snapshot_file
             exporter.export_snapshot()
+            inventory_history.write_history(snapshot_file, history_file)
         write_json(state_file, state)
     finally:
         server.CACHE_FILE = original_cache_file

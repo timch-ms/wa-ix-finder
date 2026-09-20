@@ -31,6 +31,7 @@ def listing(vin, dealer="BMW Seattle"):
             "interiorColor": "Black",
             "seats": 5,
             "drivetrain": "All-Wheel Drive",
+            "fuel": "Electric",
         },
         "retailListing": {
             "dealer": dealer,
@@ -326,6 +327,7 @@ class AutoDevCacheTests(TestCase):
 
         self.assertEqual(cleaned["seats"], 5)
         self.assertEqual(cleaned["drivetrain"], "AWD")
+        self.assertEqual(cleaned["powertrain"], "Electric")
 
     def test_vehicle_field_normalizers_reject_unknown_values(self):
         self.assertEqual(server.normalize_seats("7"), 7)
@@ -335,6 +337,10 @@ class AutoDevCacheTests(TestCase):
         self.assertEqual(server.normalize_drivetrain("rear-wheel drive"), "RWD")
         self.assertEqual(server.normalize_drivetrain("4x4"), "4WD")
         self.assertIsNone(server.normalize_drivetrain("unknown"))
+        self.assertEqual(server.normalize_powertrain("Battery Electric"), "Electric")
+        self.assertEqual(server.normalize_powertrain("Plug-in Hybrid"), "Plug-in hybrid")
+        self.assertEqual(server.normalize_powertrain("Gasoline"), "Gasoline")
+        self.assertIsNone(server.normalize_powertrain(None))
 
     def test_verified_listing_override_reconciles_cpo_and_dealer_url(self):
         vin = "WB523CF0000000001"

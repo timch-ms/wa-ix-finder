@@ -1,8 +1,9 @@
 import { renderInventory } from "./lib/inventory-view-v2.js";
 
-const [configResponse, inventoryResponse] = await Promise.all([
+const [configResponse, inventoryResponse, historyResponse] = await Promise.all([
   fetch("./data/site-config.json", { cache: "no-store" }),
-  fetch("./data/inventory.json", { cache: "no-store" })
+  fetch("./data/inventory.json", { cache: "no-store" }),
+  fetch("./data/inventory-history.json", { cache: "no-store" })
 ]);
 if (!configResponse.ok) {
   throw new Error(`Site configuration request failed with HTTP ${configResponse.status}`);
@@ -12,6 +13,9 @@ if (!inventoryResponse.ok) {
 }
 
 const config = await configResponse.json();
+const history = historyResponse.ok
+  ? await historyResponse.json()
+  : { snapshots: [], vehicles: {} };
 const vehicleName = config.vehicleName || `${config.make} ${config.model}`;
 document.title = config.siteTitle;
 document.querySelector("#site-description").content =
@@ -25,4 +29,4 @@ document.querySelector("#results-eyebrow").textContent =
 document.querySelector("#dealer-only-label").textContent = config.dealerOnlyLabel;
 document.querySelector("#dealer-only-description").textContent = config.dealerOnlyDescription;
 
-renderInventory(await inventoryResponse.json(), config);
+renderInventory(await inventoryResponse.json(), config, history);

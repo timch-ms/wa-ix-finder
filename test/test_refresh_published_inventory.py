@@ -49,6 +49,7 @@ class PublishedInventoryRefreshTests(TestCase):
         self.state_file = root / "refresh-state.json"
         self.snapshot_file = root / "inventory.json"
         self.cache_file = root / "cache.json"
+        self.history_file = root / "inventory-history.json"
         self.snapshot_file.write_text(
             json.dumps(
                 {
@@ -110,6 +111,7 @@ class PublishedInventoryRefreshTests(TestCase):
             state_file=self.state_file,
             snapshot_file=self.snapshot_file,
             cache_file=self.cache_file,
+            history_file=self.history_file,
             fetcher=fetcher,
         )
 
@@ -120,6 +122,9 @@ class PublishedInventoryRefreshTests(TestCase):
         self.assertEqual(state["lastSuccessfulRefreshDate"], "2026-09-09")
         self.assertEqual(snapshot["lastRefreshDate"], "2026-09-09")
         self.assertEqual(snapshot["listings"][0]["vin"], "WB523CF0000000002")
+        history = json.loads(self.history_file.read_text(encoding="utf-8"))
+        self.assertEqual(history["snapshots"][0]["date"], "2026-09-09")
+        self.assertIn("WB523CF0000000002", history["vehicles"])
 
     def test_failed_refresh_retains_previous_snapshot(self):
         refresh.reserve_refresh("2026-09-09", self.state_file)
@@ -134,6 +139,7 @@ class PublishedInventoryRefreshTests(TestCase):
             state_file=self.state_file,
             snapshot_file=self.snapshot_file,
             cache_file=self.cache_file,
+            history_file=self.history_file,
             fetcher=fetcher,
         )
 
@@ -142,6 +148,7 @@ class PublishedInventoryRefreshTests(TestCase):
         self.assertEqual(state["lastAttemptCalls"], 1)
         self.assertIn("Could not reach Auto.dev", state["lastError"])
         self.assertEqual(self.snapshot_file.read_text(encoding="utf-8"), original_snapshot)
+        self.assertFalse(self.history_file.exists())
 
     def test_implausibly_empty_refresh_retains_previous_snapshot(self):
         refresh.reserve_refresh("2026-09-09", self.state_file)
@@ -156,6 +163,7 @@ class PublishedInventoryRefreshTests(TestCase):
             state_file=self.state_file,
             snapshot_file=self.snapshot_file,
             cache_file=self.cache_file,
+            history_file=self.history_file,
             fetcher=fetcher,
         )
 
