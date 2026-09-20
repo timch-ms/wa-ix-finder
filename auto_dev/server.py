@@ -191,15 +191,22 @@ def normalize_drivetrain(value):
     return None
 
 
-def normalize_powertrain(value):
+def normalize_powertrain(value, trim=None):
     normalized = str(value or "").strip().casefold().replace("_", " ").replace("-", " ")
-    if not normalized:
+    normalized_trim = str(trim or "").strip().casefold().replace("_", " ").replace("-", " ")
+    combined = f"{normalized} {normalized_trim}".strip()
+    if not combined:
         return None
-    if "plug in" in normalized or "phev" in normalized:
+    if "e hybrid" in normalized_trim or "plug in" in combined or "phev" in combined:
         return "Plug-in hybrid"
-    if "hybrid" in normalized:
+    if "hybrid" in combined:
         return "Hybrid"
-    if normalized in {"electric", "ev", "bev"} or "battery electric" in normalized:
+    if (
+        normalized in {"electric", "ev", "bev"}
+        or "battery electric" in combined
+        or "electric" in normalized_trim
+        or "folgore" in normalized_trim
+    ):
         return "Electric"
     if "diesel" in normalized:
         return "Diesel"
@@ -300,7 +307,7 @@ def clean_listing(item, config=None):
     dealer = str(retail.get("dealer") or "Dealer not listed").strip()
     dealer = CANONICAL_DEALERS.get(dealer.casefold(), dealer)
     accidents = history.get("accidents")
-    powertrain = normalize_powertrain(vehicle.get("fuel"))
+    powertrain = normalize_powertrain(vehicle.get("fuel"), vehicle.get("trim"))
     allowed_powertrains = config.get("allowedPowertrains")
     if allowed_powertrains and powertrain not in allowed_powertrains:
         return None

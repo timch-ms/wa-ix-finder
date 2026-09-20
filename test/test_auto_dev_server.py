@@ -340,6 +340,10 @@ class AutoDevCacheTests(TestCase):
         self.assertEqual(server.normalize_powertrain("Battery Electric"), "Electric")
         self.assertEqual(server.normalize_powertrain("Plug-in Hybrid"), "Plug-in hybrid")
         self.assertEqual(server.normalize_powertrain("Gasoline"), "Gasoline")
+        self.assertEqual(
+            server.normalize_powertrain("Gasoline", "Turbo E-Hybrid"),
+            "Plug-in hybrid",
+        )
         self.assertIsNone(server.normalize_powertrain(None))
 
     def test_site_configuration_filters_powertrain(self):
