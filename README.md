@@ -2,6 +2,8 @@
 
 One ad-free GitHub Pages site for used vehicle inventory at Washington dealerships.
 
+**Public site:** https://timch-ms.github.io/wa-vehicle-finder/
+
 The vehicle selector currently includes BMW iX, Volvo EX90, Volkswagen ID. Buzz, Tesla Model X and Model Y, Toyota Sienna, Mercedes-Benz EQE SUV and EQS SUV, Porsche Macan Electric and Cayenne, and Maserati Grecale.
 
 ## Configuration
