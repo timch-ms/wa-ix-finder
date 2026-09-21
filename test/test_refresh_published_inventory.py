@@ -250,6 +250,44 @@ class PublishedInventoryRefreshTests(TestCase):
         )
         self.assertEqual(disabled["lastAttemptDate"], "2026-09-08")
 
+    def test_reserve_all_can_target_one_vehicle(self):
+        root = Path(self.temporary.name)
+        config_file = root / "vehicles.json"
+        vehicles_dir = root / "vehicles"
+        config_file.write_text(
+            json.dumps(
+                {
+                    "vehicles": [
+                        {
+                            "slug": slug,
+                            "refresh": {"enabled": True, "intervalDays": 1},
+                        }
+                        for slug in ("bmw-ix", "volvo-ex90")
+                    ]
+                }
+            ),
+            encoding="utf-8",
+        )
+        for slug in ("bmw-ix", "volvo-ex90"):
+            refresh.write_json(
+                vehicles_dir / slug / "refresh-state.json",
+                {"lastAttemptDate": "2026-09-08"},
+            )
+
+        reserved = refresh.reserve_all(
+            "2026-09-09",
+            ["bmw-ix"],
+            config_file=config_file,
+            vehicles_dir=vehicles_dir,
+        )
+
+        self.assertEqual(reserved, ["bmw-ix"])
+        untouched = refresh.read_json(
+            vehicles_dir / "volvo-ex90" / "refresh-state.json",
+            {},
+        )
+        self.assertEqual(untouched["lastAttemptDate"], "2026-09-08")
+
     def test_refresh_all_keeps_vehicle_files_isolated(self):
         root = Path(self.temporary.name)
         config_file = root / "vehicles.json"

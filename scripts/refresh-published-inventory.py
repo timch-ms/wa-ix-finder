@@ -142,9 +142,22 @@ def reserve_refresh(date, state_file, config=None):
     return should_refresh
 
 
-def reserve_all(date, config_file=CONFIG_FILE, vehicles_dir=VEHICLES_DIR):
+def reserve_all(
+    date,
+    requested_slugs=None,
+    config_file=CONFIG_FILE,
+    vehicles_dir=VEHICLES_DIR,
+):
+    requested = set(requested_slugs or [])
+    configured = read_vehicle_config(config_file)["vehicles"]
+    configured_slugs = {config["slug"] for config in configured}
+    unknown = requested - configured_slugs
+    if unknown:
+        raise ValueError(f"Unknown vehicle slug(s): {', '.join(sorted(unknown))}")
     reserved = []
-    for config in read_vehicle_config(config_file)["vehicles"]:
+    for config in configured:
+        if requested and config["slug"] not in requested:
+            continue
         if not config.get("refresh", {}).get("enabled", False):
             continue
         paths = vehicle_paths(config["slug"], vehicles_dir)
@@ -312,7 +325,8 @@ def main():
     args = parser.parse_args()
 
     if args.operation == "reserve-all":
-        reserve_all(args.date)
+        slugs = [slug for slug in args.vehicles.split(",") if slug]
+        reserve_all(args.date, slugs)
         return
 
     slugs = [slug for slug in args.vehicles.split(",") if slug]

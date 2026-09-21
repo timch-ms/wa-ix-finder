@@ -5,6 +5,11 @@ on:
     # One off-peak check; each vehicle's cadence is defined in data/vehicles.json.
     - cron: "17 9 * * *"
   workflow_dispatch:
+    inputs:
+      vehicles:
+        description: "Optional comma-separated vehicle slugs; blank checks all configured vehicles"
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -56,7 +61,10 @@ jobs:
         id: reserve
         if: steps.credential.outputs.configured == 'true'
         shell: pwsh
-        run: python scripts\refresh-published-inventory.py reserve-all --date "${{ steps.date.outputs.value }}"
+        run: |
+          python scripts\refresh-published-inventory.py reserve-all `
+            --date "${{ steps.date.outputs.value }}" `
+            --vehicles "${{ inputs.vehicles }}"
 
       - name: Persist attempt reservations
         if: steps.reserve.outputs.should_refresh == 'true'
