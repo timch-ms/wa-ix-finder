@@ -17,19 +17,6 @@
       "officialDealerNamePatterns": [
         "BMW"
       ],
-      "dealerDomains": [
-        "bmwbellevue.com",
-        "bmwnorthwest.com",
-        "bmwofseattle.com",
-        "bmwofspokane.com",
-        "bmwseattle.com",
-        "jaguarbellevue.com",
-        "lithia.com",
-        "lithiajeepspokane.com",
-        "seattlefinestmotors.com",
-        "swickardtoyota.com",
-        "volvocarsbellevue.com"
-      ],
       "marketplaceDomains": [
         "autolist.com"
       ],
@@ -53,9 +40,6 @@
       "dealerOnlyDescription": "Hide independent and other-brand dealers",
       "officialDealerNamePatterns": [
         "Volvo"
-      ],
-      "dealerDomains": [
-        "volvocarsbellevue.com"
       ],
       "marketplaceDomains": [
         "autolist.com",
@@ -82,12 +66,6 @@
       "officialDealerNamePatterns": [
         "Volkswagen"
       ],
-      "dealerDomains": [
-        "auto206.com",
-        "bmwofspokane.com",
-        "vwofkirkland.com",
-        "vwofpuyallup.com"
-      ],
       "marketplaceDomains": [
         "autolist.com",
         "carvana.com"
@@ -112,14 +90,6 @@
       "dealerOnlyDescription": "Hide independent and other-brand dealers",
       "officialDealerNamePatterns": [
         "Tesla"
-      ],
-      "dealerDomains": [
-        "gamblinmotors.com",
-        "gmcofriverfrontpark.com",
-        "leskovar.com",
-        "puyallupnissan.com",
-        "tesla.com",
-        "vwofpuyallup.com"
       ],
       "marketplaceDomains": [
         "autolist.com",
@@ -147,38 +117,6 @@
       "officialDealerNamePatterns": [
         "Tesla"
       ],
-      "dealerDomains": [
-        "4seasonmotor.com",
-        "acuraofseattle.com",
-        "auto206.com",
-        "bellinghamchevy.com",
-        "bmwbellevue.com",
-        "carrsubaru.com",
-        "cortesautocenter.com",
-        "cortesnissan.com",
-        "daytonamotorco.com",
-        "evergreenford.com",
-        "gamblinmotors.com",
-        "genesisofkirkland.com",
-        "gtownmotors.com",
-        "leskovar.com",
-        "mbseattle.com",
-        "michaelssubaru.com",
-        "millenniumauto.biz",
-        "northwestchevrolet.com",
-        "pierrechevrolet.com",
-        "puyallupnissan.com",
-        "rentonkia.com",
-        "seattlefinestmotors.com",
-        "seattlejeep.com",
-        "tesla.com",
-        "toyotaofbellingham.com",
-        "toyotaofpuyallup.com",
-        "volvocarsbellevue.com",
-        "vwofkirkland.com",
-        "vwofpuyallup.com",
-        "wayscarfffordauburn.com"
-      ],
       "marketplaceDomains": [
         "autolist.com",
         "carvana.com"
@@ -204,24 +142,6 @@
       "dealerOnlyDescription": "Hide independent and other-brand dealers",
       "officialDealerNamePatterns": [
         "Toyota"
-      ],
-      "dealerDomains": [
-        "bellinghamchevy.com",
-        "bmwofspokane.com",
-        "burienchevrolet.com",
-        "dougsmazda.com",
-        "genesisofkirkland.com",
-        "importsandclassics.com",
-        "lithiajeepspokane.com",
-        "mbmotorsllc.com",
-        "rentonkia.com",
-        "seattlefinestmotors.com",
-        "speckchevyprosser.com",
-        "toyotaofbellevue.com",
-        "toyotaofbellingham.com",
-        "toyotaofpuyallup.com",
-        "toyotaofrenton.com",
-        "vwofpuyallup.com"
       ],
       "marketplaceDomains": [
         "autolist.com",
@@ -250,10 +170,6 @@
         "Mercedes-Benz",
         "Mercedes Benz"
       ],
-      "dealerDomains": [
-        "seattlefinestmotors.com",
-        "swickardtoyota.com"
-      ],
       "marketplaceDomains": [
         "autolist.com",
         "carvana.com"
@@ -279,9 +195,6 @@
       "officialDealerNamePatterns": [
         "Mercedes-Benz",
         "Mercedes Benz"
-      ],
-      "dealerDomains": [
-        "carrchevrolet.com"
       ],
       "marketplaceDomains": [
         "autolist.com",
@@ -312,13 +225,6 @@
       "officialDealerNamePatterns": [
         "Porsche"
       ],
-      "dealerDomains": [
-        "porsche.com",
-        "porschebellevue.com",
-        "porscheseattle.com",
-        "porschespokane.com",
-        "porschetacoma.com"
-      ],
       "marketplaceDomains": [
         "autolist.com",
         "carvana.com"
@@ -345,13 +251,6 @@
       "officialDealerNamePatterns": [
         "Porsche"
       ],
-      "dealerDomains": [
-        "porsche.com",
-        "porschebellevue.com",
-        "porscheseattle.com",
-        "porschespokane.com",
-        "porschetacoma.com"
-      ],
       "marketplaceDomains": [
         "autolist.com",
         "carvana.com"
@@ -376,10 +275,6 @@
       "dealerOnlyDescription": "Hide independent and other-brand dealers",
       "officialDealerNamePatterns": [
         "Maserati"
-      ],
-      "dealerDomains": [
-        "maseratiofseattle.com",
-        "maseratiofwashington.com"
       ],
       "marketplaceDomains": [
         "autolist.com",

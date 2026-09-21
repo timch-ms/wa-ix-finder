@@ -8,7 +8,7 @@ The vehicle selector currently includes BMW iX, Volvo EX90, Volkswagen ID. Buzz,
 
 ## Configuration
 
-`data/vehicles.json` is the single source of configuration for every vehicle. Each entry contains its query, labels, approved dealer domains, and refresh policy:
+`data/vehicles.json` is the single source of configuration for every vehicle. Each entry contains its query, labels, known marketplace domains, and refresh policy:
 
 ```json
 "refresh": {

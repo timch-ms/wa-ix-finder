@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { normalizeMaterial, sortListings, uniqueValues } from "../lib/inventory.js";
-import { listingHistoryInfo } from "../lib/inventory-view-v2.js";
+import { listingDestination, listingHistoryInfo } from "../lib/inventory-view-v2.js";
 
 test("classifies genuine leather without mislabeling Sensatec", () => {
   assert.equal(normalizeMaterial("Amido Perforated Full Merino Leather"), "Genuine leather");
@@ -40,4 +40,23 @@ test("derives prior availability and price change from history", () => {
 
   assert.equal(info.wasInPrevious, true);
   assert.equal(info.priceDelta, -2000);
+});
+
+test("allows new HTTPS dealer domains and labels known marketplaces", () => {
+  assert.deepEqual(
+    listingDestination("https://newdealer.example/vehicle/123", ["autolist.com"]),
+    { type: "dealer", url: "https://newdealer.example/vehicle/123" }
+  );
+  assert.equal(
+    listingDestination("https://www.autolist.com/vehicle/123", ["autolist.com"]).type,
+    "marketplace"
+  );
+  assert.equal(
+    listingDestination("https://www.carfax.com/vehicle/VIN", ["autolist.com"]).type,
+    "missing"
+  );
+  assert.equal(
+    listingDestination("http://newdealer.example/vehicle/123", ["autolist.com"]).type,
+    "missing"
+  );
 });
