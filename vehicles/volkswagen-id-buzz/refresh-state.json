@@ -1,8 +1,8 @@
 {
   "lastAttemptDate": "2026-09-20",
-  "lastAttemptCalls": 0,
+  "lastAttemptCalls": 1,
   "lastError": null,
-  "lastSuccessfulRefreshDate": "2026-09-11",
+  "lastSuccessfulRefreshDate": "2026-09-20",
   "knownVins": {
     "WVG6YVEB5SH006984": "2026-09-08",
     "WVG5WVEB2SH022996": "2026-09-08",
@@ -12,6 +12,9 @@
     "WVGAWVEB3SH021273": "2026-09-08",
     "WVGAWVEBXSH012750": "2026-09-08",
     "WVGAWVEB7SH046340": "2026-09-08",
-    "WVGAWVEB9SH030169": "2026-09-08"
+    "WVGAWVEB9SH030169": "2026-09-08",
+    "WVGAWVEB1SH011082": "2026-09-20",
+    "WVGAWVEB7SH016559": "2026-09-20",
+    "WVGNYVEB2SH048380": "2026-09-20"
   }
 }

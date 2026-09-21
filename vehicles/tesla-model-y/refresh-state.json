@@ -1,7 +1,7 @@
 {
   "lastAttemptDate": "2026-09-20",
-  "lastAttemptCalls": 0,
-  "lastError": null,
+  "lastAttemptCalls": 11,
+  "lastError": "Auto.dev refresh failed: Refresh requires more than the configured maximum of 11 calls.",
   "lastSuccessfulRefreshDate": "2026-09-14",
   "knownVins": {
     "7SAYGDEEXNF505341": "2026-09-08",
