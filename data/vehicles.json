@@ -186,7 +186,7 @@
       "refresh": {
         "enabled": true,
         "intervalDays": 2,
-        "maxApiCalls": 11
+        "maxApiCalls": 15
       }
     },
     {
