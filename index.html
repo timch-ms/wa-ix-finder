@@ -31,14 +31,19 @@
     <div id="cache-notice" class="cache-notice" role="status"></div>
 
     <section class="inventory-shell inventory-layout">
-      <aside class="filters" aria-label="Inventory filters">
-        <div class="filter-heading">
-          <h2>Filter inventory</h2>
-          <button id="clear-filters" class="text-button" type="button">Clear</button>
-        </div>
+      <details class="filters" open>
+        <summary class="filter-toggle">
+          <span>Filters</span>
+          <span class="filter-toggle-hint">Show filters</span>
+        </summary>
+        <div class="filter-content" aria-label="Inventory filters">
+          <div class="filter-heading">
+            <h2>Filter inventory</h2>
+            <button id="clear-filters" class="text-button" type="button">Clear</button>
+          </div>
 
-        <label for="year">Year</label>
-        <select id="year"><option value="">All years</option></select>
+          <label for="year">Year</label>
+          <select id="year"><option value="">All years</option></select>
 
         <label for="dealership">Dealership</label>
         <select id="dealership"><option value="">All dealerships</option></select>
@@ -131,11 +136,12 @@
           <span><strong>New in latest refresh</strong></span>
         </label>
 
-        <label class="check-row compact-check" for="recently-removed">
-          <input id="recently-removed" type="checkbox">
-          <span><strong>Recently removed</strong><small>Last seen within seven days</small></span>
-        </label>
-      </aside>
+          <label class="check-row compact-check" for="recently-removed">
+            <input id="recently-removed" type="checkbox">
+            <span><strong>Recently removed</strong><small>Last seen within seven days</small></span>
+          </label>
+        </div>
+      </details>
 
       <section class="results" aria-live="polite">
         <div class="results-header">

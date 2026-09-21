@@ -1,5 +1,13 @@
 import { renderInventory } from "./lib/inventory-view-v2.js";
 
+const filterPanel = document.querySelector(".filters");
+const mobileFilters = window.matchMedia("(max-width: 720px)");
+function syncFilterPanel(event) {
+  filterPanel.open = !event.matches;
+}
+syncFilterPanel(mobileFilters);
+mobileFilters.addEventListener("change", syncFilterPanel);
+
 const configResponse = await fetch("./data/vehicles.json", { cache: "no-store" });
 if (!configResponse.ok) {
   throw new Error(`Vehicle configuration request failed with HTTP ${configResponse.status}`);
