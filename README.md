@@ -20,7 +20,7 @@ The vehicle selector currently includes BMW iX, Volvo EX90, Volkswagen ID. Buzz,
 - Set `enabled` to control automatic updates.
 - Set `intervalDays` to change update frequency.
 
-The workflow checks once each day at `09:17 UTC`. A vehicle is queried only when enabled and its configured number of Washington calendar days has elapsed. All configured vehicles refresh daily except Tesla Model Y, which refreshes every two days.
+The workflow checks once each day at `09:17 UTC`. A vehicle is queried only when enabled and its configured number of Washington calendar days has elapsed. Tesla Model X, Tesla Model Y, and Toyota Sienna refresh every two days; all other configured vehicles refresh daily.
 
 Every enabled vehicle uses one global safety ceiling of 20 inventory API calls per Washington day. If a refresh would exceed that limit, the last successful listings and history are retained and that vehicle's public page displays a warning that its data may be incomplete.
 
