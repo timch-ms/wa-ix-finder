@@ -1,0 +1,10 @@
+{
+  "lastAttemptDate": "2026-09-11",
+  "lastAttemptCalls": 1,
+  "lastError": "Refresh returned only 0 listings; at least 1 were required.",
+  "lastSuccessfulRefreshDate": "2026-09-09",
+  "knownVins": {
+    "4JGDM2EB5RA030626": "2026-09-08",
+    "4JGDM4EB6PA007249": "2026-09-08"
+  }
+}

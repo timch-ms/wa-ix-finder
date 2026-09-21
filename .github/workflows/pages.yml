@@ -10,9 +10,9 @@ on:
       - "site-v3.js"
       - ".nojekyll"
       - "assets/**"
-      - "data/inventory.json"
-      - "data/inventory-history.json"
-      - "data/site-config.json"
+      - "data/vehicles.json"
+      - "vehicles/*/inventory.json"
+      - "vehicles/*/inventory-history.json"
       - "lib/inventory.js"
       - "lib/inventory-view-v2.js"
       - ".github/workflows/pages.yml"
@@ -38,13 +38,17 @@ jobs:
       - uses: actions/configure-pages@v5
       - name: Prepare public site
         run: |
-          mkdir -p _site/assets _site/data _site/lib
+          mkdir -p _site/assets _site/data _site/lib _site/vehicles
           cp index.html styles.css inventory-v3.css site-v3.js .nojekyll _site/
           cp -R assets/. _site/assets/
-          cp data/inventory.json _site/data/
-          cp data/inventory-history.json _site/data/
-          cp data/site-config.json _site/data/
+          cp data/vehicles.json _site/data/
           cp lib/inventory.js lib/inventory-view-v2.js _site/lib/
+          for inventory in vehicles/*/inventory.json; do
+            vehicle_dir="$(dirname "$inventory")"
+            slug="$(basename "$vehicle_dir")"
+            mkdir -p "_site/vehicles/$slug"
+            cp "$vehicle_dir/inventory.json" "$vehicle_dir/inventory-history.json" "_site/vehicles/$slug/"
+          done
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

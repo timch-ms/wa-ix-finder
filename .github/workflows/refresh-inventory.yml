@@ -1,25 +1,21 @@
-name: Refresh daily inventory
+name: Refresh configured inventories
 
 on:
   schedule:
-    # 09:17 UTC is 2:17 AM PDT and 1:17 AM PST.
+    # One off-peak check; each vehicle's cadence is defined in data/vehicles.json.
     - cron: "17 9 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: daily-inventory-refresh
+  group: configured-inventory-refresh
   cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: windows-latest
-    outputs:
-      refreshed: ${{ steps.refresh.outputs.refresh_succeeded }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -53,47 +49,45 @@ jobs:
           $configured = -not [string]::IsNullOrWhiteSpace($env:AUTO_DEV_API_KEY)
           "configured=$($configured.ToString().ToLowerInvariant())" >> $env:GITHUB_OUTPUT
           if (-not $configured) {
-            Write-Host "INVENTORY_API_KEY is not configured; no refresh date was reserved."
+            Write-Host "INVENTORY_API_KEY is not configured; no refresh was reserved."
           }
 
-      - name: Reserve daily API attempt
+      - name: Reserve eligible vehicles
         id: reserve
         if: steps.credential.outputs.configured == 'true'
         shell: pwsh
-        run: python scripts\refresh-published-inventory.py reserve --date "${{ steps.date.outputs.value }}"
+        run: python scripts\refresh-published-inventory.py reserve-all --date "${{ steps.date.outputs.value }}"
 
-      - name: Persist attempt reservation
+      - name: Persist attempt reservations
         if: steps.reserve.outputs.should_refresh == 'true'
         shell: pwsh
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data\refresh-state.json
-          git commit -m "Reserve inventory refresh for ${{ steps.date.outputs.value }}" `
+          git add vehicles/*/refresh-state.json
+          git commit -m "Reserve configured inventory refreshes for ${{ steps.date.outputs.value }}" `
             -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>" `
-            -m "Copilot-Session: fde001ea-9c80-4d8f-94cb-a0898cba5815"
+            -m "Copilot-Session: 3ffe60bf-824c-4fb0-9555-7a41e8a02c0b"
           git pull --rebase origin main
           git push origin HEAD:main
 
-      - name: Refresh sanitized snapshot
+      - name: Refresh eligible snapshots
         id: refresh
         if: steps.reserve.outputs.should_refresh == 'true'
         shell: pwsh
         env:
           AUTO_DEV_API_KEY: ${{ secrets.INVENTORY_API_KEY }}
-        run: python scripts\refresh-published-inventory.py refresh --date "${{ steps.date.outputs.value }}"
+        run: |
+          python scripts\refresh-published-inventory.py refresh-all `
+            --date "${{ steps.date.outputs.value }}" `
+            --vehicles "${{ steps.reserve.outputs.reserved_vehicles }}"
 
-      - name: Run tests
-        if: steps.reserve.outputs.should_refresh == 'true' && steps.refresh.outputs.refresh_succeeded == 'true'
+      - name: Validate refreshed site
+        if: steps.reserve.outputs.should_refresh == 'true'
         shell: pwsh
         run: |
           python -m unittest discover -s test -p "test*.py" -q
           python -m py_compile auto_dev\server.py scripts\export-auto-dev-snapshot.py scripts\refresh-published-inventory.py
-
-      - name: Scan public artifact inputs
-        if: steps.reserve.outputs.should_refresh == 'true' && steps.refresh.outputs.refresh_succeeded == 'true'
-        shell: pwsh
-        run: |
           $publicFiles = @(
             "index.html",
             "styles.css",
@@ -101,11 +95,12 @@ jobs:
             "inventory-v3.css",
             "lib\inventory.js",
             "lib\inventory-view-v2.js",
-            "data\inventory.json",
-            "data\inventory-history.json",
-            "data\site-config.json"
+            "data\vehicles.json"
           )
           $publicFiles += Get-ChildItem "assets" -Recurse -File |
+            Select-Object -ExpandProperty FullName
+          $publicFiles += Get-ChildItem "vehicles" -Recurse -File |
+            Where-Object { $_.Name -in @("inventory.json", "inventory-history.json") } |
             Select-Object -ExpandProperty FullName
           $hits = Select-String `
             -Path $publicFiles `
@@ -115,66 +110,23 @@ jobs:
             exit 1
           }
 
-      - name: Commit refreshed snapshot
-        if: steps.reserve.outputs.should_refresh == 'true' && steps.refresh.outputs.refresh_succeeded == 'true'
+      - name: Commit refresh results
+        if: steps.reserve.outputs.should_refresh == 'true'
         shell: pwsh
         run: |
-          git add data\inventory.json data\inventory-history.json data\refresh-state.json
+          git add vehicles/*/inventory.json vehicles/*/inventory-history.json vehicles/*/refresh-state.json
           git diff --cached --quiet
           if ($LASTEXITCODE -eq 0) {
-            Write-Host "The snapshot is already current."
+            Write-Host "The configured snapshots are already current."
             exit 0
           }
-          git commit -m "Refresh inventory snapshot for ${{ steps.date.outputs.value }}" `
+          git commit -m "Refresh configured inventories for ${{ steps.date.outputs.value }}" `
             -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>" `
-            -m "Copilot-Session: fde001ea-9c80-4d8f-94cb-a0898cba5815"
+            -m "Copilot-Session: 3ffe60bf-824c-4fb0-9555-7a41e8a02c0b"
           git pull --rebase origin main
           git push origin HEAD:main
 
-      - name: Fail unsuccessful refresh
-        if: always() && !cancelled() && steps.reserve.outputs.should_refresh == 'true' && steps.refresh.outcome != 'skipped' && steps.refresh.outputs.refresh_succeeded != 'true'
+      - name: Fail unsuccessful vehicle refreshes
+        if: steps.refresh.outputs.refresh_failed == 'true'
         shell: pwsh
-        run: |
-          git add data\refresh-state.json
-          git diff --cached --quiet
-          if ($LASTEXITCODE -ne 0) {
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "Record failed inventory refresh for ${{ steps.date.outputs.value }}" `
-              -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>" `
-              -m "Copilot-Session: fde001ea-9c80-4d8f-94cb-a0898cba5815"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          }
-          throw "The inventory API refresh failed; the previous public snapshot was retained."
-
-  deploy:
-    needs: refresh
-    if: needs.refresh.outputs.refreshed == 'true'
-    runs-on: ubuntu-latest
-    concurrency:
-      group: pages
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - uses: actions/configure-pages@v5
-      - name: Prepare public site
-        run: |
-          mkdir -p _site/assets _site/data _site/lib
-          cp index.html styles.css inventory-v3.css site-v3.js .nojekyll _site/
-          cp -R assets/. _site/assets/
-          cp data/inventory.json _site/data/
-          cp data/inventory-history.json _site/data/
-          cp data/site-config.json _site/data/
-          cp lib/inventory.js lib/inventory-view-v2.js _site/lib/
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+        run: throw "One or more vehicle refreshes failed; prior public snapshots were retained."

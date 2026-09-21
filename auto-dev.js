@@ -7,7 +7,7 @@ if (!isLocalCacheServer) {
   location.replace("./");
 } else {
   const [configResponse, inventoryResponse] = await Promise.all([
-    fetch("./data/site-config.json", { cache: "no-store" }),
+    fetch("./data/vehicles.json", { cache: "no-store" }),
     fetch("./api/auto-dev-inventory", { cache: "no-store" })
   ]);
   if (!configResponse.ok) {
@@ -16,5 +16,9 @@ if (!isLocalCacheServer) {
   if (!inventoryResponse.ok) {
     throw new Error(`Inventory request failed with HTTP ${inventoryResponse.status}`);
   }
-  renderInventory(await inventoryResponse.json(), await configResponse.json());
+  const siteConfig = await configResponse.json();
+  const vehicleConfig = siteConfig.vehicles.find(
+    (vehicle) => vehicle.slug === siteConfig.defaultVehicle
+  );
+  renderInventory(await inventoryResponse.json(), vehicleConfig);
 }

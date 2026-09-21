@@ -2,6 +2,8 @@ data/collected.json
 data/auto-dev-cache.json
 data/auto-dev-cache.lock
 data/auto-dev-server.lock
+vehicles/*/auto-dev-cache.json
+vehicles/*/auto-dev-cache.lock
 collector/__pycache__/
 auto_dev/__pycache__/
 test/__pycache__/

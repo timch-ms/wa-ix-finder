@@ -18,7 +18,9 @@ button, select { font: inherit; }
 .state-label { color: var(--muted); }
 .hero { min-height: 270px; padding: 54px clamp(20px, 7vw, 108px); color: white; background: linear-gradient(110deg, #101820 10%, #233446 58%, #1c69d4 160%); }
 .hero h1 { margin: 5px 0 10px; max-width: 780px; font-size: clamp(38px, 5vw, 62px); line-height: 1.05; font-weight: 400; }
-.hero p:last-child { margin: 0; color: #e5e9ee; font-size: 19px; }
+.hero > p:last-of-type { margin: 0; color: #e5e9ee; font-size: 19px; }
+.vehicle-switcher { display: grid; gap: 7px; width: min(420px, 100%); margin-top: 28px; color: white; font-size: 14px; font-weight: 700; }
+.vehicle-switcher select { width: 100%; color: var(--ink); }
 .eyebrow { margin: 0; font-size: 12px; letter-spacing: .14em; font-weight: 700; }
 .inventory-shell { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 44px; max-width: 1500px; margin: auto; padding: 48px clamp(20px, 5vw, 76px) 70px; }
 .filters { align-self: start; position: sticky; top: 18px; padding: 26px; background: var(--surface); }

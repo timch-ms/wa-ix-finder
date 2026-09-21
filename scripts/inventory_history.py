@@ -3,8 +3,8 @@ from pathlib import Path
 import json
 
 ROOT = Path(__file__).resolve().parent.parent
-HISTORY_FILE = ROOT / "data" / "inventory-history.json"
-SNAPSHOT_FILE = ROOT / "data" / "inventory.json"
+HISTORY_FILE = ROOT / "vehicles" / "bmw-ix" / "inventory-history.json"
+SNAPSHOT_FILE = ROOT / "vehicles" / "bmw-ix" / "inventory.json"
 RETENTION_DAYS = 7
 
 

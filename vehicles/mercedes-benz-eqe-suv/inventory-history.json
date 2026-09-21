@@ -1,0 +1,1230 @@
+{
+  "retentionDays": 7,
+  "updatedAt": "2026-09-12T02:51:02.720514+00:00",
+  "snapshots": [
+    {
+      "date": "2026-09-08",
+      "vins": [
+        "4JGGM1CB1PA009621",
+        "4JGGM1CB1PA010350",
+        "4JGGM1CB1PA015628",
+        "4JGGM1CB2PA021437",
+        "4JGGM1CB2PA025858",
+        "4JGGM1CB2SA063471",
+        "4JGGM1CB3PA019261",
+        "4JGGM1CB4PA005000",
+        "4JGGM1CB4RA056063",
+        "4JGGM1CB4TA070407",
+        "4JGGM1CB5PA003966",
+        "4JGGM1CB5VA075960",
+        "4JGGM1CB6TA073535",
+        "4JGGM1CB7PA008909",
+        "4JGGM1CB8PA008840",
+        "4JGGM1CBXRA043320",
+        "4JGGM2BB4TA073542",
+        "4JGGM2BB5SA062371",
+        "4JGGM2CB5PA021065",
+        "4JGGM2CB6PA018109",
+        "4JGGM2CBXPA012488"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "vins": [
+        "4JGGM1CB1PA009621",
+        "4JGGM1CB1PA010350",
+        "4JGGM1CB1PA015628",
+        "4JGGM1CB2PA021437",
+        "4JGGM1CB2PA025858",
+        "4JGGM1CB2SA063471",
+        "4JGGM1CB3PA019261",
+        "4JGGM1CB4PA005000",
+        "4JGGM1CB4RA056063",
+        "4JGGM1CB4TA070407",
+        "4JGGM1CB5PA003966",
+        "4JGGM1CB5VA075960",
+        "4JGGM1CB6TA073535",
+        "4JGGM1CB7PA008909",
+        "4JGGM1CB8PA008840",
+        "4JGGM1CBXRA043320",
+        "4JGGM2BB4TA073542",
+        "4JGGM2BB5SA062371",
+        "4JGGM2CB5PA021065",
+        "4JGGM2CB6PA018109",
+        "4JGGM2CBXPA012488"
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "vins": [
+        "4JGGM1CB1PA009621",
+        "4JGGM1CB1PA010350",
+        "4JGGM1CB1PA015628",
+        "4JGGM1CB2PA021437",
+        "4JGGM1CB2PA025858",
+        "4JGGM1CB2SA063471",
+        "4JGGM1CB3PA019261",
+        "4JGGM1CB3PA039963",
+        "4JGGM1CB4PA005000",
+        "4JGGM1CB4RA056063",
+        "4JGGM1CB4TA070407",
+        "4JGGM1CB5PA003966",
+        "4JGGM1CB5VA075960",
+        "4JGGM1CB6TA073535",
+        "4JGGM1CB7PA008909",
+        "4JGGM1CB8PA008840",
+        "4JGGM1CBXRA043320",
+        "4JGGM2BB4TA073542",
+        "4JGGM2CB5PA021065",
+        "4JGGM2CB6PA018109",
+        "4JGGM2CBXPA001992",
+        "4JGGM2CBXPA012488"
+      ]
+    }
+  ],
+  "vehicles": {
+    "4JGGM1CB1PA015628": {
+      "lastKnown": {
+        "id": "4jggm1cb1pa015628",
+        "vin": "4JGGM1CB1PA015628",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 39992,
+        "mileage": 27652,
+        "exteriorColor": "Selenite Grey Metallic",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": true,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM1CB1PA015628-1.jpg",
+        "photoCount": 1,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB1PA015628",
+        "listedAt": "2026-08-11 21:12:35",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 39992,
+          "mileage": 27652,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 39992,
+          "mileage": 27652,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 39992,
+          "mileage": 27652,
+          "dealer": "Mercedes-Benz of Bellevue"
+        }
+      ]
+    },
+    "4JGGM1CB2PA021437": {
+      "lastKnown": {
+        "id": "4jggm1cb2pa021437",
+        "vin": "4JGGM1CB2PA021437",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 39990,
+        "mileage": 33969,
+        "exteriorColor": "Polar White",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": true,
+        "oneOwner": false,
+        "accidentFree": false,
+        "accidentCount": 1,
+        "usageType": "Multiple Use",
+        "image": "https://retail.photos.vin/4JGGM1CB2PA021437-1.jpg",
+        "photoCount": 1,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB2PA021437",
+        "listedAt": "2026-09-01 21:31:51",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 39990,
+          "mileage": 33969,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 39990,
+          "mileage": 33969,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 39990,
+          "mileage": 33969,
+          "dealer": "Mercedes-Benz of Bellevue"
+        }
+      ]
+    },
+    "4JGGM1CB4PA005000": {
+      "lastKnown": {
+        "id": "4jggm1cb4pa005000",
+        "vin": "4JGGM1CB4PA005000",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 42760,
+        "mileage": 347014,
+        "exteriorColor": "Obsidian Black Metallic",
+        "interiorColor": "Black/Sable Brown",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": true,
+        "oneOwner": true,
+        "accidentFree": false,
+        "accidentCount": 1,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM1CB4PA005000-1.jpg",
+        "photoCount": 1,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB4PA005000",
+        "listedAt": "2026-08-18 21:00:29",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 42760,
+          "mileage": 347014,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 42760,
+          "mileage": 347014,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 42760,
+          "mileage": 347014,
+          "dealer": "Mercedes-Benz of Bellevue"
+        }
+      ]
+    },
+    "4JGGM1CB4RA056063": {
+      "lastKnown": {
+        "id": "4jggm1cb4ra056063",
+        "vin": "4JGGM1CB4RA056063",
+        "year": 2024,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 46990,
+        "mileage": 16253,
+        "exteriorColor": "Cirrus Silver Metallic",
+        "interiorColor": "Black/Space Grey",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": true,
+        "oneOwner": false,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Multiple Use",
+        "image": "https://retail.photos.vin/4JGGM1CB4RA056063-1.jpg",
+        "photoCount": 1,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB4RA056063",
+        "listedAt": "2026-08-15 21:12:22",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 46990,
+          "mileage": 16253,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 46990,
+          "mileage": 16253,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 46990,
+          "mileage": 16253,
+          "dealer": "Mercedes-Benz of Bellevue"
+        }
+      ]
+    },
+    "4JGGM1CB5VA075960": {
+      "lastKnown": {
+        "id": "4jggm1cb5va075960",
+        "vin": "4JGGM1CB5VA075960",
+        "year": 2027,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 320",
+        "price": 82715,
+        "mileage": 10,
+        "exteriorColor": "MANUFAKTUR Patagonia Red Metallic",
+        "interiorColor": "Black/Sable Brown",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": false,
+        "oneOwner": null,
+        "accidentFree": null,
+        "accidentCount": null,
+        "usageType": "Not listed",
+        "image": "https://retail.photos.vin/4JGGM1CB5VA075960-1.jpg",
+        "photoCount": 1,
+        "url": null,
+        "listedAt": "2026-08-19 14:02:12",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 82715,
+          "mileage": 10,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 82715,
+          "mileage": 10,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 82715,
+          "mileage": 10,
+          "dealer": "Mercedes-Benz of Bellevue"
+        }
+      ]
+    },
+    "4JGGM1CB6TA073535": {
+      "lastKnown": {
+        "id": "4jggm1cb6ta073535",
+        "vin": "4JGGM1CB6TA073535",
+        "year": 2026,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 320 4MATIC",
+        "price": 70978,
+        "mileage": 2146,
+        "exteriorColor": "Polar White",
+        "interiorColor": "Black/Sable Brown",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": false,
+        "oneOwner": null,
+        "accidentFree": null,
+        "accidentCount": null,
+        "usageType": "Not listed",
+        "image": "https://retail.photos.vin/4JGGM1CB6TA073535-1.jpg",
+        "photoCount": 1,
+        "url": null,
+        "listedAt": "2026-08-19 14:02:12",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 70978,
+          "mileage": 2146,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 70978,
+          "mileage": 2146,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 70978,
+          "mileage": 2146,
+          "dealer": "Mercedes-Benz of Bellevue"
+        }
+      ]
+    },
+    "4JGGM1CB8PA008840": {
+      "lastKnown": {
+        "id": "4jggm1cb8pa008840",
+        "vin": "4JGGM1CB8PA008840",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 37790,
+        "mileage": 40459,
+        "exteriorColor": "Polar White",
+        "interiorColor": "Neva Grey/Sable Brown",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": true,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM1CB8PA008840-1.jpg",
+        "photoCount": 1,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB8PA008840",
+        "listedAt": "2026-09-03 21:47:07",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 37790,
+          "mileage": 40459,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 37790,
+          "mileage": 40459,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 37790,
+          "mileage": 40459,
+          "dealer": "Mercedes-Benz of Bellevue"
+        }
+      ]
+    },
+    "4JGGM2BB4TA073542": {
+      "lastKnown": {
+        "id": "4jggm2bb4ta073542",
+        "vin": "4JGGM2BB4TA073542",
+        "year": 2026,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 320+",
+        "price": 68143,
+        "mileage": 3879,
+        "exteriorColor": "Black",
+        "interiorColor": "Black/Sable Brown",
+        "seats": 5,
+        "drivetrain": "RWD",
+        "dealer": "Mercedes-Benz of Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": false,
+        "oneOwner": null,
+        "accidentFree": null,
+        "accidentCount": null,
+        "usageType": "Not listed",
+        "image": "https://retail.photos.vin/4JGGM2BB4TA073542-1.jpg",
+        "photoCount": 1,
+        "url": null,
+        "listedAt": "2026-08-19 14:02:12",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 68143,
+          "mileage": 3879,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 68143,
+          "mileage": 3879,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 68143,
+          "mileage": 3879,
+          "dealer": "Mercedes-Benz of Bellevue"
+        }
+      ]
+    },
+    "4JGGM1CB2PA025858": {
+      "lastKnown": {
+        "id": "4jggm1cb2pa025858",
+        "vin": "4JGGM1CB2PA025858",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 36680,
+        "mileage": 40771,
+        "exteriorColor": "White",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Elliot Bay Ineos Grenadier",
+        "officialBrandDealer": false,
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98133",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM1CB2PA025858-1.jpg",
+        "photoCount": 23,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB2PA025858",
+        "listedAt": "2026-08-09 02:56:15",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 36980,
+          "mileage": 40771,
+          "dealer": "Elliot Bay Ineos Grenadier"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 36980,
+          "mileage": 40771,
+          "dealer": "Elliot Bay Ineos Grenadier"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 36680,
+          "mileage": 40771,
+          "dealer": "Elliot Bay Ineos Grenadier"
+        }
+      ]
+    },
+    "4JGGM1CB5PA003966": {
+      "lastKnown": {
+        "id": "4jggm1cb5pa003966",
+        "vin": "4JGGM1CB5PA003966",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 38997,
+        "mileage": 39275,
+        "exteriorColor": "Blue",
+        "interiorColor": "Brown",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Landmark Motors Inc",
+        "officialBrandDealer": false,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": false,
+        "accidentCount": 1,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM1CB5PA003966-1.jpg",
+        "photoCount": 33,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB5PA003966",
+        "listedAt": "2026-08-09 02:56:15",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 38997,
+          "mileage": 39275,
+          "dealer": "Landmark Motors Inc"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 38997,
+          "mileage": 39275,
+          "dealer": "Landmark Motors Inc"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 38997,
+          "mileage": 39275,
+          "dealer": "Landmark Motors Inc"
+        }
+      ]
+    },
+    "4JGGM1CB1PA009621": {
+      "lastKnown": {
+        "id": "4jggm1cb1pa009621",
+        "vin": "4JGGM1CB1PA009621",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 38080,
+        "mileage": 28675,
+        "exteriorColor": "White",
+        "interiorColor": "Gray",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "J & A Auto Sales",
+        "officialBrandDealer": false,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": false,
+        "accidentCount": 1,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM1CB1PA009621-1.jpg",
+        "photoCount": 42,
+        "url": "https://www.autolist.com/mercedes+benz-eqe#vin=4JGGM1CB1PA009621",
+        "listedAt": "2026-08-28 22:56:40",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 38080,
+          "mileage": 28675,
+          "dealer": "J & A Auto Sales"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 38080,
+          "mileage": 28675,
+          "dealer": "J & A Auto Sales"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 38080,
+          "mileage": 28675,
+          "dealer": "J & A Auto Sales"
+        }
+      ]
+    },
+    "4JGGM1CB3PA019261": {
+      "lastKnown": {
+        "id": "4jggm1cb3pa019261",
+        "vin": "4JGGM1CB3PA019261",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 39645,
+        "mileage": 37445,
+        "exteriorColor": "Gray",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Spokane",
+        "officialBrandDealer": true,
+        "city": "Liberty Lake",
+        "state": "WA",
+        "zip": "99019",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": false,
+        "accidentCount": 1,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM1CB3PA019261-1.jpg",
+        "photoCount": 23,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB3PA019261",
+        "listedAt": "2026-08-11 21:12:34",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 39645,
+          "mileage": 37445,
+          "dealer": "Mercedes-Benz of Spokane"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 39645,
+          "mileage": 37445,
+          "dealer": "Mercedes-Benz of Spokane"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 39645,
+          "mileage": 37445,
+          "dealer": "Mercedes-Benz of Spokane"
+        }
+      ]
+    },
+    "4JGGM1CB7PA008909": {
+      "lastKnown": {
+        "id": "4jggm1cb7pa008909",
+        "vin": "4JGGM1CB7PA008909",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 41500,
+        "mileage": 11109,
+        "exteriorColor": "Unspecified",
+        "interiorColor": "Unspecified",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Seattle Finest Motors LLC",
+        "officialBrandDealer": false,
+        "city": "Lynnwood",
+        "state": "WA",
+        "zip": "98037",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM1CB7PA008909-1.jpg",
+        "photoCount": 56,
+        "url": "https://www.seattlefinestmotors.com/pre-owned-cars/detail/x/1574110",
+        "listedAt": "2026-09-01 04:27:10",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 41999,
+          "mileage": 11109,
+          "dealer": "Seattle Finest Motors LLC"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 41999,
+          "mileage": 11109,
+          "dealer": "Seattle Finest Motors LLC"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 41500,
+          "mileage": 11109,
+          "dealer": "Seattle Finest Motors LLC"
+        }
+      ]
+    },
+    "4JGGM2CB5PA021065": {
+      "lastKnown": {
+        "id": "4jggm2cb5pa021065",
+        "vin": "4JGGM2CB5PA021065",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 500 4MATIC",
+        "price": 42999,
+        "mileage": 25238,
+        "exteriorColor": "Blue",
+        "interiorColor": "White",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Seattle Finest Motors LLC",
+        "officialBrandDealer": false,
+        "city": "Lynnwood",
+        "state": "WA",
+        "zip": "98037",
+        "cpo": false,
+        "oneOwner": false,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM2CB5PA021065-1.jpg",
+        "photoCount": 67,
+        "url": "https://www.seattlefinestmotors.com/pre-owned-cars/detail/x/1571030",
+        "listedAt": "2026-08-25 06:59:35",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 43500,
+          "mileage": 25238,
+          "dealer": "Seattle Finest Motors LLC"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 43500,
+          "mileage": 25238,
+          "dealer": "Seattle Finest Motors LLC"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 42999,
+          "mileage": 25238,
+          "dealer": "Seattle Finest Motors LLC"
+        }
+      ]
+    },
+    "4JGGM2CB6PA018109": {
+      "lastKnown": {
+        "id": "4jggm2cb6pa018109",
+        "vin": "4JGGM2CB6PA018109",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 500 4MATIC",
+        "price": 46998,
+        "mileage": 28604,
+        "exteriorColor": "Green",
+        "interiorColor": "Brown",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Lynnwood",
+        "officialBrandDealer": true,
+        "city": "Lynnwood",
+        "state": "WA",
+        "zip": "98037",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM2CB6PA018109-1.jpg",
+        "photoCount": 25,
+        "url": "https://www.carfax.com/vehicle/4JGGM2CB6PA018109",
+        "listedAt": "2026-08-21 21:13:03",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 46998,
+          "mileage": 28604,
+          "dealer": "Mercedes-Benz of Lynnwood"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 46998,
+          "mileage": 28604,
+          "dealer": "Mercedes-Benz of Lynnwood"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 46998,
+          "mileage": 28604,
+          "dealer": "Mercedes-Benz of Lynnwood"
+        }
+      ]
+    },
+    "4JGGM2CBXPA012488": {
+      "lastKnown": {
+        "id": "4jggm2cbxpa012488",
+        "vin": "4JGGM2CBXPA012488",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 500 4MATIC",
+        "price": 45698,
+        "mileage": 27170,
+        "exteriorColor": "White",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Lynnwood",
+        "officialBrandDealer": true,
+        "city": "Lynnwood",
+        "state": "WA",
+        "zip": "98037",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM2CBXPA012488-1.jpg",
+        "photoCount": 25,
+        "url": "https://www.carfax.com/vehicle/4JGGM2CBXPA012488",
+        "listedAt": "2026-08-09 02:56:12",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 45698,
+          "mileage": 27170,
+          "dealer": "Mercedes-Benz of Lynnwood"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 45698,
+          "mileage": 27170,
+          "dealer": "Mercedes-Benz of Lynnwood"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 45698,
+          "mileage": 27170,
+          "dealer": "Mercedes-Benz of Lynnwood"
+        }
+      ]
+    },
+    "4JGGM1CBXRA043320": {
+      "lastKnown": {
+        "id": "4jggm1cbxra043320",
+        "vin": "4JGGM1CBXRA043320",
+        "year": 2024,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 51647,
+        "mileage": 5037,
+        "exteriorColor": "Gray",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Spokane",
+        "officialBrandDealer": true,
+        "city": "Liberty Lake",
+        "state": "WA",
+        "zip": "99019",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Corporate Use",
+        "image": "https://retail.photos.vin/4JGGM1CBXRA043320-1.jpg",
+        "photoCount": 31,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CBXRA043320",
+        "listedAt": "2026-08-09 02:56:11",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 51647,
+          "mileage": 5037,
+          "dealer": "Mercedes-Benz of Spokane"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 51647,
+          "mileage": 5037,
+          "dealer": "Mercedes-Benz of Spokane"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 51647,
+          "mileage": 5037,
+          "dealer": "Mercedes-Benz of Spokane"
+        }
+      ]
+    },
+    "4JGGM1CB2SA063471": {
+      "lastKnown": {
+        "id": "4jggm1cb2sa063471",
+        "vin": "4JGGM1CB2SA063471",
+        "year": 2025,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 65011,
+        "mileage": 2369,
+        "exteriorColor": "Black",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Spokane",
+        "officialBrandDealer": true,
+        "city": "Liberty Lake",
+        "state": "WA",
+        "zip": "99019",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Corporate Use",
+        "image": "https://retail.photos.vin/4JGGM1CB2SA063471-1.jpg",
+        "photoCount": 28,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB2SA063471",
+        "listedAt": "2026-08-09 02:36:18",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 65011,
+          "mileage": 2369,
+          "dealer": "Mercedes-Benz of Spokane"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 65011,
+          "mileage": 2369,
+          "dealer": "Mercedes-Benz of Spokane"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 65011,
+          "mileage": 2369,
+          "dealer": "Mercedes-Benz of Spokane"
+        }
+      ]
+    },
+    "4JGGM1CB4TA070407": {
+      "lastKnown": {
+        "id": "4jggm1cb4ta070407",
+        "vin": "4JGGM1CB4TA070407",
+        "year": 2026,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 320 4MATIC",
+        "price": 59499,
+        "mileage": 4430,
+        "exteriorColor": "Red",
+        "interiorColor": "Gray",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Seattle",
+        "officialBrandDealer": true,
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98134",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Corporate Use",
+        "image": "https://retail.photos.vin/4JGGM1CB4TA070407-1.jpg",
+        "photoCount": 49,
+        "url": "https://www.swickardtoyota.com/used-Edmonds-2026-Mercedes+Benz-EQE+320-4MATIC+SUV-4JGGM1CB4TA070407",
+        "listedAt": "2026-08-09 02:36:18",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 59999,
+          "mileage": 4430,
+          "dealer": "Mercedes-Benz of Seattle"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 59999,
+          "mileage": 4430,
+          "dealer": "Mercedes-Benz of Seattle"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 59499,
+          "mileage": 4430,
+          "dealer": "Mercedes-Benz of Seattle"
+        }
+      ]
+    },
+    "4JGGM2BB5SA062371": {
+      "lastKnown": {
+        "id": "4jggm2bb5sa062371",
+        "vin": "4JGGM2BB5SA062371",
+        "year": 2025,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350+",
+        "price": 47998,
+        "mileage": 4577,
+        "exteriorColor": "White",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "RWD",
+        "dealer": "CarMax Lynnwood",
+        "officialBrandDealer": false,
+        "city": "Lynnwood",
+        "state": "WA",
+        "zip": "",
+        "cpo": false,
+        "oneOwner": null,
+        "accidentFree": null,
+        "accidentCount": null,
+        "usageType": "Not listed",
+        "image": "https://retail.photos.vin/4JGGM2BB5SA062371-1.jpg",
+        "photoCount": 29,
+        "url": "https://www.autolist.com/mercedes+benz-eqe#vin=4JGGM2BB5SA062371",
+        "listedAt": "2026-06-29 23:51:28",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 47998,
+          "mileage": 4577,
+          "dealer": "CarMax Lynnwood"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 47998,
+          "mileage": 4577,
+          "dealer": "CarMax Lynnwood"
+        }
+      ]
+    },
+    "4JGGM1CB1PA010350": {
+      "lastKnown": {
+        "id": "4jggm1cb1pa010350",
+        "vin": "4JGGM1CB1PA010350",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 39816,
+        "mileage": 30907,
+        "exteriorColor": "Black",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Tacoma",
+        "officialBrandDealer": true,
+        "city": "Fife",
+        "state": "WA",
+        "zip": "",
+        "cpo": false,
+        "oneOwner": null,
+        "accidentFree": null,
+        "accidentCount": null,
+        "usageType": "Not listed",
+        "image": "https://retail.photos.vin/4JGGM1CB1PA010350-1.jpg",
+        "photoCount": 92,
+        "url": "https://www.autolist.com/mercedes+benz-eqe#vin=4JGGM1CB1PA010350",
+        "listedAt": "2026-07-28 04:28:02",
+        "firstSeenDate": "2026-09-08"
+      },
+      "observations": [
+        {
+          "date": "2026-09-08",
+          "price": 40187,
+          "mileage": 30907,
+          "dealer": "Mercedes-Benz of Tacoma"
+        },
+        {
+          "date": "2026-09-09",
+          "price": 39816,
+          "mileage": 30907,
+          "dealer": "Mercedes-Benz of Tacoma"
+        },
+        {
+          "date": "2026-09-11",
+          "price": 39816,
+          "mileage": 30907,
+          "dealer": "Mercedes-Benz of Tacoma"
+        }
+      ]
+    },
+    "4JGGM2CBXPA001992": {
+      "lastKnown": {
+        "id": "4jggm2cbxpa001992",
+        "vin": "4JGGM2CBXPA001992",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 500 4MATIC",
+        "price": 47190,
+        "mileage": 26263,
+        "exteriorColor": "Obsidian Black Metallic",
+        "interiorColor": "Neva Grey/Sable Brown",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": true,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM2CBXPA001992-1.jpg",
+        "photoCount": 1,
+        "url": "https://www.carfax.com/vehicle/4JGGM2CBXPA001992",
+        "listedAt": "2026-09-11 22:33:56",
+        "firstSeenDate": "2026-09-11"
+      },
+      "observations": [
+        {
+          "date": "2026-09-11",
+          "price": 47190,
+          "mileage": 26263,
+          "dealer": "Mercedes-Benz of Bellevue"
+        }
+      ]
+    },
+    "4JGGM1CB3PA039963": {
+      "lastKnown": {
+        "id": "4jggm1cb3pa039963",
+        "vin": "4JGGM1CB3PA039963",
+        "year": 2023,
+        "make": "Mercedes-Benz",
+        "model": "EQE",
+        "trim": "EQE 350 4MATIC",
+        "price": 36950,
+        "mileage": 31356,
+        "exteriorColor": "Blue",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "dealer": "Mercedes-Benz of Lynnwood",
+        "officialBrandDealer": true,
+        "city": "Lynnwood",
+        "state": "WA",
+        "zip": "98037",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/4JGGM1CB3PA039963-1.jpg",
+        "photoCount": 6,
+        "url": "https://www.carfax.com/vehicle/4JGGM1CB3PA039963",
+        "listedAt": "2026-09-10 21:25:09",
+        "firstSeenDate": "2026-09-11"
+      },
+      "observations": [
+        {
+          "date": "2026-09-11",
+          "price": 36950,
+          "mileage": 31356,
+          "dealer": "Mercedes-Benz of Lynnwood"
+        }
+      ]
+    }
+  }
+}

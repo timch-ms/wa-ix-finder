@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from contextlib import contextmanager
 from datetime import date as calendar_date
 from pathlib import Path
 import importlib.util
@@ -8,10 +9,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-STATE_FILE = ROOT / "data" / "refresh-state.json"
-SNAPSHOT_FILE = ROOT / "data" / "inventory.json"
-CACHE_FILE = ROOT / "data" / "auto-dev-cache.json"
-HISTORY_FILE = ROOT / "data" / "inventory-history.json"
+CONFIG_FILE = ROOT / "data" / "vehicles.json"
+VEHICLES_DIR = ROOT / "vehicles"
 MAX_CALLS = 10
 MINIMUM_RETENTION_RATIO = 0.5
 
@@ -47,10 +46,74 @@ def set_output(name, value):
             output.write(f"{name}={str(value).lower()}\n")
 
 
-def reserve_refresh(date, state_file=STATE_FILE):
+def read_vehicle_config(config_file=CONFIG_FILE):
+    config = read_json(config_file, {})
+    vehicles = config.get("vehicles")
+    if not isinstance(vehicles, list) or not vehicles:
+        raise ValueError("Vehicle configuration requires a non-empty vehicles list.")
+    slugs = [vehicle.get("slug") for vehicle in vehicles]
+    if any(not isinstance(slug, str) or not slug for slug in slugs):
+        raise ValueError("Every configured vehicle requires a slug.")
+    if len(slugs) != len(set(slugs)):
+        raise ValueError("Vehicle slugs must be unique.")
+    return config
+
+
+def configured_vehicle(slug, config_file=CONFIG_FILE):
+    for vehicle in read_vehicle_config(config_file)["vehicles"]:
+        if vehicle["slug"] == slug:
+            return vehicle
+    raise ValueError(f"Unknown vehicle slug: {slug}")
+
+
+def vehicle_paths(slug, vehicles_dir=VEHICLES_DIR):
+    directory = vehicles_dir / slug
+    return {
+        "state": directory / "refresh-state.json",
+        "snapshot": directory / "inventory.json",
+        "cache": directory / "auto-dev-cache.json",
+        "history": directory / "inventory-history.json",
+        "overrides": directory / "listing-overrides.json",
+    }
+
+
+@contextmanager
+def server_vehicle_context(config, paths):
+    original = {
+        "config": server.SITE_CONFIG_OVERRIDE,
+        "cache": server.CACHE_FILE,
+        "overrides": server.OVERRIDES_FILE,
+        "export_source": exporter.SOURCE,
+        "export_destination": exporter.DESTINATION,
+        "export_overrides": exporter.OVERRIDES,
+    }
+    server.SITE_CONFIG_OVERRIDE = config
+    server.CACHE_FILE = paths["cache"]
+    server.OVERRIDES_FILE = paths["overrides"]
+    exporter.SOURCE = paths["cache"]
+    exporter.DESTINATION = paths["snapshot"]
+    exporter.OVERRIDES = paths["overrides"]
+    try:
+        yield
+    finally:
+        server.SITE_CONFIG_OVERRIDE = original["config"]
+        server.CACHE_FILE = original["cache"]
+        server.OVERRIDES_FILE = original["overrides"]
+        exporter.SOURCE = original["export_source"]
+        exporter.DESTINATION = original["export_destination"]
+        exporter.OVERRIDES = original["export_overrides"]
+
+
+def reserve_refresh(date, state_file, config=None):
+    config = config or server.read_site_config()
     state = read_json(state_file, {})
     last_attempt = state.get("lastAttemptDate")
-    interval_days = server.read_site_config()["refreshIntervalDays"]
+    interval_days = config["refresh"].get(
+        "intervalDays",
+        config.get("refreshIntervalDays", 1),
+    ) if config.get("refresh") else config.get("refreshIntervalDays", 1)
+    if not isinstance(interval_days, int) or interval_days < 1:
+        raise ValueError("refresh.intervalDays must be a positive integer.")
     days_since_attempt = (
         (calendar_date.fromisoformat(date) - calendar_date.fromisoformat(last_attempt)).days
         if last_attempt
@@ -72,8 +135,21 @@ def reserve_refresh(date, state_file=STATE_FILE):
             f"Inventory refresh last attempted on {last_attempt}; the configured "
             f"{interval_days}-day interval has not elapsed."
         )
-    set_output("should_refresh", should_refresh)
     return should_refresh
+
+
+def reserve_all(date, config_file=CONFIG_FILE, vehicles_dir=VEHICLES_DIR):
+    reserved = []
+    for config in read_vehicle_config(config_file)["vehicles"]:
+        if not config.get("refresh", {}).get("enabled", False):
+            continue
+        paths = vehicle_paths(config["slug"], vehicles_dir)
+        if reserve_refresh(date, paths["state"], config):
+            reserved.append(config["slug"])
+    set_output("should_refresh", bool(reserved))
+    set_output("reserved_vehicles", ",".join(reserved))
+    print(f"Reserved vehicles: {', '.join(reserved) if reserved else 'none'}")
+    return reserved
 
 
 def cache_from_snapshot(snapshot, state):
@@ -108,12 +184,22 @@ def cache_from_snapshot(snapshot, state):
 def refresh_snapshot(
     date,
     api_key,
-    state_file=STATE_FILE,
-    snapshot_file=SNAPSHOT_FILE,
-    cache_file=CACHE_FILE,
-    history_file=HISTORY_FILE,
+    state_file,
+    snapshot_file,
+    cache_file,
+    history_file,
+    config=None,
+    overrides_file=None,
     fetcher=None,
 ):
+    config = config or server.read_site_config()
+    paths = {
+        "state": state_file,
+        "snapshot": snapshot_file,
+        "cache": cache_file,
+        "history": history_file,
+        "overrides": overrides_file or state_file.parent / "listing-overrides.json",
+    }
     state = read_json(state_file, {})
     if state.get("lastAttemptDate") != date:
         raise RuntimeError(f"The {date} refresh was not reserved before API access.")
@@ -122,17 +208,15 @@ def refresh_snapshot(
     previous_count = len(snapshot.get("listings") or [])
     write_json(cache_file, cache_from_snapshot(snapshot, state))
 
-    original_cache_file = server.CACHE_FILE
-    original_export_source = exporter.SOURCE
-    original_export_destination = exporter.DESTINATION
-    try:
-        server.CACHE_FILE = cache_file
-        config = server.read_site_config()
+    with server_vehicle_context(config, paths):
         refreshed = server.refresh_cache(
             fetcher=fetcher,
             date=date,
             api_key=api_key,
-            max_calls=config.get("maxApiCalls", MAX_CALLS),
+            max_calls=config.get("refresh", {}).get(
+                "maxApiCalls",
+                config.get("maxApiCalls", MAX_CALLS),
+            ),
         )
         state["lastAttemptCalls"] = refreshed.get("lastAttemptCalls", 0)
         state["lastError"] = refreshed.get("refreshError")
@@ -152,17 +236,10 @@ def refresh_snapshot(
         if success:
             state["lastSuccessfulRefreshDate"] = date
             state["knownVins"] = refreshed.get("knownVins", {})
-            exporter.SOURCE = cache_file
-            exporter.DESTINATION = snapshot_file
             exporter.export_snapshot()
             inventory_history.write_history(snapshot_file, history_file)
         write_json(state_file, state)
-    finally:
-        server.CACHE_FILE = original_cache_file
-        exporter.SOURCE = original_export_source
-        exporter.DESTINATION = original_export_destination
 
-    set_output("refresh_succeeded", success)
     if success:
         print(
             f"Published {refreshed['listingCount']} listings from "
@@ -173,17 +250,61 @@ def refresh_snapshot(
     return success
 
 
+def refresh_all(
+    date,
+    api_key,
+    slugs,
+    config_file=CONFIG_FILE,
+    vehicles_dir=VEHICLES_DIR,
+    fetcher=None,
+):
+    configs = {
+        config["slug"]: config
+        for config in read_vehicle_config(config_file)["vehicles"]
+    }
+    succeeded = []
+    failed = []
+    for slug in slugs:
+        config = configs.get(slug)
+        if config is None or not config.get("refresh", {}).get("enabled", False):
+            raise ValueError(f"Vehicle is not enabled for refresh: {slug}")
+        paths = vehicle_paths(slug, vehicles_dir)
+        print(f"Refreshing {slug}...")
+        if refresh_snapshot(
+            date,
+            api_key,
+            state_file=paths["state"],
+            snapshot_file=paths["snapshot"],
+            cache_file=paths["cache"],
+            history_file=paths["history"],
+            overrides_file=paths["overrides"],
+            config=config,
+            fetcher=fetcher,
+        ):
+            succeeded.append(slug)
+        else:
+            failed.append(slug)
+    set_output("refresh_succeeded", bool(succeeded))
+    set_output("refresh_failed", bool(failed))
+    set_output("refreshed_vehicles", ",".join(succeeded))
+    print(f"Successful vehicles: {', '.join(succeeded) if succeeded else 'none'}")
+    print(f"Failed vehicles: {', '.join(failed) if failed else 'none'}")
+    return succeeded, failed
+
+
 def main():
     parser = ArgumentParser()
-    parser.add_argument("operation", choices=("reserve", "refresh"))
+    parser.add_argument("operation", choices=("reserve-all", "refresh-all"))
     parser.add_argument("--date", required=True)
+    parser.add_argument("--vehicles", default="")
     args = parser.parse_args()
 
-    if args.operation == "reserve":
-        reserve_refresh(args.date)
+    if args.operation == "reserve-all":
+        reserve_all(args.date)
         return
 
-    refresh_snapshot(args.date, os.environ.get("AUTO_DEV_API_KEY"))
+    slugs = [slug for slug in args.vehicles.split(",") if slug]
+    refresh_all(args.date, os.environ.get("AUTO_DEV_API_KEY"), slugs)
 
 
 if __name__ == "__main__":

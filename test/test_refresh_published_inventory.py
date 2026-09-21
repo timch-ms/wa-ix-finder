@@ -172,6 +172,112 @@ class PublishedInventoryRefreshTests(TestCase):
         self.assertIn("at least 1 were required", state["lastError"])
         self.assertEqual(self.snapshot_file.read_text(encoding="utf-8"), original_snapshot)
 
+    def test_reserve_all_uses_enabled_vehicle_cadences(self):
+        root = Path(self.temporary.name)
+        config_file = root / "vehicles.json"
+        vehicles_dir = root / "vehicles"
+        config_file.write_text(
+            json.dumps(
+                {
+                    "vehicles": [
+                        {
+                            "slug": "daily",
+                            "refresh": {
+                                "enabled": True,
+                                "intervalDays": 1,
+                                "maxApiCalls": 2,
+                            },
+                        },
+                        {
+                            "slug": "disabled",
+                            "refresh": {
+                                "enabled": False,
+                                "intervalDays": 1,
+                                "maxApiCalls": 2,
+                            },
+                        },
+                    ]
+                }
+            ),
+            encoding="utf-8",
+        )
+        refresh.write_json(
+            vehicles_dir / "daily" / "refresh-state.json",
+            {"lastAttemptDate": "2026-09-08"},
+        )
+        refresh.write_json(
+            vehicles_dir / "disabled" / "refresh-state.json",
+            {"lastAttemptDate": "2026-09-08"},
+        )
+
+        reserved = refresh.reserve_all(
+            "2026-09-09",
+            config_file=config_file,
+            vehicles_dir=vehicles_dir,
+        )
+
+        self.assertEqual(reserved, ["daily"])
+        disabled = refresh.read_json(
+            vehicles_dir / "disabled" / "refresh-state.json",
+            {},
+        )
+        self.assertEqual(disabled["lastAttemptDate"], "2026-09-08")
+
+    def test_refresh_all_keeps_vehicle_files_isolated(self):
+        root = Path(self.temporary.name)
+        config_file = root / "vehicles.json"
+        vehicles_dir = root / "vehicles"
+        config = {
+            "slug": "bmw-ix",
+            "make": "BMW",
+            "model": "iX",
+            "minimumYear": 2022,
+            "officialDealerNamePatterns": ["BMW"],
+            "refresh": {
+                "enabled": True,
+                "intervalDays": 1,
+                "maxApiCalls": 2,
+            },
+        }
+        config_file.write_text(
+            json.dumps({"vehicles": [config]}),
+            encoding="utf-8",
+        )
+        paths = refresh.vehicle_paths("bmw-ix", vehicles_dir)
+        refresh.write_json(paths["state"], {"lastAttemptDate": "2026-09-09"})
+        refresh.write_json(
+            paths["snapshot"],
+            {
+                "lastRefreshDate": "2026-09-08",
+                "listingCount": 1,
+                "listings": [
+                    {
+                        "vin": "WB523CF0000000001",
+                        "firstSeenDate": "2026-09-08",
+                    }
+                ],
+            },
+        )
+        refresh.write_json(paths["overrides"], {})
+
+        succeeded, failed = refresh.refresh_all(
+            "2026-09-09",
+            "test",
+            ["bmw-ix"],
+            config_file=config_file,
+            vehicles_dir=vehicles_dir,
+            fetcher=lambda _key, _page, _config: {
+                "total": 1,
+                "data": [raw_listing("WB523CF0000000002")],
+            },
+        )
+
+        self.assertEqual(succeeded, ["bmw-ix"])
+        self.assertEqual(failed, [])
+        snapshot = refresh.read_json(paths["snapshot"], {})
+        self.assertEqual(snapshot["listings"][0]["vin"], "WB523CF0000000002")
+        self.assertTrue(paths["history"].exists())
+
 
 if __name__ == "__main__":
     main()

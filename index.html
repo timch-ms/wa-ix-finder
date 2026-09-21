@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta id="site-description" name="description" content="Used vehicle listings in Washington from a daily inventory snapshot.">
-  <title>WA iX Finder</title>
+  <title>WA Vehicle Finder</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="inventory-v3.css">
 </head>
@@ -21,7 +21,11 @@
     <section class="hero inventory-hero">
       <p class="eyebrow">USED VEHICLE INVENTORY</p>
       <h1 id="hero-title">Washington used vehicle listings</h1>
-      <p>One ad-free view published from a daily Washington inventory snapshot.</p>
+      <p id="hero-description">One ad-free view of Washington used vehicle inventory.</p>
+      <label class="vehicle-switcher" for="vehicle-selector">
+        <span>Choose a vehicle</span>
+        <select id="vehicle-selector" aria-label="Choose a vehicle"></select>
+      </label>
     </section>
 
     <div id="cache-notice" class="cache-notice" role="status"></div>

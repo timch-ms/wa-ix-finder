@@ -1,0 +1,395 @@
+{
+  "siteTitle": "WA Vehicle Finder",
+  "defaultVehicle": "bmw-ix",
+  "vehicles": [
+    {
+      "slug": "bmw-ix",
+      "displayName": "BMW iX",
+      "siteTitle": "WA iX Finder",
+      "vehicleName": "BMW iX",
+      "make": "BMW",
+      "model": "iX",
+      "minimumYear": 2022,
+      "brandMark": "iX",
+      "fallbackImage": "assets/ix-blue.svg",
+      "dealerOnlyLabel": "BMW dealers only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "BMW"
+      ],
+      "dealerDomains": [
+        "bmwbellevue.com",
+        "bmwnorthwest.com",
+        "bmwofseattle.com",
+        "bmwofspokane.com",
+        "bmwseattle.com",
+        "jaguarbellevue.com",
+        "lithia.com",
+        "lithiajeepspokane.com",
+        "seattlefinestmotors.com",
+        "swickardtoyota.com",
+        "volvocarsbellevue.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com"
+      ],
+      "refresh": {
+        "enabled": true,
+        "intervalDays": 1,
+        "maxApiCalls": 6
+      }
+    },
+    {
+      "slug": "volvo-ex90",
+      "displayName": "Volvo EX90",
+      "siteTitle": "WA EX90 Finder",
+      "vehicleName": "Volvo EX90",
+      "make": "Volvo",
+      "model": "EX90",
+      "minimumYear": 2022,
+      "brandMark": "EX",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Volvo dealers only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Volvo"
+      ],
+      "dealerDomains": [
+        "volvocarsbellevue.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": true,
+        "intervalDays": 2,
+        "maxApiCalls": 2
+      }
+    },
+    {
+      "slug": "volkswagen-id-buzz",
+      "displayName": "Volkswagen ID. Buzz",
+      "siteTitle": "WA ID. Buzz Finder",
+      "vehicleName": "Volkswagen ID. Buzz",
+      "make": "Volkswagen",
+      "model": "ID. Buzz",
+      "minimumYear": 2022,
+      "brandMark": "ID",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Volkswagen dealers only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Volkswagen"
+      ],
+      "dealerDomains": [
+        "auto206.com",
+        "bmwofspokane.com",
+        "vwofkirkland.com",
+        "vwofpuyallup.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": true,
+        "intervalDays": 2,
+        "maxApiCalls": 2
+      }
+    },
+    {
+      "slug": "tesla-model-x",
+      "displayName": "Tesla Model X",
+      "siteTitle": "WA Model X Finder",
+      "vehicleName": "Tesla Model X",
+      "make": "Tesla",
+      "model": "Model X",
+      "minimumYear": 2022,
+      "brandMark": "X",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Tesla locations only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Tesla"
+      ],
+      "dealerDomains": [
+        "gamblinmotors.com",
+        "gmcofriverfrontpark.com",
+        "leskovar.com",
+        "puyallupnissan.com",
+        "tesla.com",
+        "vwofpuyallup.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": true,
+        "intervalDays": 2,
+        "maxApiCalls": 4
+      }
+    },
+    {
+      "slug": "tesla-model-y",
+      "displayName": "Tesla Model Y",
+      "siteTitle": "WA Model Y Finder",
+      "vehicleName": "Tesla Model Y",
+      "make": "Tesla",
+      "model": "Model Y",
+      "minimumYear": 2022,
+      "queryYearsSeparately": true,
+      "brandMark": "Y",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Tesla locations only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Tesla"
+      ],
+      "dealerDomains": [
+        "4seasonmotor.com",
+        "acuraofseattle.com",
+        "auto206.com",
+        "bellinghamchevy.com",
+        "bmwbellevue.com",
+        "carrsubaru.com",
+        "cortesautocenter.com",
+        "cortesnissan.com",
+        "daytonamotorco.com",
+        "evergreenford.com",
+        "gamblinmotors.com",
+        "genesisofkirkland.com",
+        "gtownmotors.com",
+        "leskovar.com",
+        "mbseattle.com",
+        "michaelssubaru.com",
+        "millenniumauto.biz",
+        "northwestchevrolet.com",
+        "pierrechevrolet.com",
+        "puyallupnissan.com",
+        "rentonkia.com",
+        "seattlefinestmotors.com",
+        "seattlejeep.com",
+        "tesla.com",
+        "toyotaofbellingham.com",
+        "toyotaofpuyallup.com",
+        "volvocarsbellevue.com",
+        "vwofkirkland.com",
+        "vwofpuyallup.com",
+        "wayscarfffordauburn.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": true,
+        "intervalDays": 2,
+        "maxApiCalls": 11
+      }
+    },
+    {
+      "slug": "toyota-sienna",
+      "displayName": "Toyota Sienna",
+      "siteTitle": "WA Sienna Finder",
+      "vehicleName": "Toyota Sienna",
+      "make": "Toyota",
+      "model": "Sienna",
+      "minimumYear": 2022,
+      "queryYearsSeparately": true,
+      "brandMark": "S",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Toyota dealers only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Toyota"
+      ],
+      "dealerDomains": [
+        "bellinghamchevy.com",
+        "bmwofspokane.com",
+        "burienchevrolet.com",
+        "dougsmazda.com",
+        "genesisofkirkland.com",
+        "importsandclassics.com",
+        "lithiajeepspokane.com",
+        "mbmotorsllc.com",
+        "rentonkia.com",
+        "seattlefinestmotors.com",
+        "speckchevyprosser.com",
+        "toyotaofbellevue.com",
+        "toyotaofbellingham.com",
+        "toyotaofpuyallup.com",
+        "toyotaofrenton.com",
+        "vwofpuyallup.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": true,
+        "intervalDays": 2,
+        "maxApiCalls": 10
+      }
+    },
+    {
+      "slug": "mercedes-benz-eqe-suv",
+      "displayName": "Mercedes-Benz EQE SUV",
+      "siteTitle": "WA EQE SUV Finder",
+      "vehicleName": "Mercedes-Benz EQE SUV",
+      "make": "Mercedes-Benz",
+      "model": "EQE",
+      "bodyStyle": "SUV",
+      "minimumYear": 2022,
+      "brandMark": "EQE",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Mercedes-Benz dealers only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Mercedes-Benz",
+        "Mercedes Benz"
+      ],
+      "dealerDomains": [
+        "seattlefinestmotors.com",
+        "swickardtoyota.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": true,
+        "intervalDays": 2,
+        "maxApiCalls": 3
+      }
+    },
+    {
+      "slug": "mercedes-benz-eqs-suv",
+      "displayName": "Mercedes-Benz EQS SUV",
+      "siteTitle": "WA EQS SUV Finder",
+      "vehicleName": "Mercedes-Benz EQS SUV",
+      "make": "Mercedes-Benz",
+      "model": "EQS SUV",
+      "minimumYear": 2022,
+      "brandMark": "EQS",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Mercedes-Benz dealers only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Mercedes-Benz",
+        "Mercedes Benz"
+      ],
+      "dealerDomains": [
+        "carrchevrolet.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": true,
+        "intervalDays": 2,
+        "maxApiCalls": 2
+      }
+    },
+    {
+      "slug": "porsche-macan-electric",
+      "displayName": "Porsche Macan Electric",
+      "siteTitle": "WA Macan Electric Finder",
+      "vehicleName": "Porsche Macan Electric",
+      "make": "Porsche",
+      "model": "Macan",
+      "minimumYear": 2022,
+      "queryFuel": "Electric",
+      "allowedPowertrains": [
+        "Electric"
+      ],
+      "brandMark": "ME",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Porsche dealers only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Porsche"
+      ],
+      "dealerDomains": [
+        "porsche.com",
+        "porschebellevue.com",
+        "porscheseattle.com",
+        "porschespokane.com",
+        "porschetacoma.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": false,
+        "intervalDays": 2,
+        "maxApiCalls": 2
+      }
+    },
+    {
+      "slug": "porsche-cayenne",
+      "displayName": "Porsche Cayenne",
+      "siteTitle": "WA Cayenne Finder",
+      "vehicleName": "Porsche Cayenne",
+      "make": "Porsche",
+      "model": "Cayenne",
+      "minimumYear": 2022,
+      "queryYearsSeparately": true,
+      "brandMark": "CY",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Porsche dealers only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Porsche"
+      ],
+      "dealerDomains": [
+        "porsche.com",
+        "porschebellevue.com",
+        "porscheseattle.com",
+        "porschespokane.com",
+        "porschetacoma.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": false,
+        "intervalDays": 2,
+        "maxApiCalls": 10
+      }
+    },
+    {
+      "slug": "maserati-grecale",
+      "displayName": "Maserati Grecale",
+      "siteTitle": "WA Grecale Finder",
+      "vehicleName": "Maserati Grecale",
+      "make": "Maserati",
+      "model": "Grecale",
+      "minimumYear": 2022,
+      "brandMark": "GR",
+      "fallbackImage": "assets/vehicle.svg",
+      "dealerOnlyLabel": "Maserati dealers only",
+      "dealerOnlyDescription": "Hide independent and other-brand dealers",
+      "officialDealerNamePatterns": [
+        "Maserati"
+      ],
+      "dealerDomains": [
+        "maseratiofseattle.com",
+        "maseratiofwashington.com"
+      ],
+      "marketplaceDomains": [
+        "autolist.com",
+        "carvana.com"
+      ],
+      "refresh": {
+        "enabled": false,
+        "intervalDays": 2,
+        "maxApiCalls": 2
+      }
+    }
+  ]
+}

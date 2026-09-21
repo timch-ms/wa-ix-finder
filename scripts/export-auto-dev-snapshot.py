@@ -3,9 +3,9 @@ from urllib.parse import urlparse
 import json
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "data" / "auto-dev-cache.json"
-DESTINATION = ROOT / "data" / "inventory.json"
-OVERRIDES = ROOT / "data" / "listing-overrides.json"
+SOURCE = ROOT / "vehicles" / "bmw-ix" / "auto-dev-cache.json"
+DESTINATION = ROOT / "vehicles" / "bmw-ix" / "inventory.json"
+OVERRIDES = ROOT / "vehicles" / "bmw-ix" / "listing-overrides.json"
 LISTING_FIELDS = {
     "id",
     "vin",

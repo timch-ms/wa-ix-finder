@@ -12,9 +12,12 @@ import os
 import threading
 
 ROOT = Path(__file__).resolve().parent.parent
-CACHE_FILE = ROOT / "data" / "auto-dev-cache.json"
-OVERRIDES_FILE = ROOT / "data" / "listing-overrides.json"
-SITE_CONFIG_FILE = ROOT / "data" / "site-config.json"
+DEFAULT_VEHICLE_SLUG = os.environ.get("VEHICLE_SLUG", "bmw-ix")
+VEHICLE_DIR = ROOT / "vehicles" / DEFAULT_VEHICLE_SLUG
+CACHE_FILE = VEHICLE_DIR / "auto-dev-cache.json"
+OVERRIDES_FILE = VEHICLE_DIR / "listing-overrides.json"
+SITE_CONFIG_FILE = ROOT / "data" / "vehicles.json"
+SITE_CONFIG_OVERRIDE = None
 INSTANCE_FILE = ROOT / "data" / "auto-dev-server.lock"
 PORT = int(os.environ.get("AUTO_DEV_PORT", "4174"))
 REFRESH_LOCK = threading.Lock()
@@ -79,10 +82,31 @@ def empty_cache():
 
 
 def read_site_config():
-    try:
-        value = json.loads(SITE_CONFIG_FILE.read_text(encoding="utf-8"))
-    except (FileNotFoundError, json.JSONDecodeError, TypeError):
-        value = {}
+    if SITE_CONFIG_OVERRIDE is not None:
+        value = SITE_CONFIG_OVERRIDE
+    else:
+        try:
+            value = json.loads(SITE_CONFIG_FILE.read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError, TypeError):
+            value = {}
+    if isinstance(value.get("vehicles"), list):
+        value = next(
+            (
+                vehicle
+                for vehicle in value["vehicles"]
+                if vehicle.get("slug") == DEFAULT_VEHICLE_SLUG
+            ),
+            {},
+        )
+    refresh = value.get("refresh") or {}
+    value = {
+        **value,
+        "refreshIntervalDays": refresh.get(
+            "intervalDays",
+            value.get("refreshIntervalDays", DEFAULT_SITE_CONFIG["refreshIntervalDays"]),
+        ),
+        "maxApiCalls": refresh.get("maxApiCalls", value.get("maxApiCalls", 10)),
+    }
     config = {**DEFAULT_SITE_CONFIG, **value}
     if not isinstance(config["make"], str) or not config["make"].strip():
         raise ValueError("Site configuration requires a make.")
