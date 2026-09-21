@@ -46,7 +46,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2
+        "intervalDays": 1
       }
     },
     {
@@ -70,7 +70,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2
+        "intervalDays": 1
       }
     },
     {
@@ -94,7 +94,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2
+        "intervalDays": 1
       }
     },
     {
@@ -144,7 +144,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2
+        "intervalDays": 1
       }
     },
     {
@@ -170,7 +170,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2
+        "intervalDays": 1
       }
     },
     {
@@ -195,22 +195,18 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2
+        "intervalDays": 1
       }
     },
     {
-      "slug": "porsche-macan-electric",
-      "displayName": "Porsche Macan Electric",
-      "siteTitle": "WA Macan Electric Finder",
-      "vehicleName": "Porsche Macan Electric",
+      "slug": "porsche-macan",
+      "displayName": "Porsche Macan",
+      "siteTitle": "WA Macan Finder",
+      "vehicleName": "Porsche Macan",
       "make": "Porsche",
       "model": "Macan",
       "minimumYear": 2022,
-      "queryFuel": "Electric",
-      "allowedPowertrains": [
-        "Electric"
-      ],
-      "brandMark": "ME",
+      "brandMark": "M",
       "fallbackImage": "assets/vehicle.svg",
       "dealerOnlyLabel": "Porsche dealers only",
       "dealerOnlyDescription": "Hide independent and other-brand dealers",
@@ -222,8 +218,8 @@
         "carvana.com"
       ],
       "refresh": {
-        "enabled": false,
-        "intervalDays": 2
+        "enabled": true,
+        "intervalDays": 1
       }
     },
     {
@@ -247,8 +243,8 @@
         "carvana.com"
       ],
       "refresh": {
-        "enabled": false,
-        "intervalDays": 2
+        "enabled": true,
+        "intervalDays": 1
       }
     },
     {
@@ -271,8 +267,8 @@
         "carvana.com"
       ],
       "refresh": {
-        "enabled": false,
-        "intervalDays": 2
+        "enabled": true,
+        "intervalDays": 1
       }
     }
   ]
