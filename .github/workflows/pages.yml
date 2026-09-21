@@ -16,6 +16,7 @@ on:
       - "lib/inventory.js"
       - "lib/inventory-view-v2.js"
       - ".github/workflows/pages.yml"
+      - ".github/workflows/refresh-inventory.yml"
   workflow_dispatch:
 
 permissions:

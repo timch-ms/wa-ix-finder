@@ -13,6 +13,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: configured-inventory-refresh
@@ -21,6 +23,8 @@ concurrency:
 jobs:
   refresh:
     runs-on: windows-latest
+    outputs:
+      refreshed: ${{ steps.refresh.outputs.refresh_succeeded }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -138,3 +142,38 @@ jobs:
         if: steps.refresh.outputs.refresh_failed == 'true'
         shell: pwsh
         run: throw "One or more vehicle refreshes failed; prior public snapshots were retained."
+
+  deploy:
+    needs: refresh
+    if: always() && needs.refresh.outputs.refreshed == 'true'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - name: Prepare public site
+        run: |
+          mkdir -p _site/assets _site/data _site/lib _site/vehicles
+          cp index.html styles.css inventory-v3.css site-v3.js .nojekyll _site/
+          cp -R assets/. _site/assets/
+          cp data/vehicles.json _site/data/
+          cp lib/inventory.js lib/inventory-view-v2.js _site/lib/
+          for inventory in vehicles/*/inventory.json; do
+            vehicle_dir="$(dirname "$inventory")"
+            slug="$(basename "$vehicle_dir")"
+            mkdir -p "_site/vehicles/$slug"
+            cp "$vehicle_dir/inventory.json" "$vehicle_dir/inventory-history.json" "_site/vehicles/$slug/"
+          done
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
