@@ -170,7 +170,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 1
+        "intervalDays": 2
       }
     },
     {
@@ -195,7 +195,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 1
+        "intervalDays": 2
       }
     },
     {
@@ -219,7 +219,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 1
+        "intervalDays": 2
       }
     },
     {
@@ -244,7 +244,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 1
+        "intervalDays": 2
       }
     },
     {
