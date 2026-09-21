@@ -94,8 +94,8 @@ class PublishedInventoryRefreshTests(TestCase):
         self.assertFalse(refresh.reserve_refresh("2026-09-09", self.state_file))
         self.assertTrue(refresh.reserve_refresh("2026-09-10", self.state_file))
 
-    def test_automated_refresh_allows_up_to_ten_calls(self):
-        self.assertEqual(refresh.MAX_CALLS, 10)
+    def test_automated_refresh_uses_global_twenty_call_limit(self):
+        self.assertEqual(refresh.MAX_CALLS_PER_VEHICLE_PER_DAY, 20)
 
     def test_successful_refresh_updates_snapshot_and_state(self):
         refresh.reserve_refresh("2026-09-09", self.state_file)
@@ -172,6 +172,35 @@ class PublishedInventoryRefreshTests(TestCase):
         self.assertIn("at least 1 were required", state["lastError"])
         self.assertEqual(self.snapshot_file.read_text(encoding="utf-8"), original_snapshot)
 
+    def test_global_call_limit_retains_snapshot_and_publishes_warning(self):
+        refresh.reserve_refresh("2026-09-09", self.state_file)
+
+        def oversized_fetcher(_key, _page, _config):
+            return {
+                "total": 2001,
+                "data": [
+                    raw_listing(f"WB523CF000000{i:04d}")
+                    for i in range(100)
+                ],
+            }
+
+        succeeded = refresh.refresh_snapshot(
+            "2026-09-09",
+            "test",
+            state_file=self.state_file,
+            snapshot_file=self.snapshot_file,
+            cache_file=self.cache_file,
+            history_file=self.history_file,
+            fetcher=oversized_fetcher,
+        )
+
+        snapshot = refresh.read_json(self.snapshot_file, {})
+        self.assertFalse(succeeded)
+        self.assertEqual(snapshot["listingCount"], 1)
+        self.assertEqual(snapshot["refreshWarning"]["code"], "daily-call-limit")
+        self.assertIn("20-call daily limit", snapshot["refreshWarning"]["message"])
+        self.assertFalse(self.history_file.exists())
+
     def test_reserve_all_uses_enabled_vehicle_cadences(self):
         root = Path(self.temporary.name)
         config_file = root / "vehicles.json"
@@ -185,7 +214,6 @@ class PublishedInventoryRefreshTests(TestCase):
                             "refresh": {
                                 "enabled": True,
                                 "intervalDays": 1,
-                                "maxApiCalls": 2,
                             },
                         },
                         {
@@ -193,7 +221,6 @@ class PublishedInventoryRefreshTests(TestCase):
                             "refresh": {
                                 "enabled": False,
                                 "intervalDays": 1,
-                                "maxApiCalls": 2,
                             },
                         },
                     ]
@@ -236,7 +263,6 @@ class PublishedInventoryRefreshTests(TestCase):
             "refresh": {
                 "enabled": True,
                 "intervalDays": 1,
-                "maxApiCalls": 2,
             },
         }
         config_file.write_text(

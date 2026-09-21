@@ -22,8 +22,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 1,
-        "maxApiCalls": 6
+        "intervalDays": 1
       }
     },
     {
@@ -47,8 +46,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2,
-        "maxApiCalls": 2
+        "intervalDays": 2
       }
     },
     {
@@ -72,8 +70,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2,
-        "maxApiCalls": 2
+        "intervalDays": 2
       }
     },
     {
@@ -97,8 +94,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2,
-        "maxApiCalls": 4
+        "intervalDays": 2
       }
     },
     {
@@ -123,8 +119,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2,
-        "maxApiCalls": 15
+        "intervalDays": 2
       }
     },
     {
@@ -149,8 +144,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2,
-        "maxApiCalls": 10
+        "intervalDays": 2
       }
     },
     {
@@ -176,8 +170,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2,
-        "maxApiCalls": 3
+        "intervalDays": 2
       }
     },
     {
@@ -202,8 +195,7 @@
       ],
       "refresh": {
         "enabled": true,
-        "intervalDays": 2,
-        "maxApiCalls": 2
+        "intervalDays": 2
       }
     },
     {
@@ -231,8 +223,7 @@
       ],
       "refresh": {
         "enabled": false,
-        "intervalDays": 2,
-        "maxApiCalls": 2
+        "intervalDays": 2
       }
     },
     {
@@ -257,8 +248,7 @@
       ],
       "refresh": {
         "enabled": false,
-        "intervalDays": 2,
-        "maxApiCalls": 10
+        "intervalDays": 2
       }
     },
     {
@@ -282,8 +272,7 @@
       ],
       "refresh": {
         "enabled": false,
-        "intervalDays": 2,
-        "maxApiCalls": 2
+        "intervalDays": 2
       }
     }
   ]

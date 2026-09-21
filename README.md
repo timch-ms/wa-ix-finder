@@ -13,16 +13,16 @@ The vehicle selector currently includes BMW iX, Volvo EX90, Volkswagen ID. Buzz,
 ```json
 "refresh": {
   "enabled": true,
-  "intervalDays": 2,
-  "maxApiCalls": 4
+  "intervalDays": 2
 }
 ```
 
 - Set `enabled` to control automatic updates.
 - Set `intervalDays` to change update frequency.
-- Set `maxApiCalls` to enforce that vehicle's per-refresh query ceiling.
 
 The workflow checks once each day at `09:17 UTC`. A vehicle is queried only when enabled and its configured number of Washington calendar days has elapsed. The three one-shot Macan Electric, Cayenne, and Grecale snapshots are disabled by default.
+
+Every enabled vehicle uses one global safety ceiling of 20 inventory API calls per Washington day. If a refresh would exceed that limit, the last successful listings and history are retained and that vehicle's public page displays a warning that its data may be incomplete.
 
 ## Data and history
 
@@ -37,7 +37,7 @@ The public browser reads only the global configuration, current snapshots, and h
 
 ## Automated refresh
 
-Add the inventory credential as the repository Actions secret `INVENTORY_API_KEY`. Before any provider call, `.github/workflows/refresh-inventory.yml` commits reservations for all eligible vehicles. Each vehicle retains its prior public snapshot if its refresh fails, exceeds its query cap, or returns an implausibly small result.
+Add the inventory credential as the repository Actions secret `INVENTORY_API_KEY`. Before any provider call, `.github/workflows/refresh-inventory.yml` commits reservations for all eligible vehicles. Each vehicle retains its prior public snapshot if its refresh fails, exceeds the global 20-call limit, or returns an implausibly small result.
 
 Successful refreshes update only that vehicle's snapshot and seven-day history. Failed and skipped refreshes never imply that listings disappeared.
 

@@ -105,7 +105,6 @@ def read_site_config():
             "intervalDays",
             value.get("refreshIntervalDays", DEFAULT_SITE_CONFIG["refreshIntervalDays"]),
         ),
-        "maxApiCalls": refresh.get("maxApiCalls", value.get("maxApiCalls", 10)),
     }
     config = {**DEFAULT_SITE_CONFIG, **value}
     if not isinstance(config["make"], str) or not config["make"].strip():

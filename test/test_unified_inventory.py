@@ -27,7 +27,7 @@ class UnifiedInventoryTests(TestCase):
                 refresh = vehicle["refresh"]
                 self.assertIsInstance(refresh["enabled"], bool)
                 self.assertGreaterEqual(refresh["intervalDays"], 1)
-                self.assertGreaterEqual(refresh["maxApiCalls"], 1)
+                self.assertNotIn("maxApiCalls", refresh)
 
     def test_snapshots_and_histories_match_vehicle_configuration(self):
         for vehicle in self.config["vehicles"]:

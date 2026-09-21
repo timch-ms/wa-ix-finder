@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 CONFIG_FILE = ROOT / "data" / "vehicles.json"
 VEHICLES_DIR = ROOT / "vehicles"
-MAX_CALLS = 10
+MAX_CALLS_PER_VEHICLE_PER_DAY = 20
 MINIMUM_RETENTION_RATIO = 0.5
 
 from auto_dev import server
@@ -56,6 +56,10 @@ def read_vehicle_config(config_file=CONFIG_FILE):
         raise ValueError("Every configured vehicle requires a slug.")
     if len(slugs) != len(set(slugs)):
         raise ValueError("Vehicle slugs must be unique.")
+    if any("maxApiCalls" in vehicle.get("refresh", {}) for vehicle in vehicles):
+        raise ValueError(
+            "Per-vehicle maxApiCalls is not supported; all vehicles use the global limit."
+        )
     return config
 
 
@@ -213,10 +217,7 @@ def refresh_snapshot(
             fetcher=fetcher,
             date=date,
             api_key=api_key,
-            max_calls=config.get("refresh", {}).get(
-                "maxApiCalls",
-                config.get("maxApiCalls", MAX_CALLS),
-            ),
+            max_calls=MAX_CALLS_PER_VEHICLE_PER_DAY,
         )
         state["lastAttemptCalls"] = refreshed.get("lastAttemptCalls", 0)
         state["lastError"] = refreshed.get("refreshError")
@@ -238,6 +239,17 @@ def refresh_snapshot(
             state["knownVins"] = refreshed.get("knownVins", {})
             exporter.export_snapshot()
             inventory_history.write_history(snapshot_file, history_file)
+        elif "configured maximum" in str(state["lastError"]):
+            snapshot["refreshWarning"] = {
+                "date": date,
+                "code": "daily-call-limit",
+                "message": (
+                    f"The latest refresh required more than the global "
+                    f"{MAX_CALLS_PER_VEHICLE_PER_DAY}-call daily limit. "
+                    "Inventory may be incomplete; the last successful snapshot is shown."
+                ),
+            }
+            write_json(snapshot_file, snapshot)
         write_json(state_file, state)
 
     if success:
