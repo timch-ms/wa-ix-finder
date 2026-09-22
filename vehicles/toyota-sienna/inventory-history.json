@@ -1,9 +1,116 @@
 {
   "retentionDays": 7,
-  "updatedAt": "2026-09-21T01:57:39.359264+00:00",
+  "updatedAt": "2026-09-22T22:14:13.290673+00:00",
   "snapshots": [
     {
       "date": "2026-09-20",
+      "vins": [
+        "5TDCSKFC0SS161601",
+        "5TDCSKFC3SS214470",
+        "5TDCSKFC8RS116058",
+        "5TDCSKFC8SS177724",
+        "5TDCSKFC8TS236546",
+        "5TDCSKFCXSS199532",
+        "5TDDRKEC4RS183645",
+        "5TDDRKECXNS090820",
+        "5TDESKFC1SS222950",
+        "5TDESKFC3NS056306",
+        "5TDESKFC4SS159097",
+        "5TDESKFC5PS091190",
+        "5TDESKFC6PS104304",
+        "5TDGRKEC0SS228082",
+        "5TDGRKEC1SS279199",
+        "5TDGRKEC3NS120270",
+        "5TDGRKEC3SS288678",
+        "5TDGRKEC4RS210789",
+        "5TDGRKEC7RS182275",
+        "5TDGRKEC8NS096080",
+        "5TDGRKEC8PS145071",
+        "5TDGSKFC1RS128330",
+        "5TDGSKFC1SS156361",
+        "5TDGSKFC1SS206451",
+        "5TDGSKFC2SS208208",
+        "5TDGSKFC3SS214003",
+        "5TDGSKFC4RS133358",
+        "5TDGSKFC4SS179410",
+        "5TDGSKFC5PS091330",
+        "5TDGSKFC5SS166911",
+        "5TDGSKFC5SS204055",
+        "5TDGSKFC5SS220398",
+        "5TDGSKFC6RS137055",
+        "5TDGSKFC6SS210155",
+        "5TDGSKFC6SS215694",
+        "5TDGSKFC7RS110303",
+        "5TDGSKFC7RS135282",
+        "5TDGSKFC7SS214280",
+        "5TDGSKFC9RS137258",
+        "5TDGSKFC9SS203040",
+        "5TDGSKFCXPS089119",
+        "5TDJSKFC0PS096537",
+        "5TDJSKFC0PS096599",
+        "5TDJSKFC1PS093677",
+        "5TDJSKFC2SS194736",
+        "5TDJSKFC3PS096225",
+        "5TDJSKFC4RS138131",
+        "5TDJSKFC8RS131442",
+        "5TDJSKFC8SS183367",
+        "5TDJSKFCXPS096691",
+        "5TDKRKEC0SS246821",
+        "5TDKRKEC3PS158241",
+        "5TDKRKEC5NS112665",
+        "5TDKRKEC7PS155004",
+        "5TDKRKEC7RS207461",
+        "5TDKSKFC0RS138955",
+        "5TDKSKFC1RS129634",
+        "5TDKSKFC1RS135093",
+        "5TDKSKFC2PS086273",
+        "5TDKSKFC2SS189623",
+        "5TDKSKFC2SS221213",
+        "5TDKSKFC3RS125147",
+        "5TDKSKFC3RS139680",
+        "5TDKSKFC3RS141980",
+        "5TDKSKFC4NS053613",
+        "5TDKSKFC4RS130986",
+        "5TDKSKFC4RS132379",
+        "5TDKSKFC5RS126252",
+        "5TDKSKFC6PS098703",
+        "5TDKSKFC7RS129945",
+        "5TDKSKFC8RS138931",
+        "5TDKSKFC8RS145524",
+        "5TDKSKFC8RS149413",
+        "5TDKSKFC9RS145130",
+        "5TDXSKFC8TS252389",
+        "5TDXSKFCXTS245217",
+        "5TDYRKEC0NS085871",
+        "5TDYRKEC0SS256243",
+        "5TDYRKEC2RS187954",
+        "5TDYRKEC3NS090496",
+        "5TDYRKEC3RS187526",
+        "5TDYRKEC3RS187736",
+        "5TDYRKEC4SS242717",
+        "5TDYRKEC5SS226509",
+        "5TDYRKEC5SS227207",
+        "5TDYRKEC7NS117845",
+        "5TDYRKEC8NS090493",
+        "5TDYRKEC8SS258127",
+        "5TDYRKEC8TS325939",
+        "5TDYRKEC9SS226626",
+        "5TDYRKEC9TS306073",
+        "5TDYRKECXPS144542",
+        "5TDYSKFC2NS043916",
+        "5TDYSKFC3NS041771",
+        "5TDYSKFC4PS098970",
+        "5TDYSKFC5SS185527",
+        "5TDYSKFC8NS053057",
+        "5TDYSKFC9PS078536",
+        "5TDYSKFC9PS100518",
+        "5TDZSKFC2RS153231",
+        "5TDZSKFC4RS116889",
+        "5TDZSKFC8RS125160"
+      ]
+    },
+    {
+      "date": "2026-09-22",
       "vins": [
         "5TDCSKFC0SS161601",
         "5TDCSKFC3SS214470",
@@ -148,6 +255,12 @@
           "price": 45800,
           "mileage": 42703,
           "dealer": "go kia renton"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 45800,
+          "mileage": 42703,
+          "dealer": "go kia renton"
         }
       ]
     },
@@ -185,6 +298,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 39951,
+          "mileage": 74049,
+          "dealer": "Eastlake Auto Brokers"
+        },
+        {
+          "date": "2026-09-22",
           "price": 39951,
           "mileage": 74049,
           "dealer": "Eastlake Auto Brokers"
@@ -228,6 +347,12 @@
           "price": 41998,
           "mileage": 68240,
           "dealer": "CarMax Renton"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 41998,
+          "mileage": 68240,
+          "dealer": "CarMax Renton"
         }
       ]
     },
@@ -265,6 +390,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 41088,
+          "mileage": 50771,
+          "dealer": "Ruddell Auto Mall"
+        },
+        {
+          "date": "2026-09-22",
           "price": 41088,
           "mileage": 50771,
           "dealer": "Ruddell Auto Mall"
@@ -308,6 +439,12 @@
           "price": 38699,
           "mileage": 67313,
           "dealer": "McCurley Subaru of Yakima"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 38699,
+          "mileage": 67313,
+          "dealer": "McCurley Subaru of Yakima"
         }
       ]
     },
@@ -345,6 +482,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 27985,
+          "mileage": 145674,
+          "dealer": "Parkway Auto"
+        },
+        {
+          "date": "2026-09-22",
           "price": 27985,
           "mileage": 145674,
           "dealer": "Parkway Auto"
@@ -388,6 +531,12 @@
           "price": 50191,
           "mileage": 12227,
           "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 50191,
+          "mileage": 12227,
+          "dealer": "Toyota of Bellingham"
         }
       ]
     },
@@ -425,6 +574,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 50014,
+          "mileage": 16948,
+          "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
           "price": 50014,
           "mileage": 16948,
           "dealer": "Toyota of Bellingham"
@@ -468,6 +623,12 @@
           "price": 47664,
           "mileage": 16529,
           "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 47664,
+          "mileage": 16529,
+          "dealer": "Toyota of Bellingham"
         }
       ]
     },
@@ -505,6 +666,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 49911,
+          "mileage": 18211,
+          "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
           "price": 49911,
           "mileage": 18211,
           "dealer": "Toyota of Bellingham"
@@ -548,6 +715,12 @@
           "price": 42624,
           "mileage": 41581,
           "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 42624,
+          "mileage": 41581,
+          "dealer": "Toyota of Bellingham"
         }
       ]
     },
@@ -585,6 +758,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 45191,
+          "mileage": 10723,
+          "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
           "price": 45191,
           "mileage": 10723,
           "dealer": "Toyota of Bellingham"
@@ -628,6 +807,12 @@
           "price": 38215,
           "mileage": 116884,
           "dealer": "Volkswagen of Puyallup"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 38215,
+          "mileage": 116884,
+          "dealer": "Volkswagen of Puyallup"
         }
       ]
     },
@@ -665,6 +850,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 33951,
+          "mileage": 129209,
+          "dealer": "Eastlake Auto Brokers"
+        },
+        {
+          "date": "2026-09-22",
           "price": 33951,
           "mileage": 129209,
           "dealer": "Eastlake Auto Brokers"
@@ -708,6 +899,12 @@
           "price": 40996,
           "mileage": 75398,
           "dealer": "Eastlake Auto Brokers"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 40996,
+          "mileage": 75398,
+          "dealer": "Eastlake Auto Brokers"
         }
       ]
     },
@@ -745,6 +942,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 41963,
+          "mileage": 47784,
+          "dealer": "Wilder Toyota"
+        },
+        {
+          "date": "2026-09-22",
           "price": 41963,
           "mileage": 47784,
           "dealer": "Wilder Toyota"
@@ -788,6 +991,12 @@
           "price": 45963,
           "mileage": 43232,
           "dealer": "Wilder Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 45963,
+          "mileage": 43232,
+          "dealer": "Wilder Toyota"
         }
       ]
     },
@@ -825,6 +1034,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 43198,
+          "mileage": 19625,
+          "dealer": "MB Motors LLC"
+        },
+        {
+          "date": "2026-09-22",
           "price": 43198,
           "mileage": 19625,
           "dealer": "MB Motors LLC"
@@ -868,6 +1083,12 @@
           "price": 49995,
           "mileage": 34189,
           "dealer": "Eastlake Auto Brokers"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 49995,
+          "mileage": 34189,
+          "dealer": "Eastlake Auto Brokers"
         }
       ]
     },
@@ -905,6 +1126,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 47996,
+          "mileage": 51669,
+          "dealer": "Eastlake Auto Brokers"
+        },
+        {
+          "date": "2026-09-22",
           "price": 47996,
           "mileage": 51669,
           "dealer": "Eastlake Auto Brokers"
@@ -948,6 +1175,12 @@
           "price": 51199,
           "mileage": 20045,
           "dealer": "Speck Ford of Prosser"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 51199,
+          "mileage": 20045,
+          "dealer": "Speck Ford of Prosser"
         }
       ]
     },
@@ -985,6 +1218,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 43995,
+          "mileage": 33050,
+          "dealer": "burien chevrolet"
+        },
+        {
+          "date": "2026-09-22",
           "price": 43995,
           "mileage": 33050,
           "dealer": "burien chevrolet"
@@ -1028,6 +1267,12 @@
           "price": 45690,
           "mileage": 15583,
           "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 45690,
+          "mileage": 15583,
+          "dealer": "Toyota of Bellingham"
         }
       ]
     },
@@ -1065,6 +1310,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 46191,
+          "mileage": 27514,
+          "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
           "price": 46191,
           "mileage": 27514,
           "dealer": "Toyota of Bellingham"
@@ -1108,6 +1359,12 @@
           "price": 48200,
           "mileage": 16533,
           "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 48200,
+          "mileage": 16533,
+          "dealer": "Toyota of Bellingham"
         }
       ]
     },
@@ -1145,6 +1402,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 44349,
+          "mileage": 42892,
+          "dealer": "Toyota of Renton"
+        },
+        {
+          "date": "2026-09-22",
           "price": 44349,
           "mileage": 42892,
           "dealer": "Toyota of Renton"
@@ -1188,6 +1451,12 @@
           "price": 44499,
           "mileage": 43234,
           "dealer": "Toyota of Renton"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 44499,
+          "mileage": 43234,
+          "dealer": "Toyota of Renton"
         }
       ]
     },
@@ -1225,6 +1494,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 44699,
+          "mileage": 45329,
+          "dealer": "Toyota of Renton"
+        },
+        {
+          "date": "2026-09-22",
           "price": 44699,
           "mileage": 45329,
           "dealer": "Toyota of Renton"
@@ -1268,6 +1543,12 @@
           "price": 38700,
           "mileage": 27403,
           "dealer": "MB Motors LLC"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 38700,
+          "mileage": 27403,
+          "dealer": "MB Motors LLC"
         }
       ]
     },
@@ -1305,6 +1586,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 40296,
+          "mileage": 27004,
+          "dealer": "Archibalds, Inc."
+        },
+        {
+          "date": "2026-09-22",
           "price": 40296,
           "mileage": 27004,
           "dealer": "Archibalds, Inc."
@@ -1348,6 +1635,12 @@
           "price": 41648,
           "mileage": 61462,
           "dealer": "McCord's Vancouver Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 41648,
+          "mileage": 61462,
+          "dealer": "McCord's Vancouver Toyota"
         }
       ]
     },
@@ -1385,6 +1678,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 44020,
+          "mileage": 44938,
+          "dealer": "Doxon Toyota of Auburn"
+        },
+        {
+          "date": "2026-09-22",
           "price": 44020,
           "mileage": 44938,
           "dealer": "Doxon Toyota of Auburn"
@@ -1428,6 +1727,12 @@
           "price": 46981,
           "mileage": 27794,
           "dealer": "McCord's Vancouver Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 46981,
+          "mileage": 27794,
+          "dealer": "McCord's Vancouver Toyota"
         }
       ]
     },
@@ -1465,6 +1770,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 47557,
+          "mileage": 19327,
+          "dealer": "Archibalds, Inc."
+        },
+        {
+          "date": "2026-09-22",
           "price": 47557,
           "mileage": 19327,
           "dealer": "Archibalds, Inc."
@@ -1508,6 +1819,12 @@
           "price": 50198,
           "mileage": 27639,
           "dealer": "MB Motors LLC"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 50198,
+          "mileage": 27639,
+          "dealer": "MB Motors LLC"
         }
       ]
     },
@@ -1545,6 +1862,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 50198,
+          "mileage": 23279,
+          "dealer": "MB Motors LLC"
+        },
+        {
+          "date": "2026-09-22",
           "price": 50198,
           "mileage": 23279,
           "dealer": "MB Motors LLC"
@@ -1588,6 +1911,12 @@
           "price": 50998,
           "mileage": 37552,
           "dealer": "CarMax Puyallup"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 50998,
+          "mileage": 37552,
+          "dealer": "CarMax Puyallup"
         }
       ]
     },
@@ -1625,6 +1954,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 47836,
+          "mileage": 50482,
+          "dealer": "Dick Hannah Toyota"
+        },
+        {
+          "date": "2026-09-22",
           "price": 47836,
           "mileage": 50482,
           "dealer": "Dick Hannah Toyota"
@@ -1668,6 +2003,12 @@
           "price": 47999,
           "mileage": 22936,
           "dealer": "State Street Motors"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 47999,
+          "mileage": 22936,
+          "dealer": "State Street Motors"
         }
       ]
     },
@@ -1705,6 +2046,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 42188,
+          "mileage": 43784,
+          "dealer": "Dollar Car Sales"
+        },
+        {
+          "date": "2026-09-22",
           "price": 42188,
           "mileage": 43784,
           "dealer": "Dollar Car Sales"
@@ -1748,6 +2095,12 @@
           "price": 41700,
           "mileage": 44478,
           "dealer": "Brotherton Cadillac NW"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 41700,
+          "mileage": 44478,
+          "dealer": "Brotherton Cadillac NW"
         }
       ]
     },
@@ -1785,6 +2138,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 40963,
+          "mileage": 35797,
+          "dealer": "Rairdon Kia"
+        },
+        {
+          "date": "2026-09-22",
           "price": 40963,
           "mileage": 35797,
           "dealer": "Rairdon Kia"
@@ -1828,6 +2187,12 @@
           "price": 34980,
           "mileage": 54080,
           "dealer": "Dick Hannah Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 34980,
+          "mileage": 54080,
+          "dealer": "Dick Hannah Toyota"
         }
       ]
     },
@@ -1865,6 +2230,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 35866,
+          "mileage": 90176,
+          "dealer": "Dick Hannah Toyota"
+        },
+        {
+          "date": "2026-09-22",
           "price": 35866,
           "mileage": 90176,
           "dealer": "Dick Hannah Toyota"
@@ -1908,6 +2279,12 @@
           "price": 57195,
           "mileage": 1331,
           "dealer": "Speedway Chevrolet"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 57195,
+          "mileage": 1331,
+          "dealer": "Speedway Chevrolet"
         }
       ]
     },
@@ -1945,6 +2322,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 55461,
+          "mileage": 9763,
+          "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
           "price": 55461,
           "mileage": 9763,
           "dealer": "Toyota of Bellingham"
@@ -1988,6 +2371,12 @@
           "price": 54200,
           "mileage": 7446,
           "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 54200,
+          "mileage": 7446,
+          "dealer": "Toyota of Bellingham"
         }
       ]
     },
@@ -2025,6 +2414,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 49112,
+          "mileage": 15845,
+          "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
           "price": 49112,
           "mileage": 15845,
           "dealer": "Toyota of Bellingham"
@@ -2068,6 +2463,12 @@
           "price": 48091,
           "mileage": 36397,
           "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 48091,
+          "mileage": 36397,
+          "dealer": "Toyota of Bellingham"
         }
       ]
     },
@@ -2105,6 +2506,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 49591,
+          "mileage": 18010,
+          "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
           "price": 49591,
           "mileage": 18010,
           "dealer": "Toyota of Bellingham"
@@ -2148,6 +2555,12 @@
           "price": 46643,
           "mileage": 32523,
           "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 46643,
+          "mileage": 32523,
+          "dealer": "Toyota of Bellingham"
         }
       ]
     },
@@ -2185,6 +2598,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 46200,
+          "mileage": 36525,
+          "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
           "price": 46200,
           "mileage": 36525,
           "dealer": "Toyota of Bellingham"
@@ -2228,6 +2647,12 @@
           "price": 51697,
           "mileage": 3556,
           "dealer": "Northwest Chevrolet of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 51697,
+          "mileage": 3556,
+          "dealer": "Northwest Chevrolet of Bellingham"
         }
       ]
     },
@@ -2265,6 +2690,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 51795,
+          "mileage": 31280,
+          "dealer": "Lithia Chrysler Dodge Jeep Ram FIAT of Spokane"
+        },
+        {
+          "date": "2026-09-22",
           "price": 51795,
           "mileage": 31280,
           "dealer": "Lithia Chrysler Dodge Jeep Ram FIAT of Spokane"
@@ -2308,6 +2739,12 @@
           "price": 44972,
           "mileage": 59092,
           "dealer": "McCord's Vancouver Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 44972,
+          "mileage": 59092,
+          "dealer": "McCord's Vancouver Toyota"
         }
       ]
     },
@@ -2345,6 +2782,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 48999,
+          "mileage": 32489,
+          "dealer": "Seattle Finest Motors LLC"
+        },
+        {
+          "date": "2026-09-22",
           "price": 48999,
           "mileage": 32489,
           "dealer": "Seattle Finest Motors LLC"
@@ -2388,6 +2831,12 @@
           "price": 48699,
           "mileage": 6462,
           "dealer": "Imports & Classics"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 48699,
+          "mileage": 6462,
+          "dealer": "Imports & Classics"
         }
       ]
     },
@@ -2425,6 +2874,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 50883,
+          "mileage": 20844,
+          "dealer": "Archibalds, Inc."
+        },
+        {
+          "date": "2026-09-22",
           "price": 50883,
           "mileage": 20844,
           "dealer": "Archibalds, Inc."
@@ -2468,6 +2923,12 @@
           "price": 52699,
           "mileage": 5504,
           "dealer": "Imports & Classics"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 52699,
+          "mileage": 5504,
+          "dealer": "Imports & Classics"
         }
       ]
     },
@@ -2505,6 +2966,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 50999,
+          "mileage": 20942,
+          "dealer": "Rodland Toyota of Everett"
+        },
+        {
+          "date": "2026-09-22",
           "price": 50999,
           "mileage": 20942,
           "dealer": "Rodland Toyota of Everett"
@@ -2548,6 +3015,12 @@
           "price": 57700,
           "mileage": 33447,
           "dealer": "Brotherton Buick GMC in Renton"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 57700,
+          "mileage": 33447,
+          "dealer": "Brotherton Buick GMC in Renton"
         }
       ]
     },
@@ -2585,6 +3058,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 55977,
+          "mileage": 7287,
+          "dealer": "Frontier Chevrolet"
+        },
+        {
+          "date": "2026-09-22",
           "price": 55977,
           "mileage": 7287,
           "dealer": "Frontier Chevrolet"
@@ -2628,6 +3107,12 @@
           "price": 56971,
           "mileage": 10875,
           "dealer": "Kendall Subaru of Marysville"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 56971,
+          "mileage": 10875,
+          "dealer": "Kendall Subaru of Marysville"
         }
       ]
     },
@@ -2665,6 +3150,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 46999,
+          "mileage": 51571,
+          "dealer": "State Street Motors"
+        },
+        {
+          "date": "2026-09-22",
           "price": 46999,
           "mileage": 51571,
           "dealer": "State Street Motors"
@@ -2708,6 +3199,12 @@
           "price": 44606,
           "mileage": 16951,
           "dealer": "Rodland Toyota of Everett"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 44606,
+          "mileage": 16951,
+          "dealer": "Rodland Toyota of Everett"
         }
       ]
     },
@@ -2745,6 +3242,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 53188,
+          "mileage": 14701,
+          "dealer": "Rodland Toyota of Everett"
+        },
+        {
+          "date": "2026-09-22",
           "price": 53188,
           "mileage": 14701,
           "dealer": "Rodland Toyota of Everett"
@@ -2788,6 +3291,12 @@
           "price": 48148,
           "mileage": 15340,
           "dealer": "McCord's Vancouver Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 48148,
+          "mileage": 15340,
+          "dealer": "McCord's Vancouver Toyota"
         }
       ]
     },
@@ -2825,6 +3334,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 52358,
+          "mileage": 4577,
+          "dealer": "Dick Hannah Toyota"
+        },
+        {
+          "date": "2026-09-22",
           "price": 52358,
           "mileage": 4577,
           "dealer": "Dick Hannah Toyota"
@@ -2868,6 +3383,12 @@
           "price": 43345,
           "mileage": 13259,
           "dealer": "Archibalds, Inc."
+        },
+        {
+          "date": "2026-09-22",
+          "price": 43345,
+          "mileage": 13259,
+          "dealer": "Archibalds, Inc."
         }
       ]
     },
@@ -2905,6 +3426,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 44998,
+          "mileage": 53087,
+          "dealer": "CarMax - Spokane"
+        },
+        {
+          "date": "2026-09-22",
           "price": 44998,
           "mileage": 53087,
           "dealer": "CarMax - Spokane"
@@ -2948,6 +3475,12 @@
           "price": 45998,
           "mileage": 34849,
           "dealer": "CarMax Spokane"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 45998,
+          "mileage": 34849,
+          "dealer": "CarMax Spokane"
         }
       ]
     },
@@ -2985,6 +3518,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 43897,
+          "mileage": 42418,
+          "dealer": "Dick Hannah Toyota"
+        },
+        {
+          "date": "2026-09-22",
           "price": 43897,
           "mileage": 42418,
           "dealer": "Dick Hannah Toyota"
@@ -3028,6 +3567,12 @@
           "price": 37998,
           "mileage": 74778,
           "dealer": "CarMax Spokane"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 37998,
+          "mileage": 74778,
+          "dealer": "CarMax Spokane"
         }
       ]
     },
@@ -3065,6 +3610,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 38998,
+          "mileage": 87434,
+          "dealer": "CarMax Spokane"
+        },
+        {
+          "date": "2026-09-22",
           "price": 38998,
           "mileage": 87434,
           "dealer": "CarMax Spokane"
@@ -3108,6 +3659,12 @@
           "price": 32340,
           "mileage": 90450,
           "dealer": "Motorbliss Auto Sales"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 32340,
+          "mileage": 90450,
+          "dealer": "Motorbliss Auto Sales"
         }
       ]
     },
@@ -3145,6 +3702,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 37288,
+          "mileage": 58038,
+          "dealer": "Toyota of Seattle"
+        },
+        {
+          "date": "2026-09-22",
           "price": 37288,
           "mileage": 58038,
           "dealer": "Toyota of Seattle"
@@ -3188,6 +3751,12 @@
           "price": 41954,
           "mileage": 57418,
           "dealer": "Bud Clary Chevrolet Subaru"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 41954,
+          "mileage": 57418,
+          "dealer": "Bud Clary Chevrolet Subaru"
         }
       ]
     },
@@ -3225,6 +3794,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 38191,
+          "mileage": 139350,
+          "dealer": "Michael's Toyota of Bellevue"
+        },
+        {
+          "date": "2026-09-22",
           "price": 38191,
           "mileage": 139350,
           "dealer": "Michael's Toyota of Bellevue"
@@ -3268,6 +3843,12 @@
           "price": 43861,
           "mileage": 56452,
           "dealer": "McCord's Vancouver Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 43861,
+          "mileage": 56452,
+          "dealer": "McCord's Vancouver Toyota"
         }
       ]
     },
@@ -3305,6 +3886,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 45081,
+          "mileage": 43698,
+          "dealer": "Toyota of Renton"
+        },
+        {
+          "date": "2026-09-22",
           "price": 45081,
           "mileage": 43698,
           "dealer": "Toyota of Renton"
@@ -3348,6 +3935,12 @@
           "price": 49950,
           "mileage": 12779,
           "dealer": "Toyota of Bellingham"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 49950,
+          "mileage": 12779,
+          "dealer": "Toyota of Bellingham"
         }
       ]
     },
@@ -3385,6 +3978,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 48711,
+          "mileage": 9482,
+          "dealer": "McCord's Vancouver Toyota"
+        },
+        {
+          "date": "2026-09-22",
           "price": 48711,
           "mileage": 9482,
           "dealer": "McCord's Vancouver Toyota"
@@ -3428,6 +4027,12 @@
           "price": 54199,
           "mileage": 24319,
           "dealer": "Speck Hyundai of Tri-Cities"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 54199,
+          "mileage": 24319,
+          "dealer": "Speck Hyundai of Tri-Cities"
         }
       ]
     },
@@ -3465,6 +4070,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 75198,
+          "mileage": 3219,
+          "dealer": "Findlay Lexus of Spokane"
+        },
+        {
+          "date": "2026-09-22",
           "price": 75198,
           "mileage": 3219,
           "dealer": "Findlay Lexus of Spokane"
@@ -3508,6 +4119,12 @@
           "price": 49995,
           "mileage": 11119,
           "dealer": "burien chevrolet"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 49995,
+          "mileage": 11119,
+          "dealer": "burien chevrolet"
         }
       ]
     },
@@ -3545,6 +4162,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 51187,
+          "mileage": 46106,
+          "dealer": "Toyota of Kirkland"
+        },
+        {
+          "date": "2026-09-22",
           "price": 51187,
           "mileage": 46106,
           "dealer": "Toyota of Kirkland"
@@ -3588,6 +4211,12 @@
           "price": 48171,
           "mileage": 9723,
           "dealer": "Cascade Auto Center"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 48171,
+          "mileage": 9723,
+          "dealer": "Cascade Auto Center"
         }
       ]
     },
@@ -3625,6 +4254,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 44195,
+          "mileage": 43321,
+          "dealer": "Brotherton Buick GMC in Renton"
+        },
+        {
+          "date": "2026-09-22",
           "price": 44195,
           "mileage": 43321,
           "dealer": "Brotherton Buick GMC in Renton"
@@ -3668,6 +4303,12 @@
           "price": 49998,
           "mileage": 20250,
           "dealer": "AutoNation Honda Renton"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 49998,
+          "mileage": 20250,
+          "dealer": "AutoNation Honda Renton"
         }
       ]
     },
@@ -3705,6 +4346,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 45995,
+          "mileage": 15095,
+          "dealer": "Lithia Chrysler Dodge Jeep Ram FIAT of Spokane"
+        },
+        {
+          "date": "2026-09-22",
           "price": 45995,
           "mileage": 15095,
           "dealer": "Lithia Chrysler Dodge Jeep Ram FIAT of Spokane"
@@ -3748,6 +4395,12 @@
           "price": 48534,
           "mileage": 25789,
           "dealer": "Subaru of Spokane"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 48534,
+          "mileage": 25789,
+          "dealer": "Subaru of Spokane"
         }
       ]
     },
@@ -3785,6 +4438,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 51880,
+          "mileage": 23310,
+          "dealer": "Westlie Ford"
+        },
+        {
+          "date": "2026-09-22",
           "price": 51880,
           "mileage": 23310,
           "dealer": "Westlie Ford"
@@ -3828,6 +4487,12 @@
           "price": 51699,
           "mileage": 14735,
           "dealer": "Imports & Classics"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 51699,
+          "mileage": 14735,
+          "dealer": "Imports & Classics"
         }
       ]
     },
@@ -3865,6 +4530,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 56998,
+          "mileage": 7681,
+          "dealer": "Lithia Chrysler Dodge Jeep Ram FIAT of Spokane"
+        },
+        {
+          "date": "2026-09-22",
           "price": 56998,
           "mileage": 7681,
           "dealer": "Lithia Chrysler Dodge Jeep Ram FIAT of Spokane"
@@ -3908,6 +4579,12 @@
           "price": 60175,
           "mileage": 7014,
           "dealer": "Michael's Toyota of Bellevue"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 60175,
+          "mileage": 7014,
+          "dealer": "Michael's Toyota of Bellevue"
         }
       ]
     },
@@ -3945,6 +4622,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 43995,
+          "mileage": 28964,
+          "dealer": "burien chevrolet"
+        },
+        {
+          "date": "2026-09-22",
           "price": 43995,
           "mileage": 28964,
           "dealer": "burien chevrolet"
@@ -3988,6 +4671,12 @@
           "price": 50991,
           "mileage": 14088,
           "dealer": "Dick Hannah Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 50991,
+          "mileage": 14088,
+          "dealer": "Dick Hannah Toyota"
         }
       ]
     },
@@ -4025,6 +4714,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 49998,
+          "mileage": 24921,
+          "dealer": "CarMax Tulalip"
+        },
+        {
+          "date": "2026-09-22",
           "price": 49998,
           "mileage": 24921,
           "dealer": "CarMax Tulalip"
@@ -4068,6 +4763,12 @@
           "price": 59945,
           "mileage": 9941,
           "dealer": "Chevrolet of Everett"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 59945,
+          "mileage": 9941,
+          "dealer": "Chevrolet of Everett"
         }
       ]
     },
@@ -4105,6 +4806,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 50999,
+          "mileage": 1478,
+          "dealer": "Swickard Toyota"
+        },
+        {
+          "date": "2026-09-22",
           "price": 50999,
           "mileage": 1478,
           "dealer": "Swickard Toyota"
@@ -4148,6 +4855,12 @@
           "price": 53575,
           "mileage": 2700,
           "dealer": "Dick Hannah Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 53575,
+          "mileage": 2700,
+          "dealer": "Dick Hannah Toyota"
         }
       ]
     },
@@ -4185,6 +4898,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 60162,
+          "mileage": 7363,
+          "dealer": "Michael's Toyota of Bellevue"
+        },
+        {
+          "date": "2026-09-22",
           "price": 60162,
           "mileage": 7363,
           "dealer": "Michael's Toyota of Bellevue"

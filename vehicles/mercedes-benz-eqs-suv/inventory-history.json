@@ -1,9 +1,15 @@
 {
   "retentionDays": 7,
-  "updatedAt": "2026-09-21T01:57:40.786546+00:00",
+  "updatedAt": "2026-09-22T22:14:13.394391+00:00",
   "snapshots": [
     {
       "date": "2026-09-20",
+      "vins": [
+        "4JGDM2EB3PA027284"
+      ]
+    },
+    {
+      "date": "2026-09-22",
       "vins": [
         "4JGDM2EB3PA027284"
       ]
@@ -44,6 +50,12 @@
       "observations": [
         {
           "date": "2026-09-20",
+          "price": 49438,
+          "mileage": 18566,
+          "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-22",
           "price": 49438,
           "mileage": 18566,
           "dealer": "Mercedes-Benz of Bellevue"

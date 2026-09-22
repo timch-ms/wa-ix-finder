@@ -1,17 +1,7 @@
 {
   "retentionDays": 7,
-  "updatedAt": "2026-09-21T15:53:47.388019+00:00",
+  "updatedAt": "2026-09-22T22:14:06.903476+00:00",
   "snapshots": [
-    {
-      "date": "2026-09-15",
-      "vins": [
-        "7JDE23KL9SG005966",
-        "7JDE23KLXSG000680",
-        "7JDE23VL3SG007904",
-        "7JDEV3KL2SG000597",
-        "7JDEV3VK4SG016898"
-      ]
-    },
     {
       "date": "2026-09-17",
       "vins": [
@@ -43,6 +33,17 @@
         "7JDEV3KL2SG000597",
         "7JDEV3VK4SG016898"
       ]
+    },
+    {
+      "date": "2026-09-22",
+      "vins": [
+        "7JDDA3VL3TG060621",
+        "7JDE23KL9SG005966",
+        "7JDE23KLXSG000680",
+        "7JDE23VL3SG007904",
+        "7JDEV3KL2SG000597",
+        "7JDEV3VK4SG016898"
+      ]
     }
   ],
   "vehicles": {
@@ -53,37 +54,31 @@
         "year": 2025,
         "make": "Volvo",
         "model": "EX90",
-        "trim": "Twin Motor Performance Ultra 6-Seater",
-        "price": 57950,
+        "trim": "Ultra",
+        "price": 58150,
         "mileage": 21804,
-        "exteriorColor": "Onyx Black",
+        "exteriorColor": "Onyx Black Metallic",
         "interiorColor": "Zinc",
         "seats": null,
         "drivetrain": "AWD",
         "powertrain": "Electric",
-        "dealer": "Volvo Cars Bellevue",
-        "officialBrandDealer": true,
-        "city": "Bellevue",
+        "dealer": "BMW of Lynnwood",
+        "officialBrandDealer": false,
+        "city": "Lynnwood",
         "state": "WA",
-        "zip": "98004",
-        "cpo": false,
+        "zip": "98037",
+        "cpo": true,
         "oneOwner": false,
         "accidentFree": true,
         "accidentCount": 0,
         "usageType": "Vehicle Use",
         "image": "https://retail.photos.vin/7JDE23KL9SG005966-1.jpg",
-        "photoCount": 9,
-        "url": "https://volvocarsbellevue.com/used/Volvo/2025-Volvo-EX90-for-sale-Bellevue-WA-24e54bf5ac183b953cbae2d1118e76f0.htm",
+        "photoCount": 6,
+        "url": "https://www.bmwlynnwood.com/used-Lynnwood-2025-Volvo-EX90-Ultra-7JDE23KL9SG005966",
         "listedAt": "2026-08-21 19:21:08",
         "firstSeenDate": "2026-09-08"
       },
       "observations": [
-        {
-          "date": "2026-09-15",
-          "price": 58000,
-          "mileage": 21804,
-          "dealer": "Volvo Cars Bellevue"
-        },
         {
           "date": "2026-09-17",
           "price": 58000,
@@ -101,6 +96,12 @@
           "price": 57950,
           "mileage": 21804,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 58150,
+          "mileage": 21804,
+          "dealer": "BMW of Lynnwood"
         }
       ]
     },
@@ -111,37 +112,31 @@
         "year": 2025,
         "make": "Volvo",
         "model": "EX90",
-        "trim": "Twin Motor Performance Ultra 6-Seater",
-        "price": 62800,
+        "trim": "Ultra",
+        "price": 63000,
         "mileage": 5645,
-        "exteriorColor": "Silver Dawn",
+        "exteriorColor": "Silver Dawn Metallic",
         "interiorColor": "Charcoal",
         "seats": null,
         "drivetrain": "AWD",
         "powertrain": "Electric",
-        "dealer": "Volvo Cars Bellevue",
-        "officialBrandDealer": true,
-        "city": "Bellevue",
+        "dealer": "BMW of Lynnwood",
+        "officialBrandDealer": false,
+        "city": "Lynnwood",
         "state": "WA",
-        "zip": "98004",
-        "cpo": false,
+        "zip": "98037",
+        "cpo": true,
         "oneOwner": false,
         "accidentFree": true,
         "accidentCount": 0,
         "usageType": "Vehicle Use",
         "image": "https://retail.photos.vin/7JDE23KLXSG000680-1.jpg",
         "photoCount": 6,
-        "url": "https://volvocarsbellevue.com/used/Volvo/2025-Volvo-EX90-for-sale-Bellevue-WA-4e189a6dac18460621052e7cbd966f86.htm",
+        "url": "https://www.bmwlynnwood.com/used-Lynnwood-2025-Volvo-EX90-Ultra-7JDE23KLXSG000680",
         "listedAt": "2026-08-29 20:15:30",
         "firstSeenDate": "2026-09-08"
       },
       "observations": [
-        {
-          "date": "2026-09-15",
-          "price": 65075,
-          "mileage": 5645,
-          "dealer": "Volvo Cars Bellevue"
-        },
         {
           "date": "2026-09-17",
           "price": 65075,
@@ -159,6 +154,12 @@
           "price": 62800,
           "mileage": 5645,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 63000,
+          "mileage": 5645,
+          "dealer": "BMW of Lynnwood"
         }
       ]
     },
@@ -169,37 +170,31 @@
         "year": 2025,
         "make": "Volvo",
         "model": "EX90",
-        "trim": "Twin Motor Performance Ultra 7-Seater",
-        "price": 60600,
+        "trim": "Ultra",
+        "price": 60800,
         "mileage": 13861,
-        "exteriorColor": "Denim Blue",
+        "exteriorColor": "Denim Blue Metallic",
         "interiorColor": "Dawn",
         "seats": null,
         "drivetrain": "AWD",
         "powertrain": "Electric",
-        "dealer": "Volvo Cars Bellevue",
-        "officialBrandDealer": true,
-        "city": "Bellevue",
+        "dealer": "BMW of Lynnwood",
+        "officialBrandDealer": false,
+        "city": "Lynnwood",
         "state": "WA",
-        "zip": "98004",
+        "zip": "98037",
         "cpo": true,
         "oneOwner": false,
         "accidentFree": true,
         "accidentCount": 0,
         "usageType": "Personal Use",
         "image": "https://retail.photos.vin/7JDE23VL3SG007904-1.jpg",
-        "photoCount": 34,
-        "url": "https://volvocarsbellevue.com/certified/Volvo/2025-Volvo-EX90-for-sale-Bellevue-WA-48f2525cac1850bf7aa5ee516eac8a0b.htm",
+        "photoCount": 6,
+        "url": "https://www.bmwlynnwood.com/used-Lynnwood-2025-Volvo-EX90-Ultra-7JDE23VL3SG007904",
         "listedAt": "2026-08-28 19:34:55",
         "firstSeenDate": "2026-09-08"
       },
       "observations": [
-        {
-          "date": "2026-09-15",
-          "price": 59225,
-          "mileage": 13861,
-          "dealer": "Volvo Cars Bellevue"
-        },
         {
           "date": "2026-09-17",
           "price": 59225,
@@ -217,6 +212,12 @@
           "price": 60600,
           "mileage": 13861,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 60800,
+          "mileage": 13861,
+          "dealer": "BMW of Lynnwood"
         }
       ]
     },
@@ -227,37 +228,31 @@
         "year": 2025,
         "make": "Volvo",
         "model": "EX90",
-        "trim": "Twin Motor Ultra 6-Seater",
-        "price": 63988,
+        "trim": "Ultra",
+        "price": 64188,
         "mileage": 13793,
-        "exteriorColor": "Onyx Black",
+        "exteriorColor": "Onyx Black Metallic",
         "interiorColor": "Dawn",
         "seats": null,
         "drivetrain": "AWD",
         "powertrain": "Electric",
-        "dealer": "Volvo Cars Bellevue",
-        "officialBrandDealer": true,
-        "city": "Bellevue",
+        "dealer": "BMW of Lynnwood",
+        "officialBrandDealer": false,
+        "city": "Lynnwood",
         "state": "WA",
-        "zip": "98004",
-        "cpo": false,
+        "zip": "98037",
+        "cpo": true,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
         "usageType": "Personal Use",
         "image": "https://retail.photos.vin/7JDEV3KL2SG000597-1.jpg",
-        "photoCount": 11,
-        "url": "https://volvocarsbellevue.com/used/Volvo/2025-Volvo-EX90-for-sale-Bellevue-WA-85e5b7a0ac183586ac64e56a5459507a.htm",
+        "photoCount": 6,
+        "url": "https://www.bmwlynnwood.com/used-Lynnwood-2025-Volvo-EX90-Ultra-7JDEV3KL2SG000597",
         "listedAt": "2026-08-09 02:37:57",
         "firstSeenDate": "2026-09-08"
       },
       "observations": [
-        {
-          "date": "2026-09-15",
-          "price": 63988,
-          "mileage": 13793,
-          "dealer": "Volvo Cars Bellevue"
-        },
         {
           "date": "2026-09-17",
           "price": 63988,
@@ -275,6 +270,12 @@
           "price": 63988,
           "mileage": 13793,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 64188,
+          "mileage": 13793,
+          "dealer": "BMW of Lynnwood"
         }
       ]
     },
@@ -285,37 +286,31 @@
         "year": 2025,
         "make": "Volvo",
         "model": "EX90",
-        "trim": "Twin Motor Plus 7-Seater",
-        "price": 59600,
+        "trim": "Plus",
+        "price": 59800,
         "mileage": 7980,
-        "exteriorColor": "Onyx Black",
+        "exteriorColor": "Onyx Black Metallic",
         "interiorColor": "Charcoal",
         "seats": null,
         "drivetrain": "AWD",
         "powertrain": "Electric",
-        "dealer": "Volvo Cars Bellevue",
-        "officialBrandDealer": true,
-        "city": "Bellevue",
+        "dealer": "BMW of Lynnwood",
+        "officialBrandDealer": false,
+        "city": "Lynnwood",
         "state": "WA",
-        "zip": "98004",
-        "cpo": false,
+        "zip": "98037",
+        "cpo": true,
         "oneOwner": false,
         "accidentFree": true,
         "accidentCount": 0,
         "usageType": "Multiple Use",
         "image": "https://retail.photos.vin/7JDEV3VK4SG016898-1.jpg",
-        "photoCount": 34,
-        "url": "https://volvocarsbellevue.com/used/Volvo/2025-Volvo-EX90-for-sale-Bellevue-WA-fe3bd775ac18261d3a8330a101ed7d4d.htm",
+        "photoCount": 6,
+        "url": "https://www.bmwlynnwood.com/used-Lynnwood-2025-Volvo-EX90-Plus-7JDEV3VK4SG016898",
         "listedAt": "2026-09-04 16:28:37",
         "firstSeenDate": "2026-09-08"
       },
       "observations": [
-        {
-          "date": "2026-09-15",
-          "price": 63189,
-          "mileage": 7980,
-          "dealer": "Volvo Cars Bellevue"
-        },
         {
           "date": "2026-09-17",
           "price": 63189,
@@ -333,6 +328,12 @@
           "price": 59600,
           "mileage": 7980,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 59800,
+          "mileage": 7980,
+          "dealer": "BMW of Lynnwood"
         }
       ]
     },
@@ -346,16 +347,16 @@
         "trim": "Ultra",
         "price": 86088,
         "mileage": 8299,
-        "exteriorColor": "Denim Blu Met",
-        "interiorColor": "Char Ventilated Nappa Lth",
+        "exteriorColor": "Denim Blue Metallic",
+        "interiorColor": "Charcoal",
         "seats": null,
         "drivetrain": null,
         "powertrain": "Electric",
-        "dealer": "Swickard Toyota",
+        "dealer": "BMW of Lynnwood",
         "officialBrandDealer": false,
-        "city": "Edmonds",
+        "city": "Lynnwood",
         "state": "WA",
-        "zip": "98026",
+        "zip": "98037",
         "cpo": false,
         "oneOwner": null,
         "accidentFree": null,
@@ -363,7 +364,7 @@
         "usageType": "Not listed",
         "image": "https://retail.photos.vin/7JDDA3VL3TG060621-1.jpg",
         "photoCount": 2,
-        "url": "https://www.swickardtoyota.com/used-Edmonds-2026-Volvo-EX90-Ultra-7JDDA3VL3TG060621",
+        "url": "https://www.bmwlynnwood.com/used-Lynnwood-2026-Volvo-EX90-Ultra-7JDDA3VL3TG060621",
         "listedAt": "2026-09-17 19:36:31",
         "firstSeenDate": "2026-09-19"
       },
@@ -379,6 +380,12 @@
           "price": 86088,
           "mileage": 8299,
           "dealer": "Swickard Toyota"
+        },
+        {
+          "date": "2026-09-22",
+          "price": 86088,
+          "mileage": 8299,
+          "dealer": "BMW of Lynnwood"
         }
       ]
     }
