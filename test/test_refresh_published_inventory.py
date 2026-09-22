@@ -80,6 +80,60 @@ class PublishedInventoryRefreshTests(TestCase):
         self.assertFalse(refresh.reserve_refresh("2026-09-09", self.state_file))
         self.assertFalse(refresh.reserve_refresh("2026-09-08", self.state_file))
 
+    def test_failed_refresh_can_be_retried_same_day(self):
+        refresh.write_json(
+            self.state_file,
+            {
+                "lastAttemptDate": "2026-09-09",
+                "lastAttemptCalls": 3,
+                "lastError": "timed out",
+            },
+        )
+
+        self.assertTrue(
+            refresh.reserve_refresh(
+                "2026-09-09",
+                self.state_file,
+                retry_failed=True,
+            )
+        )
+        state = refresh.read_json(self.state_file, {})
+        self.assertEqual(state["lastAttemptCalls"], 3)
+        self.assertIsNone(state["lastError"])
+
+    def test_retry_rejects_success_and_exhausted_daily_limit(self):
+        refresh.write_json(
+            self.state_file,
+            {
+                "lastAttemptDate": "2026-09-09",
+                "lastAttemptCalls": 3,
+                "lastError": None,
+            },
+        )
+        self.assertFalse(
+            refresh.reserve_refresh(
+                "2026-09-09",
+                self.state_file,
+                retry_failed=True,
+            )
+        )
+
+        refresh.write_json(
+            self.state_file,
+            {
+                "lastAttemptDate": "2026-09-09",
+                "lastAttemptCalls": 20,
+                "lastError": "timed out",
+            },
+        )
+        self.assertFalse(
+            refresh.reserve_refresh(
+                "2026-09-09",
+                self.state_file,
+                retry_failed=True,
+            )
+        )
+
     def test_reservation_honors_two_day_interval(self):
         refresh.server.SITE_CONFIG_FILE.write_text(
             '{"make":"BMW","model":"iX","minimumYear":2022,'
@@ -149,6 +203,36 @@ class PublishedInventoryRefreshTests(TestCase):
         self.assertIn("Could not reach Auto.dev", state["lastError"])
         self.assertEqual(self.snapshot_file.read_text(encoding="utf-8"), original_snapshot)
         self.assertFalse(self.history_file.exists())
+
+    def test_retry_counts_prior_calls_toward_daily_limit(self):
+        refresh.write_json(
+            self.state_file,
+            {
+                "lastAttemptDate": "2026-09-09",
+                "lastAttemptCalls": 8,
+                "lastError": None,
+            },
+        )
+        calls = []
+
+        def fetcher(_key, page, _config):
+            calls.append(page)
+            return {"total": 1, "data": [raw_listing("WB523CF0000000002")]}
+
+        succeeded = refresh.refresh_snapshot(
+            "2026-09-09",
+            "test",
+            state_file=self.state_file,
+            snapshot_file=self.snapshot_file,
+            cache_file=self.cache_file,
+            history_file=self.history_file,
+            fetcher=fetcher,
+        )
+
+        state = refresh.read_json(self.state_file, {})
+        self.assertTrue(succeeded)
+        self.assertEqual(calls, [1])
+        self.assertEqual(state["lastAttemptCalls"], 9)
 
     def test_implausibly_empty_refresh_retains_previous_snapshot(self):
         refresh.reserve_refresh("2026-09-09", self.state_file)

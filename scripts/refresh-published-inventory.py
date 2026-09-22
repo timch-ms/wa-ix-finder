@@ -108,10 +108,18 @@ def server_vehicle_context(config, paths):
         exporter.OVERRIDES = original["export_overrides"]
 
 
-def reserve_refresh(date, state_file, config=None):
+def reserve_refresh(date, state_file, config=None, retry_failed=False):
     config = config or server.read_site_config()
     state = read_json(state_file, {})
     last_attempt = state.get("lastAttemptDate")
+    prior_calls = state.get("lastAttemptCalls", 0)
+    can_retry = (
+        retry_failed
+        and last_attempt == date
+        and bool(state.get("lastError"))
+        and isinstance(prior_calls, int)
+        and prior_calls < MAX_CALLS_PER_VEHICLE_PER_DAY
+    )
     interval_days = config["refresh"].get(
         "intervalDays",
         config.get("refreshIntervalDays", 1),
@@ -123,17 +131,20 @@ def reserve_refresh(date, state_file, config=None):
         if last_attempt
         else interval_days
     )
-    should_refresh = days_since_attempt >= interval_days
+    should_refresh = can_retry or days_since_attempt >= interval_days
     if should_refresh:
-        state.update(
-            {
-                "lastAttemptDate": date,
-                "lastAttemptCalls": 0,
-                "lastError": None,
-            }
-        )
+        state["lastAttemptDate"] = date
+        state["lastError"] = None
+        if not can_retry:
+            state["lastAttemptCalls"] = 0
         write_json(state_file, state)
-        print(f"Reserved the inventory refresh for {date}.")
+        if can_retry:
+            print(
+                f"Reserved a failed refresh retry for {date}; "
+                f"{prior_calls} of {MAX_CALLS_PER_VEHICLE_PER_DAY} calls already used."
+            )
+        else:
+            print(f"Reserved the inventory refresh for {date}.")
     else:
         print(
             f"Inventory refresh last attempted on {last_attempt}; the configured "
@@ -145,6 +156,7 @@ def reserve_refresh(date, state_file, config=None):
 def reserve_all(
     date,
     requested_slugs=None,
+    retry_failed=False,
     config_file=CONFIG_FILE,
     vehicles_dir=VEHICLES_DIR,
 ):
@@ -161,7 +173,7 @@ def reserve_all(
         if not config.get("refresh", {}).get("enabled", False):
             continue
         paths = vehicle_paths(config["slug"], vehicles_dir)
-        if reserve_refresh(date, paths["state"], config):
+        if reserve_refresh(date, paths["state"], config, retry_failed=retry_failed):
             reserved.append(config["slug"])
     set_output("should_refresh", bool(reserved))
     set_output("reserved_vehicles", ",".join(reserved))
@@ -220,6 +232,18 @@ def refresh_snapshot(
     state = read_json(state_file, {})
     if state.get("lastAttemptDate") != date:
         raise RuntimeError(f"The {date} refresh was not reserved before API access.")
+    calls_already_used = state.get("lastAttemptCalls", 0)
+    if not isinstance(calls_already_used, int) or calls_already_used < 0:
+        raise ValueError("lastAttemptCalls must be a non-negative integer.")
+    remaining_calls = MAX_CALLS_PER_VEHICLE_PER_DAY - calls_already_used
+    if remaining_calls <= 0:
+        state["lastError"] = (
+            f"The global {MAX_CALLS_PER_VEHICLE_PER_DAY}-call daily limit "
+            "has already been reached."
+        )
+        write_json(state_file, state)
+        print(f"Refresh failed after {calls_already_used} calls: {state['lastError']}")
+        return False
 
     snapshot = read_json(snapshot_file, {})
     previous_count = len(snapshot.get("listings") or [])
@@ -230,9 +254,11 @@ def refresh_snapshot(
             fetcher=fetcher,
             date=date,
             api_key=api_key,
-            max_calls=MAX_CALLS_PER_VEHICLE_PER_DAY,
+            max_calls=remaining_calls,
         )
-        state["lastAttemptCalls"] = refreshed.get("lastAttemptCalls", 0)
+        state["lastAttemptCalls"] = (
+            calls_already_used + refreshed.get("lastAttemptCalls", 0)
+        )
         state["lastError"] = refreshed.get("refreshError")
         refreshed_count = refreshed.get("listingCount", 0)
         minimum_count = max(1, int(previous_count * MINIMUM_RETENTION_RATIO))
@@ -322,11 +348,12 @@ def main():
     parser.add_argument("operation", choices=("reserve-all", "refresh-all"))
     parser.add_argument("--date", required=True)
     parser.add_argument("--vehicles", default="")
+    parser.add_argument("--retry-failed", action="store_true")
     args = parser.parse_args()
 
     if args.operation == "reserve-all":
         slugs = [slug for slug in args.vehicles.split(",") if slug]
-        reserve_all(args.date, slugs)
+        reserve_all(args.date, slugs, retry_failed=args.retry_failed)
         return
 
     slugs = [slug for slug in args.vehicles.split(",") if slug]

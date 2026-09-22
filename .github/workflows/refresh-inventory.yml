@@ -10,6 +10,11 @@ on:
         description: "Optional comma-separated vehicle slugs; blank checks all configured vehicles"
         required: false
         type: string
+      retryFailed:
+        description: "Retry selected vehicles that already failed today"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -66,9 +71,18 @@ jobs:
         if: steps.credential.outputs.configured == 'true'
         shell: pwsh
         run: |
-          python scripts\refresh-published-inventory.py reserve-all `
-            --date "${{ steps.date.outputs.value }}" `
-            --vehicles "${{ inputs.vehicles }}"
+          $arguments = @(
+            "scripts\refresh-published-inventory.py",
+            "reserve-all",
+            "--date",
+            "${{ steps.date.outputs.value }}",
+            "--vehicles",
+            "${{ inputs.vehicles }}"
+          )
+          if ("${{ inputs.retryFailed }}" -eq "true") {
+            $arguments += "--retry-failed"
+          }
+          python @arguments
 
       - name: Persist attempt reservations
         if: steps.reserve.outputs.should_refresh == 'true'
