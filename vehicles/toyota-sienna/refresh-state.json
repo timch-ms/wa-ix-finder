@@ -1,7 +1,7 @@
 {
   "lastAttemptDate": "2026-09-22",
-  "lastAttemptCalls": 0,
-  "lastError": null,
+  "lastAttemptCalls": 1,
+  "lastError": "Auto.dev refresh failed: The read operation timed out",
   "lastSuccessfulRefreshDate": "2026-09-20",
   "knownVins": {
     "5TDYRKEC7NS117845": "2026-09-08",
