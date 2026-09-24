@@ -1,8 +1,8 @@
 {
   "lastAttemptDate": "2026-09-24",
-  "lastAttemptCalls": 0,
+  "lastAttemptCalls": 8,
   "lastError": null,
-  "lastSuccessfulRefreshDate": "2026-09-22",
+  "lastSuccessfulRefreshDate": "2026-09-24",
   "knownVins": {
     "5TDYRKEC7NS117845": "2026-09-08",
     "5TDGSKFCXPS089119": "2026-09-08",
@@ -129,6 +129,9 @@
     "5TDESKFC1SS222950": "2026-09-20",
     "5TDYRKEC8TS325939": "2026-09-20",
     "5TDXSKFC8TS252389": "2026-09-20",
-    "5TDCSKFC8TS236546": "2026-09-20"
+    "5TDCSKFC8TS236546": "2026-09-20",
+    "5TDGSKFC1PS093284": "2026-09-24",
+    "5TDESKFC2SS223248": "2026-09-24",
+    "5TDYRKEC9SS256032": "2026-09-24"
   }
 }

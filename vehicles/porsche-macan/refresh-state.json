@@ -1,7 +1,7 @@
 {
   "lastAttemptDate": "2026-09-24",
-  "lastSuccessfulRefreshDate": "2026-09-22",
-  "lastAttemptCalls": 0,
+  "lastSuccessfulRefreshDate": "2026-09-24",
+  "lastAttemptCalls": 7,
   "lastError": null,
   "knownVins": {
     "WP1AA2XA0SL002887": "2026-09-20",
@@ -74,6 +74,10 @@
     "WP1AA2A57PLB21669": "2026-09-22",
     "WP1AF2A54NLB31977": "2026-09-22",
     "WP1AF2A50NLB30258": "2026-09-22",
-    "WP1AA2A58RLB10778": "2026-09-22"
+    "WP1AA2A58RLB10778": "2026-09-22",
+    "WP1AF2A59PLB58062": "2026-09-24",
+    "WP1AF2A51TLB62326": "2026-09-24",
+    "WP1AA2A51PLB11252": "2026-09-24",
+    "WP1AA2A53TLB03048": "2026-09-24"
   }
 }

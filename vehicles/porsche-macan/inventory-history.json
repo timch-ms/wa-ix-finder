@@ -1,6 +1,6 @@
 {
   "retentionDays": 7,
-  "updatedAt": "2026-09-22T14:08:02.506217+00:00",
+  "updatedAt": "2026-09-24T14:13:01.136749+00:00",
   "snapshots": [
     {
       "date": "2026-09-20",
@@ -84,6 +84,81 @@
         "WP1AG2A52TLB40218",
         "WP1AG2A57SLB43775"
       ]
+    },
+    {
+      "date": "2026-09-24",
+      "vins": [
+        "WP1AA2A50SLB08254",
+        "WP1AA2A50TLB02357",
+        "WP1AA2A50TLB03069",
+        "WP1AA2A51PLB11252",
+        "WP1AA2A51PLB16600",
+        "WP1AA2A52NLB05053",
+        "WP1AA2A52RLB14308",
+        "WP1AA2A52SLB03220",
+        "WP1AA2A52SLB06859",
+        "WP1AA2A52SLB13715",
+        "WP1AA2A52TLB00951",
+        "WP1AA2A52TLB02473",
+        "WP1AA2A52TLB05406",
+        "WP1AA2A52TLB06233",
+        "WP1AA2A53NLB04008",
+        "WP1AA2A53PLB06344",
+        "WP1AA2A53PLB18803",
+        "WP1AA2A53SLB13609",
+        "WP1AA2A53TLB03048",
+        "WP1AA2A53TLB03373",
+        "WP1AA2A53TLB06015",
+        "WP1AA2A54SLB04045",
+        "WP1AA2A54SLB07222",
+        "WP1AA2A54SLB15255",
+        "WP1AA2A54TLB00904",
+        "WP1AA2A54TLB06234",
+        "WP1AA2A55PLB11495",
+        "WP1AA2A55RLB03349",
+        "WP1AA2A55TLB03259",
+        "WP1AA2A56RLB04168",
+        "WP1AA2A56TLB03237",
+        "WP1AA2A56TLB03531",
+        "WP1AA2A56TLB06378",
+        "WP1AA2A57PLB21669",
+        "WP1AA2A57RLB11274",
+        "WP1AA2A57RLB14305",
+        "WP1AA2A57SLB01110",
+        "WP1AA2A57TLB01061",
+        "WP1AA2A57TLB03392",
+        "WP1AA2A58RLB00610",
+        "WP1AA2A58RLB14300",
+        "WP1AA2A58RLB16368",
+        "WP1AA2A58RLB16385",
+        "WP1AA2A58SLB06879",
+        "WP1AA2A58TLB03398",
+        "WP1AA2A58TLB03529",
+        "WP1AA2A58TLB06379",
+        "WP1AA2A59TLB06231",
+        "WP1AA2A5XPLB19754",
+        "WP1AA2A5XRLB13908",
+        "WP1AA2A5XSLB09279",
+        "WP1AA2A5XSLB15115",
+        "WP1AA2A5XTLB01930",
+        "WP1AA2A5XTLB02897",
+        "WP1AA2A5XTLB05654",
+        "WP1AD2XA9SL076428",
+        "WP1AF2A51PLB55091",
+        "WP1AF2A51TLB62326",
+        "WP1AF2A53PLB55075",
+        "WP1AF2A54NLB31784",
+        "WP1AF2A54NLB31977",
+        "WP1AF2A55TLB60188",
+        "WP1AF2A56SLB52082",
+        "WP1AF2A57NLB32198",
+        "WP1AF2A59PLB56554",
+        "WP1AF2A59PLB58062",
+        "WP1AF2A5XPLB55736",
+        "WP1AG2A50PLB36562",
+        "WP1AG2A51RLB38811",
+        "WP1AG2A57SLB43775"
+      ]
     }
   ],
   "vehicles": {
@@ -146,7 +221,7 @@
         "exteriorColor": "Frozen Blue Metallic",
         "interiorColor": "Black Chalk",
         "seats": null,
-        "drivetrain": null,
+        "drivetrain": "RWD",
         "powertrain": "Electric",
         "dealer": "Volvo Cars Bellevue",
         "officialBrandDealer": false,
@@ -154,12 +229,12 @@
         "state": "WA",
         "zip": "98004",
         "cpo": false,
-        "oneOwner": null,
-        "accidentFree": null,
-        "accidentCount": null,
-        "usageType": "Not listed",
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AD2XA9SL076428-1.jpg",
-        "photoCount": 1,
+        "photoCount": 30,
         "url": "https://volvocarsbellevue.com/used/Porsche/2025-Porsche-Macan-for-sale-Bellevue-WA-b5a0cc61ac1817c99dfd0f5c4a1cba9c.htm",
         "listedAt": "2026-09-18 19:35:24",
         "firstSeenDate": "2026-09-20"
@@ -173,6 +248,12 @@
         },
         {
           "date": "2026-09-22",
+          "price": 74855,
+          "mileage": 4325,
+          "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 74855,
           "mileage": 4325,
           "dealer": "Volvo Cars Bellevue"
@@ -190,22 +271,22 @@
         "price": 106888,
         "mileage": 9553,
         "exteriorColor": "Volcano Grey Metallic",
-        "interiorColor": "Black w/Papaya Stitching leather",
-        "seats": 5,
+        "interiorColor": "Black",
+        "seats": null,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
-        "dealer": "Porsche Seattle North",
-        "officialBrandDealer": true,
-        "city": "Lynnwood",
+        "dealer": "Volvo Cars Bellevue",
+        "officialBrandDealer": false,
+        "city": "Bellevue",
         "state": "WA",
-        "zip": "98037",
-        "cpo": true,
+        "zip": "98004",
+        "cpo": false,
         "oneOwner": false,
         "accidentFree": true,
         "accidentCount": 0,
         "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AF2A55TLB60188-1.jpg",
-        "photoCount": 30,
+        "photoCount": 35,
         "url": "https://volvocarsbellevue.com/used/Porsche/2026-Porsche-Macan-for-sale-Bellevue-WA-b8cee003ac184b703a7f6e3fc03de509.htm",
         "listedAt": "2026-08-09 02:35:39",
         "firstSeenDate": "2026-09-22"
@@ -216,6 +297,12 @@
           "price": 106888,
           "mileage": 9553,
           "dealer": "Porsche Seattle North"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 106888,
+          "mileage": 9553,
+          "dealer": "Volvo Cars Bellevue"
         }
       ]
     },
@@ -229,8 +316,8 @@
         "trim": "Trim not listed",
         "price": 67995,
         "mileage": 6030,
-        "exteriorColor": "Carrara White Metallic",
-        "interiorColor": "Black/Bordeaux Red leather",
+        "exteriorColor": "White",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -239,11 +326,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A52TLB06233-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A52TLB06233",
@@ -253,6 +340,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67995,
+          "mileage": 6030,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67995,
           "mileage": 6030,
           "dealer": "Porsche Bellevue"
@@ -269,8 +362,8 @@
         "trim": "Trim not listed",
         "price": 65736,
         "mileage": 5924,
-        "exteriorColor": "Dolomite Silver Metallic",
-        "interiorColor": "Black leather",
+        "exteriorColor": "Silver",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -279,11 +372,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A54TLB00904-1.jpg",
         "photoCount": 28,
         "url": "https://www.carfax.com/vehicle/WP1AA2A54TLB00904",
@@ -293,6 +386,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 65736,
+          "mileage": 5924,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 65736,
           "mileage": 5924,
           "dealer": "Porsche Bellevue"
@@ -310,7 +409,7 @@
         "price": 67995,
         "mileage": 6849,
         "exteriorColor": "White",
-        "interiorColor": "Black/Mojave Beige leather/premium cloth",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -319,11 +418,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A54TLB06234-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A54TLB06234",
@@ -333,6 +432,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67995,
+          "mileage": 6849,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67995,
           "mileage": 6849,
           "dealer": "Porsche Bellevue"
@@ -376,6 +481,12 @@
           "price": 66273,
           "mileage": 5082,
           "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 66273,
+          "mileage": 5082,
+          "dealer": "Porsche Bellevue"
         }
       ]
     },
@@ -389,8 +500,8 @@
         "trim": "Trim not listed",
         "price": 67218,
         "mileage": 4335,
-        "exteriorColor": "Volcano Grey Metallic",
-        "interiorColor": "Black leather/premium cloth",
+        "exteriorColor": "Gray",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -399,11 +510,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A56TLB03531-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A56TLB03531",
@@ -413,6 +524,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67218,
+          "mileage": 4335,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67218,
           "mileage": 4335,
           "dealer": "Porsche Bellevue"
@@ -430,7 +547,7 @@
         "price": 65995,
         "mileage": 5084,
         "exteriorColor": "Black",
-        "interiorColor": "Agate Grey leather/premium cloth",
+        "interiorColor": "Gray",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -439,11 +556,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A56TLB06378-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A56TLB06378",
@@ -453,6 +570,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 65995,
+          "mileage": 5084,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 65995,
           "mileage": 5084,
           "dealer": "Porsche Bellevue"
@@ -469,8 +592,8 @@
         "trim": "Trim not listed",
         "price": 65723,
         "mileage": 3898,
-        "exteriorColor": "Volcano Grey Metallic",
-        "interiorColor": "Black leather/premium cloth",
+        "exteriorColor": "Gray",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -479,11 +602,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A58TLB03529-1.jpg",
         "photoCount": 29,
         "url": "https://www.carfax.com/vehicle/WP1AA2A58TLB03529",
@@ -493,6 +616,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 65723,
+          "mileage": 3898,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 65723,
           "mileage": 3898,
           "dealer": "Porsche Bellevue"
@@ -536,6 +665,12 @@
           "price": 66273,
           "mileage": 4163,
           "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 66273,
+          "mileage": 4163,
+          "dealer": "Porsche Bellevue"
         }
       ]
     },
@@ -549,8 +684,8 @@
         "trim": "T",
         "price": 67995,
         "mileage": 5767,
-        "exteriorColor": "Gentian Blue Metallic",
-        "interiorColor": "Black w/Silver Stitching leather/premium cloth",
+        "exteriorColor": "Blue",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -559,11 +694,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A5XTLB05654-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A5XTLB05654",
@@ -573,6 +708,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67995,
+          "mileage": 5767,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67995,
           "mileage": 5767,
           "dealer": "Porsche Bellevue"
@@ -590,7 +731,7 @@
         "price": 67995,
         "mileage": 5665,
         "exteriorColor": "White",
-        "interiorColor": "Black/Bordeaux Red leather",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -599,11 +740,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A52TLB05406-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A52TLB05406",
@@ -613,6 +754,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67995,
+          "mileage": 5665,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67995,
           "mileage": 5665,
           "dealer": "Porsche Bellevue"
@@ -629,8 +776,8 @@
         "trim": "Trim not listed",
         "price": 67995,
         "mileage": 5438,
-        "exteriorColor": "Volcano Grey Metallic",
-        "interiorColor": "Black leather/premium cloth",
+        "exteriorColor": "Gray",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -639,11 +786,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A53TLB06015-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A53TLB06015",
@@ -653,6 +800,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67995,
+          "mileage": 5438,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67995,
           "mileage": 5438,
           "dealer": "Porsche Bellevue"
@@ -669,8 +822,8 @@
         "trim": "Trim not listed",
         "price": 64781,
         "mileage": 4212,
-        "exteriorColor": "Dolomite Silver Metallic",
-        "interiorColor": "Black leather",
+        "exteriorColor": "Silver",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -679,11 +832,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A55TLB03259-1.jpg",
         "photoCount": 29,
         "url": "https://www.carfax.com/vehicle/WP1AA2A55TLB03259",
@@ -693,6 +846,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 64781,
+          "mileage": 4212,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 64781,
           "mileage": 4212,
           "dealer": "Porsche Bellevue"
@@ -709,8 +868,8 @@
         "trim": "Trim not listed",
         "price": 67307,
         "mileage": 4675,
-        "exteriorColor": "Carmine Red",
-        "interiorColor": "Black leather/premium cloth",
+        "exteriorColor": "Red",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -719,11 +878,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
-        "accidentFree": true,
-        "accidentCount": 0,
-        "usageType": "Personal Use",
+        "accidentFree": false,
+        "accidentCount": 1,
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A57TLB03392-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A57TLB03392",
@@ -733,6 +892,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67307,
+          "mileage": 4675,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67307,
           "mileage": 4675,
           "dealer": "Porsche Bellevue"
@@ -749,8 +914,8 @@
         "trim": "Trim not listed",
         "price": 65995,
         "mileage": 7051,
-        "exteriorColor": "Dolomite Silver Metallic",
-        "interiorColor": "Black leather/premium cloth",
+        "exteriorColor": "Silver",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -759,11 +924,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A58TLB06379-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A58TLB06379",
@@ -773,6 +938,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 65995,
+          "mileage": 7051,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 65995,
           "mileage": 7051,
           "dealer": "Porsche Bellevue"
@@ -789,8 +960,8 @@
         "trim": "Trim not listed",
         "price": 67995,
         "mileage": 6179,
-        "exteriorColor": "Dolomite Silver Metallic",
-        "interiorColor": "Black leather",
+        "exteriorColor": "Silver",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -799,13 +970,13 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A59TLB06231-1.jpg",
-        "photoCount": 1,
+        "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A59TLB06231",
         "listedAt": "2026-09-09 22:41:21",
         "firstSeenDate": "2026-09-22"
@@ -813,6 +984,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67995,
+          "mileage": 6179,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67995,
           "mileage": 6179,
           "dealer": "Porsche Bellevue"
@@ -829,8 +1006,8 @@
         "trim": "Trim not listed",
         "price": 66990,
         "mileage": 4315,
-        "exteriorColor": "Jet Black Metallic",
-        "interiorColor": "Black leather/premium cloth",
+        "exteriorColor": "Black",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -839,11 +1016,11 @@
         "city": "Bellevue",
         "state": "WA",
         "zip": "98005",
-        "cpo": true,
+        "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Personal Use",
+        "usageType": "Corporate Use",
         "image": "https://retail.photos.vin/WP1AA2A5XTLB01930-1.jpg",
         "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A5XTLB01930",
@@ -853,6 +1030,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 66990,
+          "mileage": 4315,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 66990,
           "mileage": 4315,
           "dealer": "Porsche Bellevue"
@@ -896,6 +1079,12 @@
           "price": 59999,
           "mileage": 9127,
           "dealer": "Porsche Seattle North"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 59999,
+          "mileage": 9127,
+          "dealer": "Porsche Seattle North"
         }
       ]
     },
@@ -933,6 +1122,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 99988,
+          "mileage": 9107,
+          "dealer": "Porsche Seattle North"
+        },
+        {
+          "date": "2026-09-24",
           "price": 99988,
           "mileage": 9107,
           "dealer": "Porsche Seattle North"
@@ -976,6 +1171,12 @@
           "price": 60399,
           "mileage": 5558,
           "dealer": "Porsche Seattle North"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 60399,
+          "mileage": 5558,
+          "dealer": "Porsche Seattle North"
         }
       ]
     },
@@ -1013,6 +1214,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 60399,
+          "mileage": 7866,
+          "dealer": "Porsche Seattle North"
+        },
+        {
+          "date": "2026-09-24",
           "price": 60399,
           "mileage": 7866,
           "dealer": "Porsche Seattle North"
@@ -1056,6 +1263,12 @@
           "price": 63799,
           "mileage": 3532,
           "dealer": "Porsche Seattle North"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 63799,
+          "mileage": 3532,
+          "dealer": "Porsche Seattle North"
         }
       ]
     },
@@ -1093,6 +1306,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 49241,
+          "mileage": 36525,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 49241,
           "mileage": 36525,
           "dealer": "Porsche Bellevue"
@@ -1136,6 +1355,12 @@
           "price": 76299,
           "mileage": 30996,
           "dealer": "Porsche Seattle North"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 76299,
+          "mileage": 30996,
+          "dealer": "Porsche Seattle North"
         }
       ]
     },
@@ -1176,6 +1401,12 @@
           "price": 60512,
           "mileage": 32819,
           "dealer": "Porsche Seattle North"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 60512,
+          "mileage": 32819,
+          "dealer": "Porsche Seattle North"
         }
       ]
     },
@@ -1205,7 +1436,7 @@
         "accidentCount": 0,
         "usageType": "Lease",
         "image": "https://retail.photos.vin/WP1AA2A5XPLB19754-1.jpg",
-        "photoCount": 1,
+        "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A5XPLB19754",
         "listedAt": "2026-09-14 21:51:01",
         "firstSeenDate": "2026-09-22"
@@ -1213,6 +1444,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 49990,
+          "mileage": 21922,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 49990,
           "mileage": 21922,
           "dealer": "Porsche Bellevue"
@@ -1256,6 +1493,12 @@
           "price": 46990,
           "mileage": 24450,
           "dealer": "Carvana"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 46990,
+          "mileage": 24450,
+          "dealer": "Carvana"
         }
       ]
     },
@@ -1267,7 +1510,7 @@
         "make": "Porsche",
         "model": "Macan",
         "trim": "Trim not listed",
-        "price": 44444,
+        "price": 43187,
         "mileage": 29185,
         "exteriorColor": "Black",
         "interiorColor": "Black",
@@ -1294,6 +1537,12 @@
         {
           "date": "2026-09-22",
           "price": 44444,
+          "mileage": 29185,
+          "dealer": "Infiniti of Lynnwood"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 43187,
           "mileage": 29185,
           "dealer": "Infiniti of Lynnwood"
         }
@@ -1333,6 +1582,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 50777,
+          "mileage": 23380,
+          "dealer": "Landmark Motors"
+        },
+        {
+          "date": "2026-09-24",
           "price": 50777,
           "mileage": 23380,
           "dealer": "Landmark Motors"
@@ -1376,6 +1631,12 @@
           "price": 60300,
           "mileage": 9427,
           "dealer": "Way Scarff Ford"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 60300,
+          "mileage": 9427,
+          "dealer": "Way Scarff Ford"
         }
       ]
     },
@@ -1389,12 +1650,12 @@
         "trim": "GTS",
         "price": 69530,
         "mileage": 49466,
-        "exteriorColor": "Chalk",
-        "interiorColor": "Black",
-        "seats": 5,
+        "exteriorColor": "Unspecified",
+        "interiorColor": "Unspecified",
+        "seats": null,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
-        "dealer": "Mercedes-Benz of Bellevue",
+        "dealer": "BMW of Bellevue",
         "officialBrandDealer": false,
         "city": "Bellevue",
         "state": "WA",
@@ -1405,7 +1666,7 @@
         "accidentCount": 0,
         "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AF2A53PLB55075-1.jpg",
-        "photoCount": 1,
+        "photoCount": 24,
         "url": "https://bmwbellevue.com/used/Porsche/2023-Porsche-Macan-c4a0c4a5ac18193b227a1cbf86136ffa.htm",
         "listedAt": "2026-09-22 01:54:00",
         "firstSeenDate": "2026-09-22"
@@ -1416,6 +1677,12 @@
           "price": 69530,
           "mileage": 49466,
           "dealer": "Mercedes-Benz of Bellevue"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 69530,
+          "mileage": 49466,
+          "dealer": "BMW of Bellevue"
         }
       ]
     },
@@ -1485,7 +1752,7 @@
         "accidentCount": null,
         "usageType": "Not listed",
         "image": "https://retail.photos.vin/WP1AF2A51PLB55091-1.jpg",
-        "photoCount": 1,
+        "photoCount": 40,
         "url": "https://www.autolist.com/porsche-macan#vin=WP1AF2A51PLB55091",
         "listedAt": "2026-09-11 04:49:41",
         "firstSeenDate": "2026-09-22"
@@ -1493,6 +1760,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 78260,
+          "mileage": 31328,
+          "dealer": "Porsche Tacoma"
+        },
+        {
+          "date": "2026-09-24",
           "price": 78260,
           "mileage": 31328,
           "dealer": "Porsche Tacoma"
@@ -1506,24 +1779,24 @@
         "year": 2026,
         "make": "Porsche",
         "model": "Macan",
-        "trim": "Trim not listed",
-        "price": 69000,
+        "trim": "T",
+        "price": 68800,
         "mileage": 4545,
-        "exteriorColor": "Gray",
-        "interiorColor": "Black",
+        "exteriorColor": "Volcano Grey Metallic",
+        "interiorColor": "Black leather",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
-        "dealer": "Porsche Tacoma",
+        "dealer": "Larson Porsche of Tacoma",
         "officialBrandDealer": true,
         "city": "Fife",
         "state": "WA",
-        "zip": "",
+        "zip": "98424",
         "cpo": true,
-        "oneOwner": null,
-        "accidentFree": null,
-        "accidentCount": null,
-        "usageType": "Not listed",
+        "oneOwner": false,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AA2A52TLB02473-1.jpg",
         "photoCount": 44,
         "url": "https://www.autolist.com/porsche-macan#vin=WP1AA2A52TLB02473",
@@ -1536,6 +1809,12 @@
           "price": 69000,
           "mileage": 4545,
           "dealer": "Porsche Tacoma"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 68800,
+          "mileage": 4545,
+          "dealer": "Larson Porsche of Tacoma"
         }
       ]
     },
@@ -1573,6 +1852,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 70150,
+          "mileage": 43041,
+          "dealer": "Park Place LTD"
+        },
+        {
+          "date": "2026-09-24",
           "price": 70150,
           "mileage": 43041,
           "dealer": "Park Place LTD"
@@ -1616,6 +1901,12 @@
           "price": 72360,
           "mileage": 12166,
           "dealer": "Porsche Tacoma"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 72360,
+          "mileage": 12166,
+          "dealer": "Porsche Tacoma"
         }
       ]
     },
@@ -1653,6 +1944,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 61760,
+          "mileage": 5269,
+          "dealer": "Porsche Tacoma"
+        },
+        {
+          "date": "2026-09-24",
           "price": 61760,
           "mileage": 5269,
           "dealer": "Porsche Tacoma"
@@ -1736,6 +2033,12 @@
           "price": 62260,
           "mileage": 3978,
           "dealer": "Porsche Tacoma"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 62260,
+          "mileage": 3978,
+          "dealer": "Porsche Tacoma"
         }
       ]
     },
@@ -1773,6 +2076,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 57150,
+          "mileage": 22689,
+          "dealer": "Motorcars Limited"
+        },
+        {
+          "date": "2026-09-24",
           "price": 57150,
           "mileage": 22689,
           "dealer": "Motorcars Limited"
@@ -1816,6 +2125,12 @@
           "price": 51134,
           "mileage": 20529,
           "dealer": "Motorcars Limited"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 51134,
+          "mileage": 20529,
+          "dealer": "Motorcars Limited"
         }
       ]
     },
@@ -1853,6 +2168,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 55150,
+          "mileage": 16170,
+          "dealer": "Park Place LTD"
+        },
+        {
+          "date": "2026-09-24",
           "price": 55150,
           "mileage": 16170,
           "dealer": "Park Place LTD"
@@ -1896,6 +2217,12 @@
           "price": 51290,
           "mileage": 23834,
           "dealer": "Porsche Tacoma"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 51290,
+          "mileage": 23834,
+          "dealer": "Porsche Tacoma"
         }
       ]
     },
@@ -1933,6 +2260,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 51894,
+          "mileage": 30220,
+          "dealer": "Younker Mitsubishi"
+        },
+        {
+          "date": "2026-09-24",
           "price": 51894,
           "mileage": 30220,
           "dealer": "Younker Mitsubishi"
@@ -1976,6 +2309,12 @@
           "price": 45880,
           "mileage": 35529,
           "dealer": "Porsche Tacoma"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 45880,
+          "mileage": 35529,
+          "dealer": "Porsche Tacoma"
         }
       ]
     },
@@ -2016,6 +2355,12 @@
           "price": 45360,
           "mileage": 37936,
           "dealer": "Porsche Tacoma"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 45360,
+          "mileage": 37936,
+          "dealer": "Porsche Tacoma"
         }
       ]
     },
@@ -2030,7 +2375,7 @@
         "price": 38995,
         "mileage": 24728,
         "exteriorColor": "Silver",
-        "interiorColor": "Brown",
+        "interiorColor": "Black",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -2053,6 +2398,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 38995,
+          "mileage": 24728,
+          "dealer": "Auto Connections of Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 38995,
           "mileage": 24728,
           "dealer": "Auto Connections of Bellevue"
@@ -2096,6 +2447,12 @@
           "price": 38395,
           "mileage": 25280,
           "dealer": "Ascend Motors LLC"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 38395,
+          "mileage": 25280,
+          "dealer": "Ascend Motors LLC"
         }
       ]
     },
@@ -2133,6 +2490,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 61680,
+          "mileage": 59223,
+          "dealer": "unique motors seattle"
+        },
+        {
+          "date": "2026-09-24",
           "price": 61680,
           "mileage": 59223,
           "dealer": "unique motors seattle"
@@ -2176,6 +2539,12 @@
           "price": 43835,
           "mileage": 34646,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 43835,
+          "mileage": 34646,
+          "dealer": "Volvo Cars Bellevue"
         }
       ]
     },
@@ -2213,6 +2582,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 56196,
+          "mileage": 4461,
+          "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 56196,
           "mileage": 4461,
           "dealer": "Volvo Cars Bellevue"
@@ -2256,6 +2631,12 @@
           "price": 45399,
           "mileage": 41839,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 45399,
+          "mileage": 41839,
+          "dealer": "Volvo Cars Bellevue"
         }
       ]
     },
@@ -2293,6 +2674,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 58698,
+          "mileage": 6573,
+          "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 58698,
           "mileage": 6573,
           "dealer": "Volvo Cars Bellevue"
@@ -2336,6 +2723,12 @@
           "price": 80999,
           "mileage": 4076,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 80999,
+          "mileage": 4076,
+          "dealer": "Volvo Cars Bellevue"
         }
       ]
     },
@@ -2347,18 +2740,18 @@
         "make": "Porsche",
         "model": "Macan",
         "trim": "AWD",
-        "price": 50995,
+        "price": 50495,
         "mileage": 29414,
         "exteriorColor": "Chalk",
         "interiorColor": "Black",
         "seats": null,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
-        "dealer": "hyundai of everett",
+        "dealer": "genesis of kirkland",
         "officialBrandDealer": false,
-        "city": "Everett",
+        "city": "Kirkland",
         "state": "WA",
-        "zip": "98203",
+        "zip": "98034",
         "cpo": false,
         "oneOwner": true,
         "accidentFree": true,
@@ -2366,7 +2759,7 @@
         "usageType": "Rental Use",
         "image": "https://retail.photos.vin/WP1AA2A52SLB06859-1.jpg",
         "photoCount": 35,
-        "url": "https://hyundaiofeverett.com/used/Porsche/2025-Porsche-Macan-1a86d7b1ac181fb201976db01f7993bb.htm",
+        "url": "https://genesisofkirkland.com/used/Porsche/2025-Porsche-Macan-1a85c7aeac1842897581138da7315e4c.htm",
         "listedAt": "2026-08-20 20:29:40",
         "firstSeenDate": "2026-09-22"
       },
@@ -2376,6 +2769,12 @@
           "price": 50995,
           "mileage": 29414,
           "dealer": "hyundai of everett"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 50495,
+          "mileage": 29414,
+          "dealer": "genesis of kirkland"
         }
       ]
     },
@@ -2413,6 +2812,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 76400,
+          "mileage": 28686,
+          "dealer": "pierre chevrolet"
+        },
+        {
+          "date": "2026-09-24",
           "price": 76400,
           "mileage": 28686,
           "dealer": "pierre chevrolet"
@@ -2456,6 +2861,12 @@
           "price": 32995,
           "mileage": 77268,
           "dealer": "toyota of renton"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 32995,
+          "mileage": 77268,
+          "dealer": "toyota of renton"
         }
       ]
     },
@@ -2470,7 +2881,7 @@
         "price": 67995,
         "mileage": 6199,
         "exteriorColor": "Carrara White Metallic",
-        "interiorColor": "Black/Bordeaux Red",
+        "interiorColor": "Black/Bordeaux Red leather",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -2483,9 +2894,9 @@
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Corporate Use",
+        "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AA2A50TLB02357-1.jpg",
-        "photoCount": 1,
+        "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A50TLB02357",
         "listedAt": "2026-09-09 22:41:21",
         "firstSeenDate": "2026-09-22"
@@ -2493,6 +2904,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67995,
+          "mileage": 6199,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67995,
           "mileage": 6199,
           "dealer": "Porsche Bellevue"
@@ -2510,7 +2927,7 @@
         "price": 64264,
         "mileage": 3996,
         "exteriorColor": "Volcano Grey Metallic",
-        "interiorColor": "Black",
+        "interiorColor": "Black leather/premium cloth",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -2523,9 +2940,9 @@
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Corporate Use",
+        "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AA2A50TLB03069-1.jpg",
-        "photoCount": 1,
+        "photoCount": 29,
         "url": "https://www.carfax.com/vehicle/WP1AA2A50TLB03069",
         "listedAt": "2026-08-09 03:27:22",
         "firstSeenDate": "2026-09-22"
@@ -2533,6 +2950,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 64264,
+          "mileage": 3996,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 64264,
           "mileage": 3996,
           "dealer": "Porsche Bellevue"
@@ -2550,7 +2973,7 @@
         "price": 66544,
         "mileage": 7019,
         "exteriorColor": "Volcano Grey Metallic",
-        "interiorColor": "Black",
+        "interiorColor": "Black leather",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -2563,9 +2986,9 @@
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Corporate Use",
+        "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AA2A52TLB00951-1.jpg",
-        "photoCount": 1,
+        "photoCount": 29,
         "url": "https://www.carfax.com/vehicle/WP1AA2A52TLB00951",
         "listedAt": "2026-08-09 03:27:20",
         "firstSeenDate": "2026-09-22"
@@ -2573,6 +2996,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 66544,
+          "mileage": 7019,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 66544,
           "mileage": 7019,
           "dealer": "Porsche Bellevue"
@@ -2590,7 +3019,7 @@
         "price": 67519,
         "mileage": 4793,
         "exteriorColor": "Volcano Grey Metallic",
-        "interiorColor": "Black",
+        "interiorColor": "Black leather/premium cloth",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -2603,9 +3032,9 @@
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Corporate Use",
+        "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AA2A53TLB03373-1.jpg",
-        "photoCount": 1,
+        "photoCount": 29,
         "url": "https://www.carfax.com/vehicle/WP1AA2A53TLB03373",
         "listedAt": "2026-08-09 03:27:21",
         "firstSeenDate": "2026-09-22"
@@ -2613,6 +3042,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67519,
+          "mileage": 4793,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67519,
           "mileage": 4793,
           "dealer": "Porsche Bellevue"
@@ -2630,7 +3065,7 @@
         "price": 67312,
         "mileage": 4829,
         "exteriorColor": "Volcano Grey Metallic",
-        "interiorColor": "Black",
+        "interiorColor": "Black leather/premium cloth",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -2643,9 +3078,9 @@
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Corporate Use",
+        "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AA2A57TLB01061-1.jpg",
-        "photoCount": 1,
+        "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A57TLB01061",
         "listedAt": "2026-08-09 03:27:20",
         "firstSeenDate": "2026-09-22"
@@ -2653,6 +3088,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67312,
+          "mileage": 4829,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67312,
           "mileage": 4829,
           "dealer": "Porsche Bellevue"
@@ -2670,7 +3111,7 @@
         "price": 67307,
         "mileage": 5050,
         "exteriorColor": "Volcano Grey Metallic",
-        "interiorColor": "Black",
+        "interiorColor": "Black leather/premium cloth",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -2683,9 +3124,9 @@
         "oneOwner": true,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Corporate Use",
+        "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AA2A58TLB03398-1.jpg",
-        "photoCount": 1,
+        "photoCount": 30,
         "url": "https://www.carfax.com/vehicle/WP1AA2A58TLB03398",
         "listedAt": "2026-08-15 21:24:50",
         "firstSeenDate": "2026-09-22"
@@ -2693,6 +3134,12 @@
       "observations": [
         {
           "date": "2026-09-22",
+          "price": 67307,
+          "mileage": 5050,
+          "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-24",
           "price": 67307,
           "mileage": 5050,
           "dealer": "Porsche Bellevue"
@@ -2736,6 +3183,12 @@
           "price": 45341,
           "mileage": 30265,
           "dealer": "Burien Nissan"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 45341,
+          "mileage": 30265,
+          "dealer": "Burien Nissan"
         }
       ]
     },
@@ -2747,10 +3200,10 @@
         "make": "Porsche",
         "model": "Macan",
         "trim": "T",
-        "price": 44699,
+        "price": 43809,
         "mileage": 17627,
         "exteriorColor": "Black",
-        "interiorColor": "Black",
+        "interiorColor": "Black leather",
         "seats": 5,
         "drivetrain": "AWD",
         "powertrain": "Gasoline",
@@ -2763,7 +3216,7 @@
         "oneOwner": false,
         "accidentFree": true,
         "accidentCount": 0,
-        "usageType": "Multiple Use",
+        "usageType": "Personal Use",
         "image": "https://retail.photos.vin/WP1AA2A55PLB11495-1.jpg",
         "photoCount": 39,
         "url": "https://www.carfax.com/vehicle/WP1AA2A55PLB11495",
@@ -2774,6 +3227,12 @@
         {
           "date": "2026-09-22",
           "price": 44699,
+          "mileage": 17627,
+          "dealer": "Land Rover Lynnwood"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 43809,
           "mileage": 17627,
           "dealer": "Land Rover Lynnwood"
         }
@@ -2816,6 +3275,12 @@
           "price": 46199,
           "mileage": 19258,
           "dealer": "Silver Star Auto"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 46199,
+          "mileage": 19258,
+          "dealer": "Silver Star Auto"
         }
       ]
     },
@@ -2828,7 +3293,7 @@
         "model": "Macan",
         "trim": "GTS",
         "price": 70191,
-        "mileage": 24608,
+        "mileage": 24611,
         "exteriorColor": "White",
         "interiorColor": "Black",
         "seats": 5,
@@ -2855,6 +3320,12 @@
           "date": "2026-09-22",
           "price": 70191,
           "mileage": 24608,
+          "dealer": "Bellevue Nissan"
+        },
+        {
+          "date": "2026-09-24",
+          "price": 70191,
+          "mileage": 24611,
           "dealer": "Bellevue Nissan"
         }
       ]
@@ -2936,6 +3407,166 @@
           "price": 46670,
           "mileage": 18223,
           "dealer": "Pierre Ford Lincoln of Lynnwood"
+        }
+      ]
+    },
+    "WP1AF2A59PLB58062": {
+      "lastKnown": {
+        "id": "wp1af2a59plb58062",
+        "vin": "WP1AF2A59PLB58062",
+        "year": 2023,
+        "make": "Porsche",
+        "model": "Macan",
+        "trim": "GTS",
+        "price": 83990,
+        "mileage": 33281,
+        "exteriorColor": "Dolomite Silver Metallic",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "powertrain": "Gasoline",
+        "dealer": "Porsche Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": true,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/WP1AF2A59PLB58062-1.jpg",
+        "photoCount": 1,
+        "url": "https://www.carfax.com/vehicle/WP1AF2A59PLB58062",
+        "listedAt": "2026-09-23 21:42:58",
+        "firstSeenDate": "2026-09-24"
+      },
+      "observations": [
+        {
+          "date": "2026-09-24",
+          "price": 83990,
+          "mileage": 33281,
+          "dealer": "Porsche Bellevue"
+        }
+      ]
+    },
+    "WP1AF2A51TLB62326": {
+      "lastKnown": {
+        "id": "wp1af2a51tlb62326",
+        "vin": "WP1AF2A51TLB62326",
+        "year": 2026,
+        "make": "Porsche",
+        "model": "Macan",
+        "trim": "GTS",
+        "price": 1163900,
+        "mileage": 72,
+        "exteriorColor": "Carmine Red",
+        "interiorColor": "Black w Chalk Stitching",
+        "seats": null,
+        "drivetrain": null,
+        "powertrain": "Gasoline",
+        "dealer": "Volvo Cars Bellevue",
+        "officialBrandDealer": false,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98004",
+        "cpo": false,
+        "oneOwner": null,
+        "accidentFree": null,
+        "accidentCount": null,
+        "usageType": "Not listed",
+        "image": "https://retail.photos.vin/WP1AF2A51TLB62326-1.jpg",
+        "photoCount": 1,
+        "url": "https://volvocarsbellevue.com/used/Porsche/2026-Porsche-Macan-for-sale-Bellevue-WA-cf5ff879ac185fa6e5f523fc6c3dc0d6.htm",
+        "listedAt": "2026-09-23 21:17:37",
+        "firstSeenDate": "2026-09-24"
+      },
+      "observations": [
+        {
+          "date": "2026-09-24",
+          "price": 1163900,
+          "mileage": 72,
+          "dealer": "Volvo Cars Bellevue"
+        }
+      ]
+    },
+    "WP1AA2A51PLB11252": {
+      "lastKnown": {
+        "id": "wp1aa2a51plb11252",
+        "vin": "WP1AA2A51PLB11252",
+        "year": 2023,
+        "make": "Porsche",
+        "model": "Macan",
+        "trim": "Trim not listed",
+        "price": 47980,
+        "mileage": 12690,
+        "exteriorColor": "White",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "powertrain": "Gasoline",
+        "dealer": "Elliot Bay Ineos Grenadier",
+        "officialBrandDealer": false,
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98133",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Personal Use",
+        "image": "https://retail.photos.vin/WP1AA2A51PLB11252-1.jpg",
+        "photoCount": 27,
+        "url": "https://www.carfax.com/vehicle/WP1AA2A51PLB11252",
+        "listedAt": "2026-09-23 22:58:24",
+        "firstSeenDate": "2026-09-24"
+      },
+      "observations": [
+        {
+          "date": "2026-09-24",
+          "price": 47980,
+          "mileage": 12690,
+          "dealer": "Elliot Bay Ineos Grenadier"
+        }
+      ]
+    },
+    "WP1AA2A53TLB03048": {
+      "lastKnown": {
+        "id": "wp1aa2a53tlb03048",
+        "vin": "WP1AA2A53TLB03048",
+        "year": 2026,
+        "make": "Porsche",
+        "model": "Macan",
+        "trim": "Trim not listed",
+        "price": 65648,
+        "mileage": 4865,
+        "exteriorColor": "White",
+        "interiorColor": "Black",
+        "seats": 5,
+        "drivetrain": "AWD",
+        "powertrain": "Gasoline",
+        "dealer": "Porsche Bellevue",
+        "officialBrandDealer": true,
+        "city": "Bellevue",
+        "state": "WA",
+        "zip": "98005",
+        "cpo": false,
+        "oneOwner": true,
+        "accidentFree": true,
+        "accidentCount": 0,
+        "usageType": "Corporate Use",
+        "image": "https://retail.photos.vin/WP1AA2A53TLB03048-1.jpg",
+        "photoCount": 30,
+        "url": "https://www.carfax.com/vehicle/WP1AA2A53TLB03048",
+        "listedAt": "2026-09-22 22:40:32",
+        "firstSeenDate": "2026-09-24"
+      },
+      "observations": [
+        {
+          "date": "2026-09-24",
+          "price": 65648,
+          "mileage": 4865,
+          "dealer": "Porsche Bellevue"
         }
       ]
     }
