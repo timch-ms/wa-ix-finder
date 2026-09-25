@@ -1,6 +1,6 @@
 {
   "retentionDays": 7,
-  "updatedAt": "2026-09-24T14:12:43.542501+00:00",
+  "updatedAt": "2026-09-25T14:36:38.835904+00:00",
   "snapshots": [
     {
       "date": "2026-09-19",
@@ -56,6 +56,17 @@
         "7JDEV3KL2SG000597",
         "7JDEV3VK4SG016898"
       ]
+    },
+    {
+      "date": "2026-09-25",
+      "vins": [
+        "7JDDA3VL3TG060621",
+        "7JDE23KL9SG005966",
+        "7JDE23KLXSG000680",
+        "7JDE23VL3SG007904",
+        "7JDEV3KL2SG000597",
+        "7JDEV3VK4SG016898"
+      ]
     }
   ],
   "vehicles": {
@@ -67,7 +78,7 @@
         "make": "Volvo",
         "model": "EX90",
         "trim": "Twin Motor Performance Ultra 6-Seater",
-        "price": 57950,
+        "price": 58075,
         "mileage": 21804,
         "exteriorColor": "Onyx Black",
         "interiorColor": "Zinc",
@@ -118,6 +129,12 @@
         {
           "date": "2026-09-24",
           "price": 57950,
+          "mileage": 21804,
+          "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 58075,
           "mileage": 21804,
           "dealer": "Volvo Cars Bellevue"
         }
@@ -184,6 +201,12 @@
           "price": 62800,
           "mileage": 5645,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 62800,
+          "mileage": 5645,
+          "dealer": "Volvo Cars Bellevue"
         }
       ]
     },
@@ -195,7 +218,7 @@
         "make": "Volvo",
         "model": "EX90",
         "trim": "Twin Motor Performance Ultra 7-Seater",
-        "price": 60600,
+        "price": 62025,
         "mileage": 13861,
         "exteriorColor": "Denim Blue",
         "interiorColor": "Dawn",
@@ -246,6 +269,12 @@
         {
           "date": "2026-09-24",
           "price": 60600,
+          "mileage": 13861,
+          "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 62025,
           "mileage": 13861,
           "dealer": "Volvo Cars Bellevue"
         }
@@ -312,6 +341,12 @@
           "price": 63988,
           "mileage": 13793,
           "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 63988,
+          "mileage": 13793,
+          "dealer": "Volvo Cars Bellevue"
         }
       ]
     },
@@ -323,7 +358,7 @@
         "make": "Volvo",
         "model": "EX90",
         "trim": "Twin Motor Plus 7-Seater",
-        "price": 59600,
+        "price": 58875,
         "mileage": 7980,
         "exteriorColor": "Onyx Black",
         "interiorColor": "Charcoal",
@@ -374,6 +409,12 @@
         {
           "date": "2026-09-24",
           "price": 59600,
+          "mileage": 7980,
+          "dealer": "Volvo Cars Bellevue"
+        },
+        {
+          "date": "2026-09-25",
+          "price": 58875,
           "mileage": 7980,
           "dealer": "Volvo Cars Bellevue"
         }
@@ -437,6 +478,12 @@
         },
         {
           "date": "2026-09-24",
+          "price": 86088,
+          "mileage": 8299,
+          "dealer": "Swickard Toyota"
+        },
+        {
+          "date": "2026-09-25",
           "price": 86088,
           "mileage": 8299,
           "dealer": "Swickard Toyota"
