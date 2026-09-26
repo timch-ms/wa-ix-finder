@@ -1,12 +1,12 @@
 {
   "publishedSnapshot": true,
-  "updatedAt": "2026-09-25T14:36:37.892514+00:00",
-  "lastRefreshDate": "2026-09-25",
+  "updatedAt": "2026-09-26T13:44:51.036049+00:00",
+  "lastRefreshDate": "2026-09-26",
   "lastAttemptCalls": 4,
   "apiTotal": 72,
   "listingCount": 72,
-  "newCount": 2,
-  "removedCount": 5,
+  "newCount": 0,
+  "removedCount": 0,
   "listings": [
     {
       "id": "wb523cf01rcp18401",
@@ -1183,7 +1183,7 @@
       "photoCount": 33,
       "url": "https://www.lithia.com/catcher.esl?vin=WB523CF08RCN65144&utm_source=autolist&utm_medium=referral&utm_campaign=vdp_deep_link",
       "listedAt": "2026-09-23 23:20:04",
-      "isNew": true,
+      "isNew": false,
       "firstSeenDate": "2026-09-25"
     },
     {
@@ -1400,7 +1400,7 @@
       "photoCount": 29,
       "url": "https://www.autolist.com/bmw-ix#vin=WB523CF01PCM02929",
       "listedAt": "2026-09-22 09:34:15",
-      "isNew": true,
+      "isNew": false,
       "firstSeenDate": "2026-09-25"
     },
     {

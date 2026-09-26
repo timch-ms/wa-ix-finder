@@ -1,6 +1,6 @@
 {
   "retentionDays": 7,
-  "updatedAt": "2026-09-25T14:36:40.500611+00:00",
+  "updatedAt": "2026-09-26T13:45:15.761125+00:00",
   "snapshots": [
     {
       "date": "2026-09-20",
@@ -52,6 +52,16 @@
     },
     {
       "date": "2026-09-25",
+      "vins": [
+        "ZN682AVM0P7433932",
+        "ZN682AVM3P7429101",
+        "ZN682AVM7P7426413",
+        "ZN6PMDAA0R7449392",
+        "ZN6PMDAA7R7450247"
+      ]
+    },
+    {
+      "date": "2026-09-26",
       "vins": [
         "ZN682AVM0P7433932",
         "ZN682AVM3P7429101",
@@ -129,6 +139,12 @@
           "price": 34625,
           "mileage": 40990,
           "dealer": "Porsche Bellevue"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 34625,
+          "mileage": 40990,
+          "dealer": "Porsche Bellevue"
         }
       ]
     },
@@ -196,6 +212,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 29980,
+          "mileage": 42463,
+          "dealer": "South Tacoma Auto"
+        },
+        {
+          "date": "2026-09-26",
           "price": 29980,
           "mileage": 42463,
           "dealer": "South Tacoma Auto"
@@ -269,6 +291,12 @@
           "price": 33000,
           "mileage": 40305,
           "dealer": "Go Kia Tacoma"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 33000,
+          "mileage": 40305,
+          "dealer": "Go Kia Tacoma"
         }
       ]
     },
@@ -339,6 +367,12 @@
           "price": 32999,
           "mileage": 42497,
           "dealer": "Seattle Finest Motors"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 32999,
+          "mileage": 42497,
+          "dealer": "Seattle Finest Motors"
         }
       ]
     },
@@ -394,6 +428,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 26999,
+          "mileage": 42678,
+          "dealer": "Enterprise Car Sales Shoreline"
+        },
+        {
+          "date": "2026-09-26",
           "price": 26999,
           "mileage": 42678,
           "dealer": "Enterprise Car Sales Shoreline"

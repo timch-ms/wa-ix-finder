@@ -1,87 +1,7 @@
 {
   "retentionDays": 7,
-  "updatedAt": "2026-09-25T14:36:37.892514+00:00",
+  "updatedAt": "2026-09-26T13:44:51.036049+00:00",
   "snapshots": [
-    {
-      "date": "2026-09-19",
-      "vins": [
-        "WB523CF00RCN14804",
-        "WB523CF00RCN58477",
-        "WB523CF01PCM04311",
-        "WB523CF01PCM04664",
-        "WB523CF01PCM04972",
-        "WB523CF01PCM07855",
-        "WB523CF01PCM58451",
-        "WB523CF01RCP18401",
-        "WB523CF02RCN53930",
-        "WB523CF02RCN65933",
-        "WB523CF02RCN74924",
-        "WB523CF02RCP11165",
-        "WB523CF02RCS00135",
-        "WB523CF02SCT32818",
-        "WB523CF03PCM89460",
-        "WB523CF03PCM98286",
-        "WB523CF03RCN62359",
-        "WB523CF04PCM04352",
-        "WB523CF04PCM42633",
-        "WB523CF04RCP12138",
-        "WB523CF04RCP35676",
-        "WB523CF04SCS44031",
-        "WB523CF05RCN62556",
-        "WB523CF05RCN87442",
-        "WB523CF05SCT13129",
-        "WB523CF06RCN06139",
-        "WB523CF06RCN65837",
-        "WB523CF06RCN65952",
-        "WB523CF06SCU36177",
-        "WB523CF07PCM04684",
-        "WB523CF07PCM83483",
-        "WB523CF07RCN47878",
-        "WB523CF07RCN71968",
-        "WB523CF07RCP13543",
-        "WB523CF07RCP19861",
-        "WB523CF07SCS86550",
-        "WB523CF08PCM05021",
-        "WB523CF08PCM82150",
-        "WB523CF08PCM92354",
-        "WB523CF08RCN06367",
-        "WB523CF08RCN15215",
-        "WB523CF08RCN39014",
-        "WB523CF08RCN47968",
-        "WB523CF08RCN65905",
-        "WB523CF08RCP17018",
-        "WB523CF09PCL87502",
-        "WB523CF09PCM44281",
-        "WB523CF09PCM81962",
-        "WB523CF09RCN71521",
-        "WB523CF09RCP08408",
-        "WB523CF09RCP12040",
-        "WB523CF0XPCM05022",
-        "WB523CF0XRCN33120",
-        "WB523CF0XRCN51939",
-        "WB523CF0XSCT28872",
-        "WB533CF01PCL52120",
-        "WB533CF04PCM86541",
-        "WB533CF06PCM93863",
-        "WB533CF07PCL95926",
-        "WB533CF07RCP13613",
-        "WB543CF01TCW13003",
-        "WB543CF01TCW55221",
-        "WB543CF03TCU73925",
-        "WB543CF03TCW96045",
-        "WB543CF06TCW56249",
-        "WB543CF07TCW78549",
-        "WB543CF08TCV07261",
-        "WB543CF09TCW59730",
-        "WB543CF0XTCU91404",
-        "WB543CF0XTCW56223",
-        "WB553CF02TCW52493",
-        "WB553CF07TCU91476",
-        "WB553CF07TCW40131",
-        "WB553CF07TCW81763",
-        "WB563CF06TCV11401"
-      ]
-    },
     {
       "date": "2026-09-20",
       "vins": [
@@ -549,6 +469,83 @@
         "WB553CF07TCW81763",
         "WB563CF06TCV11401"
       ]
+    },
+    {
+      "date": "2026-09-26",
+      "vins": [
+        "WB523CF00RCN42540",
+        "WB523CF00RCN58477",
+        "WB523CF01PCM02929",
+        "WB523CF01PCM04311",
+        "WB523CF01PCM04664",
+        "WB523CF01PCM04972",
+        "WB523CF01PCM07855",
+        "WB523CF01PCM58451",
+        "WB523CF01RCP18401",
+        "WB523CF02RCN53930",
+        "WB523CF02RCN65933",
+        "WB523CF02RCN74924",
+        "WB523CF02RCP11165",
+        "WB523CF02RCS00135",
+        "WB523CF02SCT32818",
+        "WB523CF03PCM89460",
+        "WB523CF03PCM98286",
+        "WB523CF03RCN62359",
+        "WB523CF04PCM04352",
+        "WB523CF04PCM42633",
+        "WB523CF04RCP12138",
+        "WB523CF04RCP35676",
+        "WB523CF04SCS44031",
+        "WB523CF05NCK62641",
+        "WB523CF05RCN74884",
+        "WB523CF05RCN87442",
+        "WB523CF05SCT13129",
+        "WB523CF06RCN06139",
+        "WB523CF06RCN65952",
+        "WB523CF06SCU36177",
+        "WB523CF07NCK45131",
+        "WB523CF07PCM04684",
+        "WB523CF07PCM83483",
+        "WB523CF07RCN47878",
+        "WB523CF07RCP13543",
+        "WB523CF07RCP19861",
+        "WB523CF07SCS86550",
+        "WB523CF08PCM05021",
+        "WB523CF08PCM82150",
+        "WB523CF08PCM92354",
+        "WB523CF08RCN06367",
+        "WB523CF08RCN15215",
+        "WB523CF08RCN39014",
+        "WB523CF08RCN65144",
+        "WB523CF08RCN65905",
+        "WB523CF08RCP23465",
+        "WB523CF09PCL87502",
+        "WB523CF09PCM44281",
+        "WB523CF09PCM81962",
+        "WB523CF09RCN71521",
+        "WB523CF09RCP08408",
+        "WB523CF09RCP12040",
+        "WB523CF0XPCM05022",
+        "WB523CF0XRCN33120",
+        "WB523CF0XRCN51939",
+        "WB523CF0XSCT28872",
+        "WB533CF01PCL52120",
+        "WB533CF04PCM86541",
+        "WB533CF07PCL95926",
+        "WB533CF07RCP13613",
+        "WB543CF01TCW13003",
+        "WB543CF01TCW55221",
+        "WB543CF03TCU73925",
+        "WB543CF03TCW96045",
+        "WB543CF07TCW78549",
+        "WB543CF08TCV07261",
+        "WB543CF09TCW59730",
+        "WB543CF0XTCU91404",
+        "WB553CF02TCW52493",
+        "WB553CF07TCU91476",
+        "WB553CF07TCW81763",
+        "WB563CF06TCV11401"
+      ]
     }
   ],
   "vehicles": {
@@ -585,12 +582,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 41995,
-          "mileage": 51267,
-          "dealer": "Camp Chevrolet"
-        },
-        {
           "date": "2026-09-20",
           "price": 41995,
           "mileage": 51267,
@@ -622,6 +613,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 40995,
+          "mileage": 51267,
+          "dealer": "Camp Chevrolet"
+        },
+        {
+          "date": "2026-09-26",
           "price": 40995,
           "mileage": 51267,
           "dealer": "Camp Chevrolet"
@@ -661,12 +658,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 47350,
-          "mileage": 24047,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 47350,
           "mileage": 24047,
@@ -698,6 +689,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 46300,
+          "mileage": 24047,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 46300,
           "mileage": 24047,
           "dealer": "BMW of Bellevue"
@@ -737,12 +734,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 47512,
-          "mileage": 22812,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 47512,
           "mileage": 22812,
@@ -774,6 +765,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 46850,
+          "mileage": 22812,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 46850,
           "mileage": 22812,
           "dealer": "BMW of Bellevue"
@@ -813,12 +810,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 43663,
-          "mileage": 36132,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 43663,
           "mileage": 36132,
@@ -850,6 +841,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 43663,
+          "mileage": 36132,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 43663,
           "mileage": 36132,
           "dealer": "BMW of Bellevue"
@@ -889,12 +886,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 54550,
-          "mileage": 18501,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 54550,
           "mileage": 18501,
@@ -926,6 +917,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 53990,
+          "mileage": 18501,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 53990,
           "mileage": 18501,
           "dealer": "BMW of Bellevue"
@@ -965,12 +962,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 48900,
-          "mileage": 16846,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 48900,
           "mileage": 16846,
@@ -1002,6 +993,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 48900,
+          "mileage": 16846,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 48900,
           "mileage": 16846,
           "dealer": "BMW of Bellevue"
@@ -1087,12 +1084,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 56800,
-          "mileage": 29472,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 56800,
           "mileage": 29472,
@@ -1124,6 +1115,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 56800,
+          "mileage": 29472,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 56800,
           "mileage": 29472,
           "dealer": "BMW of Bellevue"
@@ -1162,12 +1159,6 @@
         "firstSeenDate": "2026-09-07"
       },
       "observations": [
-        {
-          "date": "2026-09-19",
-          "price": 79048,
-          "mileage": 5191,
-          "dealer": "BMW of Bellevue"
-        },
         {
           "date": "2026-09-20",
           "price": 76190,
@@ -1233,12 +1224,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 84470,
-          "mileage": 5559,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 84470,
           "mileage": 5559,
@@ -1303,12 +1288,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 97570,
-          "mileage": 4070,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 97570,
           "mileage": 4070,
@@ -1340,6 +1319,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 94515,
+          "mileage": 4159,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 94515,
           "mileage": 4159,
           "dealer": "BMW of Bellevue"
@@ -1379,12 +1364,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 42081,
-          "mileage": 58068,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 41472,
           "mileage": 58068,
@@ -1416,6 +1395,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 41472,
+          "mileage": 58068,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 41472,
           "mileage": 58068,
           "dealer": "Driveway"
@@ -1455,12 +1440,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 45748,
-          "mileage": 26807,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 45084,
           "mileage": 26807,
@@ -1492,6 +1471,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 45084,
+          "mileage": 26807,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 45084,
           "mileage": 26807,
           "dealer": "Driveway"
@@ -1531,12 +1516,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 48489,
-          "mileage": 29533,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 48489,
           "mileage": 29533,
@@ -1550,6 +1529,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 47189,
+          "mileage": 29533,
+          "dealer": "BMW of Spokane"
+        },
+        {
+          "date": "2026-09-26",
           "price": 47189,
           "mileage": 29533,
           "dealer": "BMW of Spokane"
@@ -1589,12 +1574,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 44725,
-          "mileage": 62607,
-          "dealer": "Mercedes-Benz of Seattle"
-        },
-        {
           "date": "2026-09-20",
           "price": 44725,
           "mileage": 62607,
@@ -1626,6 +1605,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 44450,
+          "mileage": 62607,
+          "dealer": "Mercedes-Benz of Seattle"
+        },
+        {
+          "date": "2026-09-26",
           "price": 44450,
           "mileage": 62607,
           "dealer": "Mercedes-Benz of Seattle"
@@ -1665,12 +1650,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 44180,
-          "mileage": 21650,
-          "dealer": "J & A Auto Sales"
-        },
-        {
           "date": "2026-09-20",
           "price": 43980,
           "mileage": 21650,
@@ -1702,6 +1681,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 43980,
+          "mileage": 21650,
+          "dealer": "J&A Auto Sales"
+        },
+        {
+          "date": "2026-09-26",
           "price": 43980,
           "mileage": 21650,
           "dealer": "J&A Auto Sales"
@@ -1741,12 +1726,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 46059,
-          "mileage": 39443,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 45391,
           "mileage": 39443,
@@ -1778,6 +1757,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 45391,
+          "mileage": 39443,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 45391,
           "mileage": 39443,
           "dealer": "Driveway"
@@ -1817,12 +1802,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 45176,
-          "mileage": 44130,
-          "dealer": "BMW Seattle"
-        },
-        {
           "date": "2026-09-20",
           "price": 47298,
           "mileage": 44130,
@@ -1854,6 +1833,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 47298,
+          "mileage": 44130,
+          "dealer": "BMW Seattle"
+        },
+        {
+          "date": "2026-09-26",
           "price": 47298,
           "mileage": 44130,
           "dealer": "BMW Seattle"
@@ -1893,12 +1878,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 49683,
-          "mileage": 26322,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 48960,
           "mileage": 26326,
@@ -1930,6 +1909,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 48960,
+          "mileage": 26326,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 48960,
           "mileage": 26326,
           "dealer": "Driveway"
@@ -1969,12 +1954,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 49088,
-          "mileage": 31931,
-          "dealer": "Infiniti of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 49088,
           "mileage": 31931,
@@ -2006,6 +1985,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 47755,
+          "mileage": 31931,
+          "dealer": "Infiniti of Lynnwood"
+        },
+        {
+          "date": "2026-09-26",
           "price": 47755,
           "mileage": 31931,
           "dealer": "Infiniti of Lynnwood"
@@ -2045,12 +2030,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 48990,
-          "mileage": 14568,
-          "dealer": "Platinum Auto Sales Inc"
-        },
-        {
           "date": "2026-09-20",
           "price": 48990,
           "mileage": 14568,
@@ -2082,6 +2061,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 48990,
+          "mileage": 14568,
+          "dealer": "Platinum Auto Sales Inc"
+        },
+        {
+          "date": "2026-09-26",
           "price": 48990,
           "mileage": 14568,
           "dealer": "Platinum Auto Sales Inc"
@@ -2121,12 +2106,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 47197,
-          "mileage": 39748,
-          "dealer": "BMW Northwest"
-        },
-        {
           "date": "2026-09-20",
           "price": 46697,
           "mileage": 39748,
@@ -2152,6 +2131,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 46697,
+          "mileage": 39748,
+          "dealer": "BMW Northwest"
+        },
+        {
+          "date": "2026-09-26",
           "price": 46697,
           "mileage": 39748,
           "dealer": "BMW Northwest"
@@ -2191,12 +2176,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 48471,
-          "mileage": 37035,
-          "dealer": "BMW Seattle"
-        },
-        {
           "date": "2026-09-20",
           "price": 48471,
           "mileage": 37035,
@@ -2228,6 +2207,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 48471,
+          "mileage": 37035,
+          "dealer": "BMW Seattle"
+        },
+        {
+          "date": "2026-09-26",
           "price": 48471,
           "mileage": 37035,
           "dealer": "BMW Seattle"
@@ -2267,12 +2252,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 51783,
-          "mileage": 22970,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 51029,
           "mileage": 22970,
@@ -2304,6 +2283,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 51029,
+          "mileage": 22971,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 51029,
           "mileage": 22971,
           "dealer": "Driveway"
@@ -2343,12 +2328,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 49197,
-          "mileage": 34853,
-          "dealer": "BMW Northwest"
-        },
-        {
           "date": "2026-09-20",
           "price": 48697,
           "mileage": 34853,
@@ -2374,6 +2353,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 48697,
+          "mileage": 34853,
+          "dealer": "BMW Northwest"
+        },
+        {
+          "date": "2026-09-26",
           "price": 48697,
           "mileage": 34853,
           "dealer": "BMW Northwest"
@@ -2413,12 +2398,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 47293,
-          "mileage": 32620,
-          "dealer": "BMW of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 47293,
           "mileage": 32620,
@@ -2450,6 +2429,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 46774,
+          "mileage": 32620,
+          "dealer": "BMW of Lynnwood"
+        },
+        {
+          "date": "2026-09-26",
           "price": 46774,
           "mileage": 32620,
           "dealer": "BMW of Lynnwood"
@@ -2488,12 +2473,6 @@
         "firstSeenDate": "2026-09-07"
       },
       "observations": [
-        {
-          "date": "2026-09-19",
-          "price": 51199,
-          "mileage": 29717,
-          "dealer": "BMW of Lynnwood"
-        },
         {
           "date": "2026-09-20",
           "price": 51199,
@@ -2559,12 +2538,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 52736,
-          "mileage": 21747,
-          "dealer": "BMW of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 52736,
           "mileage": 21747,
@@ -2596,6 +2569,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 51642,
+          "mileage": 21747,
+          "dealer": "BMW of Lynnwood"
+        },
+        {
+          "date": "2026-09-26",
           "price": 51642,
           "mileage": 21747,
           "dealer": "BMW of Lynnwood"
@@ -2635,12 +2614,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 51258,
-          "mileage": 20355,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 50512,
           "mileage": 20355,
@@ -2672,6 +2645,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 50512,
+          "mileage": 20371,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 50512,
           "mileage": 20371,
           "dealer": "Driveway"
@@ -2711,12 +2690,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 52753,
-          "mileage": 21041,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 51453,
           "mileage": 21041,
@@ -2742,6 +2715,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 51984,
+          "mileage": 21041,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 51984,
           "mileage": 21041,
           "dealer": "Driveway"
@@ -2781,12 +2760,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 56926,
-          "mileage": 28878,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 55626,
           "mileage": 28878,
@@ -2812,6 +2785,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 53596,
+          "mileage": 28878,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 53596,
           "mileage": 28878,
           "dealer": "Driveway"
@@ -2851,12 +2830,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 49180,
-          "mileage": 33323,
-          "dealer": "BMW of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 49180,
           "mileage": 33323,
@@ -2888,6 +2861,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 45808,
+          "mileage": 33323,
+          "dealer": "BMW of Lynnwood"
+        },
+        {
+          "date": "2026-09-26",
           "price": 45808,
           "mileage": 33323,
           "dealer": "BMW of Lynnwood"
@@ -2927,12 +2906,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 50750,
-          "mileage": 40479,
-          "dealer": "BMW of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 50750,
           "mileage": 40479,
@@ -2967,45 +2940,12 @@
           "price": 3497,
           "mileage": 40479,
           "dealer": "Swickard Toyota"
-        }
-      ]
-    },
-    "WB523CF08RCP17018": {
-      "lastKnown": {
-        "id": "wb523cf08rcp17018",
-        "vin": "WB523CF08RCP17018",
-        "year": 2024,
-        "make": "BMW",
-        "model": "iX",
-        "trim": "xDrive50",
-        "price": 50870,
-        "mileage": 22290,
-        "exteriorColor": "Red",
-        "interiorColor": "White",
-        "seats": 5,
-        "drivetrain": "AWD",
-        "dealer": "Elliot Bay Ineos Grenadier",
-        "officialBrandDealer": false,
-        "city": "Seattle",
-        "state": "WA",
-        "zip": "98133",
-        "cpo": false,
-        "oneOwner": true,
-        "accidentFree": true,
-        "accidentCount": 0,
-        "usageType": "Personal Use",
-        "image": "https://retail.photos.vin/WB523CF08RCP17018-1.jpg",
-        "photoCount": 26,
-        "url": "https://www.carfax.com/vehicle/WB523CF08RCP17018",
-        "listedAt": "2026-08-09 02:53:46",
-        "firstSeenDate": "2026-09-07"
-      },
-      "observations": [
+        },
         {
-          "date": "2026-09-19",
-          "price": 50870,
-          "mileage": 22290,
-          "dealer": "Elliot Bay Ineos Grenadier"
+          "date": "2026-09-26",
+          "price": 3497,
+          "mileage": 40479,
+          "dealer": "Swickard Toyota"
         }
       ]
     },
@@ -3041,12 +2981,6 @@
         "firstSeenDate": "2026-09-07"
       },
       "observations": [
-        {
-          "date": "2026-09-19",
-          "price": 54988,
-          "mileage": 23837,
-          "dealer": "BMW of Lynnwood"
-        },
         {
           "date": "2026-09-20",
           "price": 52599,
@@ -3094,12 +3028,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 48990,
-          "mileage": 17885,
-          "dealer": "BMW of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 48990,
           "mileage": 17885,
@@ -3131,6 +3059,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 48990,
+          "mileage": 17885,
+          "dealer": "BMW of Lynnwood"
+        },
+        {
+          "date": "2026-09-26",
           "price": 48990,
           "mileage": 17885,
           "dealer": "BMW of Lynnwood"
@@ -3170,12 +3104,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 54197,
-          "mileage": 25448,
-          "dealer": "BMW Northwest"
-        },
-        {
           "date": "2026-09-20",
           "price": 54197,
           "mileage": 25448,
@@ -3207,6 +3135,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 54197,
+          "mileage": 25448,
+          "dealer": "BMW Northwest"
+        },
+        {
+          "date": "2026-09-26",
           "price": 54197,
           "mileage": 25448,
           "dealer": "BMW Northwest"
@@ -3246,12 +3180,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 54996,
-          "mileage": 27901,
-          "dealer": "Landmark Motors"
-        },
-        {
           "date": "2026-09-20",
           "price": 54996,
           "mileage": 27901,
@@ -3283,6 +3211,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 53995,
+          "mileage": 27901,
+          "dealer": "Landmark Motors Inc"
+        },
+        {
+          "date": "2026-09-26",
           "price": 53995,
           "mileage": 27901,
           "dealer": "Landmark Motors Inc"
@@ -3322,12 +3256,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 51500,
-          "mileage": 18946,
-          "dealer": "Seattle Finest Motors"
-        },
-        {
           "date": "2026-09-20",
           "price": 51500,
           "mileage": 18946,
@@ -3359,6 +3287,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 50999,
+          "mileage": 18946,
+          "dealer": "Seattle Finest Motors"
+        },
+        {
+          "date": "2026-09-26",
           "price": 50999,
           "mileage": 18946,
           "dealer": "Seattle Finest Motors"
@@ -3398,12 +3332,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 56200,
-          "mileage": 13938,
-          "dealer": "BMW of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 56200,
           "mileage": 13938,
@@ -3435,6 +3363,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 3194,
+          "mileage": 13938,
+          "dealer": "Swickard Toyota"
+        },
+        {
+          "date": "2026-09-26",
           "price": 3194,
           "mileage": 13938,
           "dealer": "Swickard Toyota"
@@ -3474,12 +3408,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 55995,
-          "mileage": 9940,
-          "dealer": "Landmark Motors"
-        },
-        {
           "date": "2026-09-20",
           "price": 55995,
           "mileage": 9940,
@@ -3511,6 +3439,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 55995,
+          "mileage": 9940,
+          "dealer": "Landmark Motors"
+        },
+        {
+          "date": "2026-09-26",
           "price": 55995,
           "mileage": 9940,
           "dealer": "Landmark Motors"
@@ -3550,12 +3484,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 59999,
-          "mileage": 13631,
-          "dealer": "BMW Seattle"
-        },
-        {
           "date": "2026-09-20",
           "price": 59534,
           "mileage": 13631,
@@ -3584,45 +3512,6 @@
           "price": 59534,
           "mileage": 13631,
           "dealer": "BMW Seattle"
-        }
-      ]
-    },
-    "WB523CF07RCN71968": {
-      "lastKnown": {
-        "id": "wb523cf07rcn71968",
-        "vin": "WB523CF07RCN71968",
-        "year": 2024,
-        "make": "BMW",
-        "model": "iX",
-        "trim": "xDrive50",
-        "price": 49498,
-        "mileage": 24359,
-        "exteriorColor": "Blue",
-        "interiorColor": "White",
-        "seats": 5,
-        "drivetrain": "AWD",
-        "dealer": "BMW of Lynnwood",
-        "officialBrandDealer": true,
-        "city": "Lynnwood",
-        "state": "WA",
-        "zip": "98037",
-        "cpo": false,
-        "oneOwner": true,
-        "accidentFree": false,
-        "accidentCount": 1,
-        "usageType": "Personal Use",
-        "image": "https://retail.photos.vin/WB523CF07RCN71968-1.jpg",
-        "photoCount": 30,
-        "url": "https://volvocarsbellevue.com/used/BMW/2024-BMW-iX-xDrive50-for-sale-Bellevue-WA-66e595edac18221a7f70d51ef7ce8bfd.htm",
-        "listedAt": "2026-08-09 02:53:45",
-        "firstSeenDate": "2026-09-07"
-      },
-      "observations": [
-        {
-          "date": "2026-09-19",
-          "price": 49498,
-          "mileage": 24359,
-          "dealer": "BMW of Lynnwood"
         }
       ]
     },
@@ -3659,12 +3548,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 53650,
-          "mileage": 30064,
-          "dealer": "BMW of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 53650,
           "mileage": 30064,
@@ -3696,6 +3579,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 4611,
+          "mileage": 30064,
+          "dealer": "Swickard Toyota"
+        },
+        {
+          "date": "2026-09-26",
           "price": 4611,
           "mileage": 30064,
           "dealer": "Swickard Toyota"
@@ -3735,12 +3624,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 54999,
-          "mileage": 32599,
-          "dealer": "BMW Seattle"
-        },
-        {
           "date": "2026-09-20",
           "price": 54890,
           "mileage": 32599,
@@ -3772,6 +3655,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 54890,
+          "mileage": 32599,
+          "dealer": "BMW Seattle"
+        },
+        {
+          "date": "2026-09-26",
           "price": 54890,
           "mileage": 32599,
           "dealer": "BMW Seattle"
@@ -3811,12 +3700,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 52980,
-          "mileage": 17038,
-          "dealer": "Elliott Bay Auto Brokers"
-        },
-        {
           "date": "2026-09-20",
           "price": 52980,
           "mileage": 17038,
@@ -3848,6 +3731,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 52980,
+          "mileage": 17038,
+          "dealer": "Elliot Bay Ineos Grenadier"
+        },
+        {
+          "date": "2026-09-26",
           "price": 52980,
           "mileage": 17038,
           "dealer": "Elliot Bay Ineos Grenadier"
@@ -3887,12 +3776,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 53999,
-          "mileage": 24796,
-          "dealer": "BMW Seattle"
-        },
-        {
           "date": "2026-09-20",
           "price": 53999,
           "mileage": 24796,
@@ -3924,6 +3807,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 53999,
+          "mileage": 24796,
+          "dealer": "BMW Seattle"
+        },
+        {
+          "date": "2026-09-26",
           "price": 53999,
           "mileage": 24796,
           "dealer": "BMW Seattle"
@@ -3963,12 +3852,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 55995,
-          "mileage": 13100,
-          "dealer": "Landmark Motors"
-        },
-        {
           "date": "2026-09-20",
           "price": 55995,
           "mileage": 13100,
@@ -4000,6 +3883,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 55995,
+          "mileage": 13100,
+          "dealer": "Landmark Motors"
+        },
+        {
+          "date": "2026-09-26",
           "price": 55995,
           "mileage": 13100,
           "dealer": "Landmark Motors"
@@ -4039,12 +3928,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 59198,
-          "mileage": 20181,
-          "dealer": "Jaguar Land Rover Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 59198,
           "mileage": 20181,
@@ -4076,6 +3959,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 58598,
+          "mileage": 20181,
+          "dealer": "Jaguar Land Rover Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 58598,
           "mileage": 20181,
           "dealer": "Jaguar Land Rover Bellevue"
@@ -4115,12 +4004,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 59995,
-          "mileage": 16897,
-          "dealer": "Landmark Motors"
-        },
-        {
           "date": "2026-09-20",
           "price": 59995,
           "mileage": 16897,
@@ -4152,6 +4035,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 58998,
+          "mileage": 16897,
+          "dealer": "Landmark Motors"
+        },
+        {
+          "date": "2026-09-26",
           "price": 58998,
           "mileage": 16897,
           "dealer": "Landmark Motors"
@@ -4191,12 +4080,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 64880,
-          "mileage": 26172,
-          "dealer": "Landmark Motors"
-        },
-        {
           "date": "2026-09-20",
           "price": 64880,
           "mileage": 26172,
@@ -4228,6 +4111,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 64880,
+          "mileage": 26172,
+          "dealer": "Landmark Motors Inc"
+        },
+        {
+          "date": "2026-09-26",
           "price": 64880,
           "mileage": 26172,
           "dealer": "Landmark Motors Inc"
@@ -4267,12 +4156,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 76430,
-          "mileage": 1275,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 75130,
           "mileage": 1275,
@@ -4304,6 +4187,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 75306,
+          "mileage": 1275,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 75306,
           "mileage": 1275,
           "dealer": "Driveway"
@@ -4343,12 +4232,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 73386,
-          "mileage": 6058,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 72308,
           "mileage": 6058,
@@ -4380,6 +4263,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 72308,
+          "mileage": 6058,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 72308,
           "mileage": 6058,
           "dealer": "Driveway"
@@ -4419,12 +4308,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 74676,
-          "mileage": 5220,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 73578,
           "mileage": 5220,
@@ -4456,6 +4339,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 73376,
+          "mileage": 5220,
+          "dealer": "BMW of Spokane"
+        },
+        {
+          "date": "2026-09-26",
           "price": 73376,
           "mileage": 5220,
           "dealer": "BMW of Spokane"
@@ -4495,12 +4384,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 73398,
-          "mileage": 27113,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 72320,
           "mileage": 27113,
@@ -4532,6 +4415,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 72098,
+          "mileage": 27113,
+          "dealer": "BMW of Spokane"
+        },
+        {
+          "date": "2026-09-26",
           "price": 72098,
           "mileage": 27113,
           "dealer": "BMW of Spokane"
@@ -4571,12 +4460,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 63525,
-          "mileage": 11918,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 62595,
           "mileage": 11918,
@@ -4608,6 +4491,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 60851,
+          "mileage": 11918,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 60851,
           "mileage": 11918,
           "dealer": "Driveway"
@@ -4647,12 +4536,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 65952,
-          "mileage": 5772,
-          "dealer": "Driveway"
-        },
-        {
           "date": "2026-09-20",
           "price": 64985,
           "mileage": 5772,
@@ -4684,6 +4567,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 64985,
+          "mileage": 5772,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 64985,
           "mileage": 5772,
           "dealer": "Driveway"
@@ -4723,12 +4612,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 76064,
-          "mileage": 32,
-          "dealer": "BMW of Spokane"
-        },
-        {
           "date": "2026-09-20",
           "price": 77240,
           "mileage": 32,
@@ -4760,6 +4643,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 76396,
+          "mileage": 32,
+          "dealer": "BMW of Spokane"
+        },
+        {
+          "date": "2026-09-26",
           "price": 76396,
           "mileage": 32,
           "dealer": "BMW of Spokane"
@@ -4799,12 +4688,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 77782,
-          "mileage": 14904,
-          "dealer": "BMW of Spokane"
-        },
-        {
           "date": "2026-09-20",
           "price": 78963,
           "mileage": 14904,
@@ -4836,6 +4719,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 79082,
+          "mileage": 14904,
+          "dealer": "Driveway"
+        },
+        {
+          "date": "2026-09-26",
           "price": 79082,
           "mileage": 14904,
           "dealer": "Driveway"
@@ -4875,12 +4764,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 88197,
-          "mileage": 5730,
-          "dealer": "BMW Northwest"
-        },
-        {
           "date": "2026-09-20",
           "price": 88197,
           "mileage": 5730,
@@ -4912,6 +4795,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 86197,
+          "mileage": 5730,
+          "dealer": "BMW Northwest"
+        },
+        {
+          "date": "2026-09-26",
           "price": 86197,
           "mileage": 5730,
           "dealer": "BMW Northwest"
@@ -4951,12 +4840,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 90197,
-          "mileage": 1792,
-          "dealer": "BMW Northwest"
-        },
-        {
           "date": "2026-09-20",
           "price": 90197,
           "mileage": 1792,
@@ -4988,6 +4871,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 85197,
+          "mileage": 1792,
+          "dealer": "BMW Northwest"
+        },
+        {
+          "date": "2026-09-26",
           "price": 85197,
           "mileage": 1792,
           "dealer": "BMW Northwest"
@@ -5026,12 +4915,6 @@
         "firstSeenDate": "2026-09-07"
       },
       "observations": [
-        {
-          "date": "2026-09-19",
-          "price": 84764,
-          "mileage": 2924,
-          "dealer": "BMW of Lynnwood"
-        },
         {
           "date": "2026-09-20",
           "price": 84764,
@@ -5079,12 +4962,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 103450,
-          "mileage": 3697,
-          "dealer": "Windy Chevrolet"
-        },
-        {
           "date": "2026-09-20",
           "price": 103450,
           "mileage": 3697,
@@ -5116,6 +4993,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 103450,
+          "mileage": 3697,
+          "dealer": "Windy Chevrolet"
+        },
+        {
+          "date": "2026-09-26",
           "price": 103450,
           "mileage": 3697,
           "dealer": "Windy Chevrolet"
@@ -5155,12 +5038,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 54750,
-          "mileage": 21700,
-          "dealer": "BMW of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 54750,
           "mileage": 21700,
@@ -5192,6 +5069,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 706,
+          "mileage": 21700,
+          "dealer": "Swickard Toyota"
+        },
+        {
+          "date": "2026-09-26",
           "price": 706,
           "mileage": 21700,
           "dealer": "Swickard Toyota"
@@ -5230,12 +5113,6 @@
         "firstSeenDate": "2026-09-07"
       },
       "observations": [
-        {
-          "date": "2026-09-19",
-          "price": 54797,
-          "mileage": 30092,
-          "dealer": "BMW Northwest"
-        },
         {
           "date": "2026-09-20",
           "price": 54797,
@@ -5295,12 +5172,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 43998,
-          "mileage": 36711,
-          "dealer": "CarMax Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 43998,
           "mileage": 36711,
@@ -5326,6 +5197,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 43998,
+          "mileage": 36711,
+          "dealer": "CarMax Lynnwood"
+        },
+        {
+          "date": "2026-09-26",
           "price": 43998,
           "mileage": 36711,
           "dealer": "CarMax Lynnwood"
@@ -5365,12 +5242,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 45777,
-          "mileage": 33682,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 45777,
           "mileage": 33682,
@@ -5402,6 +5273,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 43900,
+          "mileage": 33682,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 43900,
           "mileage": 33682,
           "dealer": "BMW of Bellevue"
@@ -5441,12 +5318,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 51615,
-          "mileage": 13867,
-          "dealer": "BMW of Spokane"
-        },
-        {
           "date": "2026-09-20",
           "price": 52398,
           "mileage": 13867,
@@ -5478,6 +5349,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 52398,
+          "mileage": 13867,
+          "dealer": "BMW of Spokane"
+        },
+        {
+          "date": "2026-09-26",
           "price": 52398,
           "mileage": 13867,
           "dealer": "BMW of Spokane"
@@ -5517,12 +5394,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 66519,
-          "mileage": 9915,
-          "dealer": "BMW of Spokane"
-        },
-        {
           "date": "2026-09-20",
           "price": 67529,
           "mileage": 9915,
@@ -5554,6 +5425,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 67529,
+          "mileage": 9915,
+          "dealer": "BMW of Spokane"
+        },
+        {
+          "date": "2026-09-26",
           "price": 67529,
           "mileage": 9915,
           "dealer": "BMW of Spokane"
@@ -5593,12 +5470,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 49297,
-          "mileage": 37300,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 49297,
           "mileage": 37300,
@@ -5630,6 +5501,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 49297,
+          "mileage": 37306,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 49297,
           "mileage": 37306,
           "dealer": "BMW of Bellevue"
@@ -5668,12 +5545,6 @@
         "firstSeenDate": "2026-09-13"
       },
       "observations": [
-        {
-          "date": "2026-09-19",
-          "price": 53999,
-          "mileage": 22665,
-          "dealer": "BMW Seattle"
-        },
         {
           "date": "2026-09-20",
           "price": 53999,
@@ -5721,12 +5592,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 74999,
-          "mileage": 5575,
-          "dealer": "BMW Seattle"
-        },
-        {
           "date": "2026-09-20",
           "price": 74999,
           "mileage": 5589,
@@ -5758,6 +5623,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 74999,
+          "mileage": 5589,
+          "dealer": "BMW Seattle"
+        },
+        {
+          "date": "2026-09-26",
           "price": 74999,
           "mileage": 5589,
           "dealer": "BMW Seattle"
@@ -5797,12 +5668,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 48411,
-          "mileage": 41381,
-          "dealer": "BMW of Bellevue"
-        },
-        {
           "date": "2026-09-20",
           "price": 48411,
           "mileage": 41381,
@@ -5834,6 +5699,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 47850,
+          "mileage": 41388,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 47850,
           "mileage": 41388,
           "dealer": "BMW of Bellevue"
@@ -5873,12 +5744,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 49563,
-          "mileage": 26649,
-          "dealer": "BMW of Lynnwood"
-        },
-        {
           "date": "2026-09-20",
           "price": 49563,
           "mileage": 26649,
@@ -5904,6 +5769,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 49084,
+          "mileage": 26649,
+          "dealer": "BMW of Lynnwood"
+        },
+        {
+          "date": "2026-09-26",
           "price": 49084,
           "mileage": 26649,
           "dealer": "BMW of Lynnwood"
@@ -5943,12 +5814,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 57980,
-          "mileage": 28937,
-          "dealer": "Elliot Bay Ineos Grenadier"
-        },
-        {
           "date": "2026-09-20",
           "price": 57980,
           "mileage": 28937,
@@ -5980,6 +5845,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 57980,
+          "mileage": 28937,
+          "dealer": "Elliott Bay Auto Brokers"
+        },
+        {
+          "date": "2026-09-26",
           "price": 57980,
           "mileage": 28937,
           "dealer": "Elliott Bay Auto Brokers"
@@ -6019,12 +5890,6 @@
       },
       "observations": [
         {
-          "date": "2026-09-19",
-          "price": 55799,
-          "mileage": 27249,
-          "dealer": "BMW Seattle"
-        },
-        {
           "date": "2026-09-20",
           "price": 55999,
           "mileage": 27249,
@@ -6056,6 +5921,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 55999,
+          "mileage": 27249,
+          "dealer": "BMW Seattle"
+        },
+        {
+          "date": "2026-09-26",
           "price": 55999,
           "mileage": 27249,
           "dealer": "BMW Seattle"
@@ -6193,6 +6064,12 @@
           "price": 58704,
           "mileage": 12702,
           "dealer": "Swickard Toyota"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 58704,
+          "mileage": 12702,
+          "dealer": "Swickard Toyota"
         }
       ]
     },
@@ -6248,6 +6125,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 51458,
+          "mileage": 32864,
+          "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
           "price": 51458,
           "mileage": 32864,
           "dealer": "BMW of Bellevue"
@@ -6309,6 +6192,12 @@
           "price": 41990,
           "mileage": 31436,
           "dealer": "BMW of Bellevue"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 41990,
+          "mileage": 31436,
+          "dealer": "BMW of Bellevue"
         }
       ]
     },
@@ -6352,6 +6241,12 @@
         },
         {
           "date": "2026-09-25",
+          "price": 46191,
+          "mileage": 55286,
+          "dealer": "Spencer's Auto Sales"
+        },
+        {
+          "date": "2026-09-26",
           "price": 46191,
           "mileage": 55286,
           "dealer": "Spencer's Auto Sales"
@@ -6401,6 +6296,12 @@
           "price": 40999,
           "mileage": 34817,
           "dealer": "Mercedes-Benz of Bellingham"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 40999,
+          "mileage": 34817,
+          "dealer": "Mercedes-Benz of Bellingham"
         }
       ]
     },
@@ -6441,6 +6342,12 @@
           "price": 49999,
           "mileage": 35223,
           "dealer": "BMW Seattle"
+        },
+        {
+          "date": "2026-09-26",
+          "price": 49999,
+          "mileage": 35223,
+          "dealer": "BMW Seattle"
         }
       ]
     },
@@ -6478,6 +6385,12 @@
       "observations": [
         {
           "date": "2026-09-25",
+          "price": 39991,
+          "mileage": 44304,
+          "dealer": "Legend Auto Sales"
+        },
+        {
+          "date": "2026-09-26",
           "price": 39991,
           "mileage": 44304,
           "dealer": "Legend Auto Sales"
